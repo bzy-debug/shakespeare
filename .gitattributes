@@ -1,0 +1,2 @@
+# Immutable publisher snapshots: preserve exact bytes and source whitespace.
+data/english-collection/sources/*.html -text whitespace=-blank-at-eol,-blank-at-eof

@@ -1,37 +1,61 @@
-# Shakespeare · 双语阅读原型
+# Shakespeare · 全集双语阅读
 
-静态 HTML / CSS / JavaScript，无构建依赖。双击 `index.html` 即可打开；也可在本目录运行：
+静态 HTML / CSS / JavaScript，无生产构建依赖。打开 `index.html`，或在项目目录运行：
 
 ```sh
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-访问 http://127.0.0.1:4173 。
+浏览 http://127.0.0.1:4173 。数据按作品懒加载，正文、图片和脚本均保存在项目内；Google Fonts 为可选字体，离线时使用系统字体。
 
-## 内容与交互
+## 新增内容
 
-- 《哈姆雷特》第一幕第一场完整英文：MIT Shakespeare 公版原文，https://shakespeare.mit.edu/hamlet/hamlet.1.1.html 。保留原文诗行，角色采用来源中的 BERNARDO 拼法。
-- 72 个双语单元，包括角色台词及独立舞台提示；中文采用朱生豪译本，以维基文库《汉姆莱脱／第一幕》修订版 1489093 为底本，使用该站的简体显示。保留底本措辞及人名（勃那陀、弗兰西斯科、玛昔勒斯等），不改写为现代译法。
-- 双栏共享行高，点击同时高亮；窄屏改为每段英文在上、中文在下。
-- 搜索中英文与角色名（⌘ / Ctrl K），点击结果跳转；支持书签、本场进度定位、三种阅读模式、字号、行距、三种纸张主题。
-- 设置、书签与阅读位置保存在当前浏览器的 localStorage。直接打开文件时，存储支持取决于浏览器；建议通过本地服务器预览。
-- 目录仅第一幕第一场可读，其余条目明确标为未收录。
-- 正文及脚本均在本地；Google Fonts 为可选网络字体，离线时使用系统衬线字体。
+- 中文：用户提供的人民文学出版社 2014 纪念版 EPUB，39 部戏剧与 4 个诗歌/诗集文件单元，共 47,598 个原文块、1,258 个阅读分节。
+- 英文：39 部戏剧与 7 个诗歌集合，共 988 节、40,327 块。37 部戏剧及诗歌来自 MIT Shakespeare 固定提交，另两剧《爱德华三世》《两位贵亲戚》来自 Project Gutenberg。
+- 43 个中文单元均有对应英文作品；中文最后一个合辑对应 4 个英文作品，可在英文栏单独切换。
+- 书架按作品、英文名、译者检索；提供“仅明确署名朱生豪”筛选。
+- 中英文各自独立选择篇章，支持上一节/下一节、当前作品全文搜索、跨作品书签、阅读位置、三种阅读模式、字号/行距/纸张设置、浏览器前进后退和链接定位。
+- 中文保留全部原文块、舞台提示、人物表、诗行、注释和图片文字：240 次图片引用、222 张不同图片、603 条脚注及 1,206 个往返链接。
 
-## 文件
+## 版本、署名与对照层级
 
-- `index.html`：页面结构与对话框
-- `styles.css`：桌面与窄屏排版、阅读主题
-- `app.js`：阅读交互和本地存储
-- `data/english.json`：从来源提取的英文数据
-- `data/scene.js`：带稳定 ID 的中英双语数据
-- `data/zhu-shenghao-source.json`：朱生豪译文来源、固定版本链接、提取文本与三处舞台提示对齐说明
-- `assets/globe-engraving.png`：内置 imagegen 生成的环球剧场装饰插画
+上传 EPUB 的版权页署名为“朱生豪等译”，不能把整本书都标为朱生豪译。逐作品保留原书署名：
 
-插画提示词：Create an elegant antique copperplate architectural engraving of Shakespeare's Globe theatre for the header of a literary reading website. Landscape 3:2 composition, building centered in the lower middle, generous blank space around it. Exterior Elizabethan circular timber-frame theatre, polygonal structure, thatched roof sections and tiny flag, fine crosshatching and delicate thin sepia-gray ink lines, pale warm ivory background #f8f5ed. A few faint shrubs at ground level. Quiet, delicate, airy, authentic book frontispiece illustration. No text, no letters, no labels, no border, no drop shadow, no colors other than pale sepia ink and ivory. Fine detailed architectural line work, broad blank margins softly fading into ivory.
+- 30 部戏剧明确署名朱生豪。
+- 8 部戏剧署名方平、章益、方重、杨周翰或绿原。
+- 《泰尔亲王配力克里斯》原书署名“朱豪译”，保留原文并明确标为待核实，没有自动改字。
+- 诗歌分别署名张谷若、杨德豫、梁宗岱、黄雨石。
 
-## 中文底本与对齐
+新增内容是“按作品并列阅读”，不是逐句或逐段对齐。两个版本的幕场、序言及段落划分可能不同，因此不按序号硬拼中英文。所有中文文字来自上传文件，没有补写、现代改写或机器翻译。图片中的文字保留图片呈现，未冒充完成 OCR 校勘。
 
-译者署名依据：[维基文库《汉姆莱脱》](https://zh.wikisource.org/wiki/漢姆萊脫)。正文采用[第一幕固定修订版 1489093](https://zh.wikisource.org/w/index.php?title=漢姆萊脫/第一幕&oldid=1489093&variant=zh-hans)，获取日期 2026-10-12。
+“完整”在本项目中指用户提供版本的 39 剧及诗歌正文，不是对所有莎士比亚正典/存疑作品的学术完备性声明。书前人物、作品内献辞、编辑注释与正文分节展示；全书版权页、插页、总前言、总目录及年表附录没有作为莎士比亚作品混入书架。原 EPUB 保持不变。
 
-中文台词按人物发言对齐，保留完整措辞和标点。为匹配现有英文底本，独立显示舞台提示，并调整了“鬼上”“鸡啼”和第二次“鬼下”的展示位置；相邻连续台词据此拆段。详细位置记录在 `data/zhu-shenghao-source.json`。全场中文台词串联后与底本的台词串联文本逐字一致，九条舞台提示均保留。
+MIT 历史诗集中部分作品并非莎士比亚独作，来源说明保留这一归属限制。《两位贵亲戚》是莎士比亚与弗莱彻合著，《爱德华三世》归属存在研究讨论；本项目按提供的合集收录，不自行裁定作者归属。
+
+## 来源与可重现性
+
+- [中文来源说明](data/chinese-collection/README.md)、[中文清单](data/chinese-collection/manifest.json)
+- [英文来源说明](data/english-collection/README.md)、[英文清单](data/english-collection/sources/manifest.json)
+- 中文来源 SHA-256：`e0385e88e1428b9accb344d45650a0f52ea1d917cbb12009036b2fb32fd9b747`
+- MIT 固定提交：`6b82db852c7322dd33e95db347f0ddfc812c6409`，来自官方站点链接的 [TheMITTech/shakespeare](https://github.com/TheMITTech/shakespeare)。来源快照随英文数据保存。
+- 输入 EPUB 的文件名不是来源获取地址；本次未从其中提到的网站下载书籍。
+
+中文是对用户提供文件的转换；本地导入不等于对现代译文、修订、注释或图片公共再发布权的认定。公开发布前应确认具体版本和目标地区的授权。
+
+## 保留的单场示例
+
+`legacy-hamlet.html` / `legacy-hamlet.js` 保留原来的《哈姆雷特》1.1，72 个对照单元及旧 localStorage 键，原书签不受新阅读器影响。该页使用维基文库固定修订版 1489093 的简体显示；讨论页注明来自 1978 年朱生豪译、吴兴华校版本，不应称为未经修订的原译。它与新上传的 2014 合集底本分别标示；旧有的三处舞台提示对齐记录仍在 `data/zhu-shenghao-source.json`。
+
+## 检查
+
+```sh
+npm ci
+npm test
+# 生产页面不需要 npm；仅开发测试使用 jsdom。
+# 与原始 EPUB 展开文件逐字核对（可选）
+SHAKESPEARE_CHINESE_SOURCE=/path/to/expanded/epub python3 -m unittest discover -s tests -v
+```
+
+转换器及英文检查命令见各数据目录 README。验证范围与运行环境限制见 [preview/QA.md](preview/QA.md)。
+
+原环球剧场装饰图保留于 `assets/globe-engraving.png`。本分支没有后端，也未合并或部署。

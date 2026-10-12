@@ -1,0 +1,12 @@
+{
+  "name": "shakespeare-collection-reader",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static Shakespeare reader; dependencies are test-only.",
+  "scripts": {
+    "test": "node --check app.js && node --check legacy-hamlet.js && python3 -m unittest discover -s tests -v && node tests/reader.dom.cjs",
+    "test:dom": "node tests/reader.dom.cjs",
+    "rebuild:english": "python3 scripts/import_english.py"
+  },
+  "devDependencies": {"jsdom": "26.1.0"}
+}

@@ -1,79 +1,95 @@
 'use strict';
 (() => {
-  const rows = window.HAMLET_SCENE;
-  const names = { BERNARDO: '勃那陀', FRANCISCO: '弗兰西斯科', HORATIO: '霍拉旭', MARCELLUS: '玛昔勒斯' };
-  const $ = (s) => document.querySelector(s);
-  const $$ = (s) => [...document.querySelectorAll(s)];
-  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const key = 'shakespeare.hamlet.1.1.v1';
-  let saved = {};
-  try { saved = JSON.parse(localStorage.getItem(key)) || {}; } catch {}
-  const state = {
-    bookmarks: new Set(Array.isArray(saved.bookmarks) ? saved.bookmarks.filter(id => rows.some(r => r.id === id)) : []),
-    selected: rows.some(r => r.id === saved.selected) ? saved.selected : rows[2].id,
-    fontSize: Number.isFinite(saved.fontSize) ? Math.min(28, Math.max(16, saved.fontSize)) : 20,
-    theme: ['paper','light','night'].includes(saved.theme) ? saved.theme : 'paper',
-    spacing: ['1.65','1.9','2.2'].includes(saved.spacing) ? saved.spacing : '1.9',
-    mode: ['parallel','en','zh'].includes(saved.mode) ? saved.mode : 'parallel',
-    position: typeof saved.position === 'string' ? saved.position : null,
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const catalog = window.SHAKESPEARE_CHINESE_CATALOG || [];
+  const englishCatalog = window.SHAKESPEARE_ENGLISH_CATALOG || [];
+  const englishMap = {
+    '维洛那二绅士':'two_gentlemen','爱的徒劳':'lll','罗密欧与朱丽叶':'romeo_juliet','驯悍记':'taming_shrew','错误的喜剧':'comedy_errors','约翰王':'john','仲夏夜之梦':'midsummer','威尼斯商人':'merchant','理查二世':'richardii','亨利四世上篇':'1henryiv','亨利四世下篇':'2henryiv','温莎的风流娘儿们':'merry_wives','无事生非':'much_ado','终成眷属':'allswell','亨利五世':'henryv','皆大欢喜':'asyoulikeit','泰尔亲王配力克里斯':'pericles','第十二夜':'twelfth_night','亨利六世上篇':'1henryvi','亨利六世中篇':'2henryvi','亨利六世下篇':'3henryvi','雅典的泰门':'timon','理查三世':'richardiii','一报还一报':'measure','亨利八世':'henryviii','辛白林':'cymbeline','李尔王':'lear','科利奥兰纳斯':'coriolanus','暴风雨':'tempest','冬天的故事':'winters_tale','特洛伊罗斯与克瑞西达':'troilus_cressida','麦克白':'macbeth','裘力斯·凯撒':'julius_caesar','哈姆莱特':'hamlet','安东尼与克莉奥佩特拉':'cleopatra','泰特斯·安德洛尼克斯':'titus','奥瑟罗':'othello','十四行诗':'sonnets','维纳斯与阿都尼':'venus_and_adonis','鲁克丽丝受辱记':'rape_of_lucrece'
   };
-  let toastTimer, saveTimer, ticking = false, restoring = true;
-  const persist = () => { try { localStorage.setItem(key, JSON.stringify({...state,bookmarks:[...state.bookmarks]})); } catch {} };
-  function toast(message) { $('#toast').textContent=message; $('#toast').classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2100); }
-  $('#dialogue').innerHTML = rows.map((r,i) => `<article class="dialogue-row ${r.type === 'stage' ? 'stage' : ''}" id="${r.id}" tabindex="0" aria-label="${r.type === 'stage' ? '舞台提示' : names[r.speaker]+'的台词'}，第${i+1}段"><span class="row-number" title="${r.line ? '原文第 '+r.line+' 行' : '舞台提示'}">${String(i+1).padStart(2,'0')}</span><div class="passage en" lang="en">${r.speaker ? `<h3 class="speaker">${esc(r.speaker)}</h3>` : ''}<p>${esc(r.en)}</p></div><div class="passage zh" lang="zh-CN">${r.speaker ? `<h3 class="speaker">${names[r.speaker]}</h3>` : ''}<p>${esc(r.zh)}</p></div><button class="row-bookmark" aria-label="收藏第${i+1}段" aria-pressed="false" title="添加书签"><svg><use href="#i-bookmark"/></svg></button></article>`).join('');
-  const elements = $$('.dialogue-row');
-  const select = (id) => { state.selected=id; elements.forEach(el=>el.classList.toggle('selected',el.id===id)); persist(); };
-  function updateBookmarks() {
-    elements.forEach((el,i)=>{ const active=state.bookmarks.has(el.id);const b=el.querySelector('.row-bookmark');b.classList.toggle('saved',active);b.setAttribute('aria-pressed',String(active));b.setAttribute('aria-label',`${active?'取消收藏':'收藏'}第${i+1}段`);b.title=active?'移除书签':'添加书签'; });
-    $('#bookmark-count').textContent=state.bookmarks.size;$('#bookmark-count').hidden=!state.bookmarks.size;
+  let saved = {};
+  try { const raw = JSON.parse(localStorage.getItem('shakespeare.collection.v1')); if (raw && typeof raw === 'object') saved = raw; } catch {}
+  const state = {
+    work: catalog.some(w=>w.id===saved.work) ? saved.work : 'part0037',
+    zh: '', en: '', englishWork:'', mode:['parallel','en','zh'].includes(saved.mode)?saved.mode:'parallel',
+    fontSize:Number.isFinite(saved.fontSize)?Math.min(28,Math.max(16,saved.fontSize)):20,
+    theme:['paper','light','night'].includes(saved.theme)?saved.theme:'paper',
+    spacing:['1.65','1.9','2.2'].includes(saved.spacing)?saved.spacing:'1.9',
+    bookmarks:Array.isArray(saved.bookmarks)?saved.bookmarks.filter(b=>b&&catalog.some(w=>w.id===b.work)&&typeof b.block==='string'&&['zh','en'].includes(b.lang)&&typeof b.section==='string').slice(0,2000):[],
+    positions:saved.positions&&typeof saved.positions==='object'&&!Array.isArray(saved.positions)?saved.positions:{}
+  };
+  let zhWork=null, enWork=null, generation=0, toastTimer, progressFrame, positionTimer, restoringPosition=false;
+  const scripts=new Map();
+  const persist=()=>{try{localStorage.setItem('shakespeare.collection.v1',JSON.stringify(state));}catch{}};
+  const englishIds=w=>w.englishIds?.length?w.englishIds:[w.englishId || englishMap[w.title]].filter(Boolean);
+  const englishInfo=(w,id)=>englishCatalog.find(e=>e.id===(englishIds(w).includes(id)?id:englishIds(w)[0]));
+  function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2200);}
+  function loadScript(path){
+    if(scripts.has(path))return scripts.get(path);
+    const p=new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path;s.onload=resolve;s.onerror=()=>{scripts.delete(path);s.remove();reject(new Error('无法载入 '+path));};document.head.append(s);});scripts.set(path,p);return p;
   }
-  elements.forEach((el,i)=>{
-    el.addEventListener('click',e=>{if(e.target.closest('.row-bookmark'))return;if(window.getSelection()?.toString())return;select(el.id);});
-    el.addEventListener('keydown',e=>{if(e.target!==el)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();select(el.id);}if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();const next=elements[i+(e.key==='ArrowDown'?1:-1)];if(next){next.focus();select(next.id);}}});
-    el.querySelector('.row-bookmark').addEventListener('click',()=>{if(state.bookmarks.has(el.id)){state.bookmarks.delete(el.id);toast('已移除书签');}else{state.bookmarks.add(el.id);toast('已收藏这段台词');}updateBookmarks();persist();});
+  function section(work,id){return work?.sections.find(s=>s.id===id)||work?.sections[0];}
+  function route(){const q=new URLSearchParams(location.hash.slice(1));return {work:q.get('work'),zh:q.get('zh'),en:q.get('en'),block:q.get('block'),lang:q.get('lang'),englishWork:q.get('englishWork')};}
+  function setURL(replace=false,extra={}){const q=new URLSearchParams({work:state.work,zh:state.zh,en:state.en,englishWork:state.englishWork,...extra});const hash='#'+q; if(location.hash!==hash)history[replace?'replaceState':'pushState'](null,'',hash);}
+  function applySettings(){document.documentElement.style.setProperty('--font-size',state.fontSize+'px');document.documentElement.style.setProperty('--leading',state.spacing);document.body.dataset.theme=state.theme;document.body.dataset.mode=state.mode;$('#font-size').value=state.fontSize;$('#font-output').value=state.fontSize+' px';$('#reading-mode').value=state.mode;$$('[data-theme-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.themeChoice===state.theme)));$$('[data-spacing]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.spacing===state.spacing)));requestAnimationFrame(updateProgress);}
+  async function openWork(id,options={}){
+    const meta=catalog.find(w=>w.id===id)||catalog.find(w=>w.id==='part0037')||catalog[0];
+    if(!meta){$('#load-status').textContent='作品目录载入失败，请检查本地文件。';return;}
+    const ticket=++generation;restoringPosition=true;state.work=meta.id;zhWork=null;enWork=null;
+    $('#load-status').textContent='正在载入《'+meta.title+'》…';$('#reading').setAttribute('aria-busy','true');$('#english-text').replaceChildren();$('#chinese-text').replaceChildren();$('#work-toc').replaceChildren();$('#en-section').replaceChildren();$('#zh-section').replaceChildren();
+    const enMeta=englishInfo(meta,options.englishWork||state.positions[meta.id]?.englishWork);state.englishWork=enMeta?.id||'';$('#english-work').hidden=englishIds(meta).length<2;$('#english-work').innerHTML=englishIds(meta).map(id=>englishCatalog.find(w=>w.id===id)).filter(Boolean).map(w=>'<option value="'+esc(w.id)+'"'+(w.id===state.englishWork?' selected':'')+'>'+esc(w.title)+'</option>').join('');
+    try{
+      await loadScript(meta.file||'data/chinese-collection/works/'+meta.id+'.js');
+      const chinese=window.SHAKESPEARE_CHINESE?.[meta.id];if(!chinese?.sections?.length)throw new Error('中文数据无有效篇章');
+      let english=null,englishError=false;
+      if(enMeta){try{await loadScript(enMeta.file||'data/english-collection/'+enMeta.id+'.js');english=window.SHAKESPEARE_ENGLISH?.[enMeta.id];if(!english?.sections?.length)throw new Error('英文数据无有效篇章');}catch{englishError=true;}}
+      if(ticket!==generation)return;
+      zhWork=chinese;enWork=english;const previous=state.positions[meta.id]||{};
+      state.zh=section(zhWork,options.zh||previous.zh)?.id||'';state.en=section(enWork,options.en||previous.en)?.id||'';
+      $('.book-title h2').textContent=enMeta?.title||'Shakespeare';$('.book-title p').textContent=meta.title;$('.book-title .eyebrow').textContent=meta.kind==='play'?'THE PLAYS':'THE POEMS';
+      $('#play-title').textContent=enMeta?.title||meta.title;$('.hero-copy>.eyebrow').textContent='THE COLLECTED WORKS';$('.hero-subtitle>span').textContent=meta.title;$('.author').textContent='William Shakespeare';
+      $('.breadcrumb').textContent='全集 / '+meta.title;document.title=meta.title+' · Shakespeare';
+      const credit=meta.translatorCredit||meta.translator+'译';$('#edition-note').textContent='人民文学出版社 · 2014 纪念版 · '+credit+(meta.attributionStatus==='source-credit-uncertain'?'（原书署名待核实）':'');
+      $('#source-note').innerHTML='中文：用户提供《莎士比亚全集》EPUB，人民文学出版社，2014，ISBN 978-7-02-010568-7。'+esc(credit)+'。原书为多译者合集，图片文字与注释保留。<br>'+(enMeta?'英文：<a target="_blank" rel="noopener noreferrer" href="'+esc(enMeta.sourceUrl||'https://shakespeare.mit.edu/')+'">'+esc(enMeta.sourceLabel||'英文公版来源')+'</a>。':'英文：此作品暂无已收录的对应英文来源。')+(enMeta?.attributionNote?' '+esc(enMeta.attributionNote):'')+'<br>中英文独立分节，并非逐句对齐。<a href="data/chinese-collection/manifest.json">查看中文来源记录</a> · <a href="legacy-hamlet.html">原版单场对照示例（旧底本）</a>';
+      $('#load-status').textContent=englishError?'英文文件未能载入，中文可继续阅读。':'';
+      if(englishError){const b=document.createElement('button');b.textContent='重试载入';b.onclick=()=>openWork(meta.id,{zh:state.zh,en:state.en,replace:true});$('#load-status').append(' ',b);}
+      renderSections();setURL(options.replace??false);state.positions[state.work]={zh:state.zh,en:state.en,englishWork:state.englishWork};persist();
+      if(options.block)jumpBlock(options.lang||'zh',options.block);else if(options.initial&&previous.block)jumpBlock(previous.lang||'zh',previous.block);else if(!options.initial)window.scrollTo({top:0,behavior:'instant'});
+    }catch(error){if(ticket!==generation)return;$('#load-status').textContent='载入失败：'+error.message+'。';const b=document.createElement('button');b.textContent='重试';b.onclick=()=>openWork(meta.id,{...options,replace:true});$('#load-status').append(b);}
+    finally{if(ticket===generation){$('#reading').setAttribute('aria-busy','false');requestAnimationFrame(()=>{restoringPosition=false;});}}
+  }
+  function optionsHTML(work,current){return (work?.sections||[]).map(s=>'<option value="'+esc(s.id)+'"'+(s.id===current?' selected':'')+'>'+esc(s.label)+'</option>').join('');}
+  function blockId(lang,b,i){return b.id||lang+'-'+i;}
+  function renderPane(lang,work,selected){const target=$(lang==='zh'?'#chinese-text':'#english-text');const sec=section(work,selected);if(!sec){target.innerHTML='<p class="empty-state">本书尚无对应英文文本。中文已完整收录。</p>';return;}
+    target.innerHTML=sec.blocks.map((b,i)=>{const id=blockId(lang,b,i);const mark=state.bookmarks.some(x=>x.work===state.work&&x.lang===lang&&x.block===id&&x.section===sec.id);const content=lang==='zh'?b.html:(b.speaker?'<h3 class="speaker">'+esc(b.speaker)+'</h3>':'')+'<p>'+esc(b.text)+'</p>';return '<article class="source-block '+(b.kind==='stage'?'stage-block':'')+'" data-block="'+esc(id)+'" data-lang="'+lang+'" tabindex="0"><div class="source-content">'+content+'</div><button class="block-bookmark" aria-label="'+(mark?'取消书签':'添加书签')+'" aria-pressed="'+mark+'" title="'+(mark?'取消书签':'添加书签')+'">'+(mark?'◆':'◇')+'</button></article>';}).join('');
+  }
+  function renderSections(){
+    if(!zhWork)return;for(const lang of ['zh','en']){const work=lang==='zh'?zhWork:enWork;const cur=state[lang];$('#'+lang+'-section').innerHTML=optionsHTML(work,cur);$('#'+lang+'-section').disabled=!work;const idx=work?.sections.findIndex(s=>s.id===cur)??-1;$('#'+lang+'-prev').disabled=idx<=0;$('#'+lang+'-next').disabled=!work||idx>=work.sections.length-1;renderPane(lang,work,cur);}
+    $('#work-toc').innerHTML=zhWork.sections.map(s=>'<button data-section="'+esc(s.id)+'" class="'+(s.id===state.zh?'scene-current':'')+'"'+(s.id===state.zh?' aria-current="page"':'')+'>'+esc(s.label)+'</button>').join('');
+    const label=section(zhWork,state.zh)?.label||'';$('#footer-section').textContent=label;$('#section-end-label').textContent='当前篇章 · '+label;updateBookmarks();applySettings();
+  }
+  function changeSection(lang,id,opts={}){const work=lang==='zh'?zhWork:enWork;if(!work?.sections.some(s=>s.id===id))return;state[lang]=id;renderSections();state.positions[state.work]={zh:state.zh,en:state.en,englishWork:state.englishWork};persist();setURL(false);toggleMenu(false);if(opts.block)jumpBlock(lang,opts.block);else $('#reading').scrollIntoView({block:'start',behavior:'instant'});}
+  function jumpBlock(lang,id){if(state.mode!==lang&&state.mode!=='parallel'){state.mode=lang;applySettings();persist();}const el=$$('.source-block').find(e=>e.dataset.lang===lang&&e.dataset.block===id);if(el){el.classList.add('selected');el.scrollIntoView({block:'center',behavior:'instant'});el.focus({preventScroll:true});}}
+  function updateBookmarks(){$('#bookmark-count').textContent=state.bookmarks.length;$('#bookmark-count').hidden=!state.bookmarks.length;}
+  $('#reading').addEventListener('click',e=>{
+    const btn=e.target.closest('.block-bookmark');if(btn){const article=btn.closest('[data-block]'),lang=article.dataset.lang,sec=section(lang==='zh'?zhWork:enWork,state[lang]);const id=article.dataset.block;const ix=state.bookmarks.findIndex(b=>b.work===state.work&&b.lang===lang&&b.section===sec.id&&b.block===id);if(ix>=0)state.bookmarks.splice(ix,1);else state.bookmarks.push({work:state.work,lang,englishWork:state.englishWork,section:sec.id,block:id,label:sec.label,text:article.querySelector('.source-content').textContent.slice(0,160)});const on=ix<0;btn.textContent=on?'◆':'◇';btn.setAttribute('aria-pressed',on);btn.setAttribute('aria-label',on?'取消书签':'添加书签');btn.title=on?'取消书签':'添加书签';persist();updateBookmarks();toast(on?'已添加书签':'已移除书签');return;}
+    const anchor=e.target.closest('.source-content a');if(anchor){const raw=anchor.dataset.sourceAnchor||anchor.getAttribute('href')?.split('#')[1];if(raw){e.preventDefault();navigateAnchor(raw);}}
   });
-  function applySettings() {
-    document.documentElement.style.setProperty('--font-size',state.fontSize+'px');
-    document.documentElement.style.setProperty('--leading',state.spacing);
-    document.body.dataset.theme=state.theme;document.body.dataset.mode=state.mode;
-    $('#font-size').value=state.fontSize;$('#font-output').value=state.fontSize+' px';$('#reading-mode').value=state.mode;
-    $$('[data-theme-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.themeChoice===state.theme)));
-    $$('[data-spacing]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.spacing===state.spacing)));
-    requestAnimationFrame(updateProgress);
-  }
-  function showDialog(id) {const d=$(id);if(!d.open)d.showModal();}
-  $$('[data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-  $$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
-  $('#type-button').addEventListener('click',()=>showDialog('#type-dialog'));
-  $('#font-size').addEventListener('input',e=>{state.fontSize=Number(e.target.value);applySettings();persist();});
-  $$('[data-theme-choice]').forEach(b=>b.addEventListener('click',()=>{state.theme=b.dataset.themeChoice;applySettings();persist();}));
-  $$('[data-spacing]').forEach(b=>b.addEventListener('click',()=>{state.spacing=b.dataset.spacing;applySettings();persist();}));
-  $('#reset-settings').addEventListener('click',()=>{state.fontSize=20;state.spacing='1.9';state.theme='paper';applySettings();persist();});
-  $('#reading-mode').addEventListener('change',e=>{const anchor=firstVisible();state.mode=e.target.value;applySettings();if(window.scrollY>250)document.getElementById(anchor)?.scrollIntoView({block:'start'});persist();});
-  function jump(id) {const el=document.getElementById(id);if(!el)return;select(id);el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});el.focus({preventScroll:true});}
-  function excerpt(s,max=120){return s.length>max?s.slice(0,max)+'…':s;}
-  function highlighted(s,q){if(!q)return esc(excerpt(s));const at=s.toLocaleLowerCase().indexOf(q.toLocaleLowerCase());if(at<0)return esc(excerpt(s));const from=Math.max(0,at-35),to=Math.min(s.length,at+q.length+95);return (from?'…':'')+esc(s.slice(from,at))+'<mark>'+esc(s.slice(at,at+q.length))+'</mark>'+esc(s.slice(at+q.length,to))+(to<s.length?'…':'');}
-  function resultHTML(r,q=''){return `<button class="result" data-jump="${r.id}"><strong>${r.speaker?names[r.speaker]+' · '+r.speaker:'舞台提示'} <span> / ${r.line?'原文第 '+r.line+' 行':'第一幕第一场'}</span></strong><p lang="en">${highlighted(r.en,q)}</p><small>${highlighted(r.zh,q)}</small></button>`;}
-  function wireResults(container,dialog){container.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{dialog.close();jump(b.dataset.jump);}));}
-  function search(){const q=$('#search-input').value.trim();const result=$('#search-results');if(!q){$('#search-summary').textContent='在第一幕第一场中搜索 · 支持中英文与角色名';result.innerHTML='<div class="empty-state">试试 “Who’s there”、ghost 或「霍拉旭」</div>';return;}const normalized=q.replace(/[’‘]/g,"'").toLocaleLowerCase();const matches=rows.filter(r=>[r.en,r.zh,r.speaker||'',names[r.speaker]||''].some(t=>t.toLocaleLowerCase().includes(normalized)));$('#search-summary').textContent=`找到 ${matches.length} 段台词或舞台提示`;result.innerHTML=matches.length?matches.map(r=>resultHTML(r,q)).join(''):'<div class="empty-state">没有找到匹配内容。<br>试试更短的词句，或换一种语言。</div>';wireResults(result,$('#search-dialog'));}
-  function openSearch(){showDialog('#search-dialog');search();$('#search-input').focus();}
-  $('#search-button').addEventListener('click',openSearch);$('#search-input').addEventListener('input',search);
-  $('#bookmarks-button').addEventListener('click',()=>{const result=$('#bookmark-results');const bookmarks=rows.filter(r=>state.bookmarks.has(r.id));result.innerHTML=bookmarks.length?bookmarks.map(r=>resultHTML(r)).join(''):'<div class="empty-state">还没有书签。<br>点击台词右侧的书签图标，留住喜欢的句子。</div>';wireResults(result,$('#bookmarks-dialog'));showDialog('#bookmarks-dialog');});
-  $('#library-button').addEventListener('click',()=>{toggleMenu(false);showDialog('#library-dialog');});
-  $('#open-hamlet').addEventListener('click',()=>$('#library-dialog').close());
-  function toggleMenu(open){$('#sidebar').inert=window.innerWidth<=900&&!open;$('#sidebar').classList.toggle('open',open);$('#scrim').hidden=!open;$('#menu-button').setAttribute('aria-expanded',String(open));}
-  $('#menu-button').addEventListener('click',()=>toggleMenu(!$('#sidebar').classList.contains('open')));$('#scrim').addEventListener('click',()=>toggleMenu(false));
-  document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();if(!$$('dialog[open]').length)openSearch();}if(e.key==='Escape')toggleMenu(false);});
-  const toTop=()=>{toggleMenu(false);window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});};
-  $('#scene-start').addEventListener('click',toTop);$('#back-to-start').addEventListener('click',toTop);
-  $('#jump-end').addEventListener('click',()=>jump(rows.at(-1).id));
-  function firstVisible(){return elements.find(el=>el.getBoundingClientRect().bottom>150)?.id||rows.at(-1).id;}
-  function updateProgress(){const first=elements[0].getBoundingClientRect().top+window.scrollY;const last=elements.at(-1).getBoundingClientRect().bottom+window.scrollY;const max=Math.max(1,last-window.innerHeight+65-first+150);const p=Math.min(100,Math.max(0,Math.round((window.scrollY-first+150)/max*100)));$('#progress-label').textContent=p+'%';$('#progress-fill').style.width=p+'%';$('#progress-slider').value=p;const id=firstVisible();const row=rows.find(r=>r.id===id);$('#current-line').textContent=window.scrollY<100?'开场':(row.line?'原文第 '+row.line+' 行':'舞台提示');if(!restoring){state.position=window.scrollY<100?null:id;clearTimeout(saveTimer);saveTimer=setTimeout(persist,250);}ticking=false;}
-  window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateProgress);}},{passive:true});
-  window.addEventListener('resize',()=>{toggleMenu(window.innerWidth<=900&&$('#sidebar').classList.contains('open'));updateProgress();});
-  $('#progress-slider').addEventListener('input',e=>{const first=elements[0].getBoundingClientRect().top+window.scrollY;const last=elements.at(-1).getBoundingClientRect().bottom+window.scrollY;const max=Math.max(1,last-window.innerHeight+65-first+150);window.scrollTo({top:first-150+max*Number(e.target.value)/100,behavior:'instant'});});
-  toggleMenu(false);select(state.selected);updateBookmarks();applySettings();
-  const restore=()=>{if(state.position)document.getElementById(state.position)?.scrollIntoView({block:'start'});restoring=false;updateProgress();};
-  Promise.all([document.fonts.ready,new Promise(resolve=>{const img=$('.hero-art img');if(img.complete)resolve();else{img.addEventListener('load',resolve,{once:true});img.addEventListener('error',resolve,{once:true});}})]).then(restore);
-  window.addEventListener('pagehide',persist);
+  function navigateAnchor(raw){let decoded;try{decoded=decodeURIComponent(raw);}catch{return;}const original=decoded.replace('epub-'+state.work+'-','');const targetSection=zhWork?.source?.anchorSections?.[original];if(targetSection){if(targetSection!==state.zh)changeSection('zh',targetSection);requestAnimationFrame(()=>document.getElementById('epub-'+state.work+'-'+original)?.scrollIntoView({block:'center'}));return;}for(const sec of zhWork?.sections||[]){for(const b of sec.blocks){const doc=new DOMParser().parseFromString(b.html,'text/html');const match=[...doc.querySelectorAll('[id]')].find(el=>el.id===decoded||el.id==='epub-'+state.work+'-'+decoded);if(match){if(sec.id!==state.zh)changeSection('zh',sec.id);requestAnimationFrame(()=>{const el=document.getElementById(match.id);el?.scrollIntoView({block:'center'});});return;}}}toast('此链接的目标未收录');}
+  $('#english-work').addEventListener('change',e=>openWork(state.work,{zh:state.zh,englishWork:e.target.value}));
+  for(const lang of ['zh','en']){$('#'+lang+'-section').addEventListener('change',e=>changeSection(lang,e.target.value));for(const [name,offset] of [['prev',-1],['next',1]])$('#'+lang+'-'+name).addEventListener('click',()=>{const w=lang==='zh'?zhWork:enWork;const i=w?.sections.findIndex(s=>s.id===state[lang]);const next=w?.sections[i+offset];if(next)changeSection(lang,next.id);});}
+  $('#work-toc').addEventListener('click',e=>{const b=e.target.closest('[data-section]');if(b)changeSection('zh',b.dataset.section);});
+  function showDialog(id){const d=$(id);if(!d.open)d.showModal();}
+  $$('[data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
+  function renderLibrary(){const q=$('#library-query').value.trim().toLocaleLowerCase();const only=$('#zhu-only').checked;const matches=catalog.filter(w=>(!only||w.translator==='朱生豪')&&[w.title,w.translator,englishInfo(w)?.title||''].join(' ').toLocaleLowerCase().includes(q));$('#library-summary').textContent='39 部戏剧 · 4 个诗歌/诗集单元 · 当前显示 '+matches.length+' 项';$('#library-results').innerHTML=matches.map(w=>'<button class="shelf-book" data-work="'+esc(w.id)+'"><strong>'+esc(w.title)+'</strong><em>'+esc(englishInfo(w)?.title||'Shakespeare')+'</em><small>'+esc(w.translatorCredit||w.translator+'译')+(w.attributionStatus==='source-credit-uncertain'?' · 署名待核实':'')+'</small><span>'+ (w.kind==='play'?'戏剧':'诗歌 / 诗集')+' · '+(englishInfo(w)?'中英文':'中文全文')+'</span></button>').join('')||'<p class="empty-state">没有匹配作品</p>';}
+  $('#library-button').addEventListener('click',()=>{toggleMenu(false);renderLibrary();showDialog('#library-dialog');});$('#library-query').addEventListener('input',renderLibrary);$('#zhu-only').addEventListener('change',renderLibrary);$('#library-results').addEventListener('click',e=>{const b=e.target.closest('[data-work]');if(b){$('#library-dialog').close();openWork(b.dataset.work);}});
+  function search(){const q=$('#search-input').value.trim().toLocaleLowerCase();const target=$('#search-results');if(!q){$('#search-summary').textContent='搜索当前作品的全部篇章 · 支持中英文';target.innerHTML='<p class="empty-state">输入词句，查找并跳转到所在篇章</p>';return;}const hits=[];for(const [lang,w] of [['zh',zhWork],['en',enWork]])for(const sec of w?.sections||[])sec.blocks.forEach((b,i)=>{const searchable=(b.speaker?b.speaker+'\n':'')+(b.text||'');if(searchable.toLocaleLowerCase().includes(q))hits.push({lang,section:sec.id,label:sec.label,id:blockId(lang,b,i),text:searchable});});$('#search-summary').textContent='找到 '+hits.length+' 段'+(hits.length>100?'，显示前 100 段，请缩小搜索范围':'');target.innerHTML=hits.slice(0,100).map(h=>{const pos=h.text.toLocaleLowerCase().indexOf(q),start=Math.max(0,pos-30);return '<button class="result" data-result-lang="'+h.lang+'" data-result-section="'+esc(h.section)+'" data-result-block="'+esc(h.id)+'"><strong>'+esc(h.label)+' · '+h.lang.toUpperCase()+'</strong><p>'+esc(h.text.slice(start,start+180))+'</p></button>';}).join('')||'<p class="empty-state">没有找到匹配内容</p>';}
+  function openSearch(){showDialog('#search-dialog');search();$('#search-input').focus();}$('#search-button').addEventListener('click',openSearch);$('#search-input').addEventListener('input',search);$('#search-results').addEventListener('click',e=>{const b=e.target.closest('[data-result-block]');if(b){$('#search-dialog').close();changeSection(b.dataset.resultLang,b.dataset.resultSection,{block:b.dataset.resultBlock});}});
+  $('#bookmarks-button').addEventListener('click',()=>{$('#bookmark-results').innerHTML=state.bookmarks.map((b,i)=>'<button class="result" data-bookmark-index="'+i+'"><strong>'+esc(catalog.find(w=>w.id===b.work)?.title)+' · '+esc(b.label)+' · '+b.lang.toUpperCase()+'</strong><p>'+esc(b.text)+'</p></button>').join('')||'<p class="empty-state">还没有书签。点击正文旁的 ◇ 即可收藏。</p>';showDialog('#bookmarks-dialog');});$('#bookmark-results').addEventListener('click',e=>{const btn=e.target.closest('[data-bookmark-index]');if(!btn)return;const b=state.bookmarks[Number(btn.dataset.bookmarkIndex)];if(!b)return;$('#bookmarks-dialog').close();openWork(b.work,{[b.lang]:b.section,block:b.block,lang:b.lang,englishWork:b.englishWork});});
+  $('#type-button').addEventListener('click',()=>showDialog('#type-dialog'));$('#font-size').addEventListener('input',e=>{state.fontSize=Number(e.target.value);applySettings();persist();});$$('[data-theme-choice]').forEach(b=>b.addEventListener('click',()=>{state.theme=b.dataset.themeChoice;applySettings();persist();}));$$('[data-spacing]').forEach(b=>b.addEventListener('click',()=>{state.spacing=b.dataset.spacing;applySettings();persist();}));$('#reset-settings').addEventListener('click',()=>{state.fontSize=20;state.spacing='1.9';state.theme='paper';applySettings();persist();});$('#reading-mode').addEventListener('change',e=>{state.mode=e.target.value;applySettings();persist();});
+  function toggleMenu(open){$('#sidebar').inert=innerWidth<=900&&!open;$('#sidebar').classList.toggle('open',open);$('#scrim').hidden=!open;$('#menu-button').setAttribute('aria-expanded',String(open));}$('#menu-button').addEventListener('click',()=>toggleMenu(!$('#sidebar').classList.contains('open')));$('#scrim').addEventListener('click',()=>toggleMenu(false));document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();if(!$$('dialog[open]').length)openSearch();}if(e.key==='Escape')toggleMenu(false);});
+  function updateProgress(){const el=$('#reading'),top=el.getBoundingClientRect().top+scrollY,end=el.getBoundingClientRect().bottom+scrollY;const p=Math.min(100,Math.max(0,Math.round((scrollY-top+140)/Math.max(1,end-top-innerHeight+190)*100)));$('#progress-label').textContent=p+'%';$('#progress-fill').style.width=p+'%';$('#progress-slider').value=p;progressFrame=null;}
+  window.addEventListener('scroll',()=>{if(!progressFrame)progressFrame=requestAnimationFrame(updateProgress);if(!restoringPosition&&zhWork){clearTimeout(positionTimer);positionTimer=setTimeout(()=>{const block=$$('.source-block').find(e=>{const r=e.getBoundingClientRect();return r.width>0&&r.bottom>160&&r.top<innerHeight;});if(block){state.positions[state.work]={zh:state.zh,en:state.en,englishWork:state.englishWork,block:block.dataset.block,lang:block.dataset.lang};persist();}},250);}},{passive:true});window.addEventListener('resize',()=>{toggleMenu(innerWidth<=900&&$('#sidebar').classList.contains('open'));updateProgress();});$('#progress-slider').addEventListener('input',e=>{const el=$('#reading'),top=el.getBoundingClientRect().top+scrollY;scrollTo({top:Math.max(0,top-140+Math.max(1,el.getBoundingClientRect().height-innerHeight+190)*Number(e.target.value)/100),behavior:'instant'});});$('#back-to-start').addEventListener('click',()=>$('#reading').scrollIntoView({block:'start'}));$('#jump-end').addEventListener('click',()=>$('.scene-end').scrollIntoView({block:'center'}));
+  window.addEventListener('popstate',()=>{const r=route();openWork(r.work||state.work,{...r,replace:true});});window.addEventListener('pagehide',persist);
+  toggleMenu(false);applySettings();updateBookmarks();const initial=route();openWork(initial.work||state.work,{...initial,replace:true,initial:true});
 })();

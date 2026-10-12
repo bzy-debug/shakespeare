@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#481f26">
-<meta name="description" content="莎士比亚全集双语阅读原型 · 哈姆雷特第一幕第一场，中英文台词逐段对照。">
-<title>Hamlet · 哈姆雷特 — Shakespeare</title>
+<meta name="description" content="莎士比亚全集阅读：用户提供版本，逐作品保留译者，中文与英文独立分节浏览。">
+<title>莎士比亚全集 · Shakespeare</title>
 <link rel="stylesheet" href="styles.css">
-<script defer src="data/scene.js"></script><script defer src="app.js"></script>
+<script defer src="data/chinese-collection/catalog.js"></script><script defer src="data/english-collection/catalog.js"></script><script defer src="app.js"></script>
 </head>
 <body>
 <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -24,24 +24,15 @@
   <button class="library-link" id="library-button">← <span>全部作品</span><span class="tiny-label">书架</span></button>
   <div class="book-title"><span class="eyebrow">THE TRAGEDIES</span><h2>Hamlet</h2><p>哈姆雷特</p></div>
   <div class="toc-heading">目录 <span>CONTENTS</span></div>
-  <nav class="toc" aria-label="幕与场">
-    <details open><summary>第一幕 <span>I</span></summary><div class="scenes">
-      <button class="scene-current" id="scene-start" aria-current="page">第一场 <small>城堡前的露台</small></button>
-      <button disabled>第二场 <small>即将收录</small></button><button disabled>第三场</button><button disabled>第四场</button><button disabled>第五场</button>
-    </div></details>
-    <details><summary>第二幕 <span>II</span></summary><p class="unavailable">尚未收录</p></details>
-    <details><summary>第三幕 <span>III</span></summary><p class="unavailable">尚未收录</p></details>
-    <details><summary>第四幕 <span>IV</span></summary><p class="unavailable">尚未收录</p></details>
-    <details><summary>第五幕 <span>V</span></summary><p class="unavailable">尚未收录</p></details>
-  </nav>
-  <div class="sidebar-bottom"><div>本场阅读进度 <span id="progress-label">0%</span></div><div class="progress-track"><span id="progress-fill"></span></div><p>一页之间，走入另一个世界。</p></div>
+  <nav class="toc scenes" id="work-toc" aria-label="中文篇章目录"></nav>
+  <div class="sidebar-bottom"><div>本节阅读进度 <span id="progress-label">0%</span></div><div class="progress-track"><span id="progress-fill"></span></div><p>一页之间，走入另一个世界。</p></div>
 </aside>
 <div class="workspace">
   <header class="toolbar">
     <button id="menu-button" class="icon-button mobile-menu" aria-label="打开目录" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
     <div class="breadcrumb">悲剧 <span>/</span> 哈姆雷特 <span>/</span> <strong>第一幕 · 第一场</strong></div>
     <div class="tools">
-      <button id="search-button" class="icon-button" aria-label="搜索本场台词" title="搜索台词（⌘ / Ctrl K）"><svg><use href="#i-search"/></svg></button>
+      <button id="search-button" class="icon-button" aria-label="搜索当前作品" title="搜索台词（⌘ / Ctrl K）"><svg><use href="#i-search"/></svg></button>
       <button id="bookmarks-button" class="icon-button" aria-label="查看书签" title="查看书签"><svg><use href="#i-bookmark"/></svg><span id="bookmark-count" hidden>0</span></button>
       <span class="tool-divider"></span>
       <button id="type-button" class="icon-button type-button" aria-label="阅读设置" title="阅读设置">Aa</button>
@@ -52,19 +43,23 @@
       <div class="hero-copy"><p class="eyebrow">THE TRAGEDY OF</p><h1 id="play-title">Hamlet<span class="title-period">.</span></h1><div class="hero-subtitle"><span>哈姆雷特</span><span class="author">William Shakespeare <i>c. 1600</i></span></div></div>
       <div class="hero-art"><img src="assets/globe-engraving.png" alt="环球剧场的复古版画插画"><p>“All the world's a stage.”</p></div>
     </section>
-    <section class="scene-meta"><div class="scene-title"><p>ACT I <span>·</span> SCENE I</p><h2>第一幕 · 第一场</h2></div><div class="setting"><p>Elsinore. A platform before the castle.</p><span>厄耳锡诺；城堡前的露台。</span></div><span class="scene-number">01 <i>/ 20</i></span></section>
-    <section class="reader" id="reading" tabindex="-1" aria-label="第一幕第一场双语正文">
-      <div class="reader-heading"><div class="language-labels"><span class="en-label">ORIGINAL <b>·</b> ENGLISH</span><span class="zh-label">译文 <b>·</b> 简体中文 <small>朱生豪译</small></span></div><div class="reader-controls"><span class="alignment-note">↔ 台词对齐</span><label class="sr-only" for="reading-mode">阅读模式</label><select id="reading-mode"><option value="parallel">中英对照</option><option value="en">仅英文</option><option value="zh">仅中文</option></select></div></div>
-      <div id="dialogue"></div>
+    <section class="collection-meta"><p id="edition-note"></p><p class="alignment-disclosure">中英文按作品并列，各自独立选择篇章；未进行逐句对齐。中文图片字、人物表及脚注均保留。</p></section>
+    <div id="load-status" role="status" aria-live="polite"></div>
+    <section class="reader" id="reading" tabindex="-1" aria-label="作品正文">
+      <div class="reader-heading collection-heading"><div class="language-labels"><span class="en-label">ENGLISH</span><span class="zh-label">中文译文</span></div><div class="reader-controls"><label class="sr-only" for="reading-mode">阅读模式</label><select id="reading-mode"><option value="parallel">中英并列</option><option value="en">仅英文</option><option value="zh">仅中文</option></select></div></div>
+      <div class="collection-columns">
+        <section class="language-pane english-pane" lang="en" aria-label="English text"><div class="section-navigation"><label class="sr-only" for="english-work">English work</label><select id="english-work" class="english-work-choice" hidden></select><label for="en-section">English section</label><select id="en-section"></select><div><button id="en-prev" aria-label="Previous English section">←</button><button id="en-next" aria-label="Next English section">→</button></div></div><div id="english-text" class="collection-text"></div></section>
+        <section class="language-pane chinese-pane" lang="zh-CN" aria-label="中文译文"><div class="section-navigation"><label for="zh-section">中文篇章</label><select id="zh-section"></select><div><button id="zh-prev" aria-label="上一中文篇章">←</button><button id="zh-next" aria-label="下一中文篇章">→</button></div></div><div id="chinese-text" class="collection-text"></div></section>
+      </div>
     </section>
-    <div class="scene-end"><span>✦</span><p>第一幕 · 第一场 终</p><button id="back-to-start">回到本场开头 ↑</button></div>
-    <footer class="source-note">英文原文：<a href="https://shakespeare.mit.edu/hamlet/hamlet.1.1.html" target="_blank" rel="noopener noreferrer">MIT Shakespeare</a>（公版）<span>·</span>中文：<a href="https://zh.wikisource.org/w/index.php?title=漢姆萊脫/第一幕&amp;oldid=1489093&amp;variant=zh-hans" target="_blank" rel="noopener noreferrer">朱生豪译 · 维基文库</a>（简体显示）。<br>当前收录《哈姆雷特》第一幕第一场；舞台提示按英文底本位置对齐。</footer>
+    <div class="scene-end"><span>✦</span><p id="section-end-label"></p><button id="back-to-start">回到本节开头 ↑</button></div>
+    <footer class="source-note" id="source-note"></footer>
   </main>
-  <footer class="reading-footer"><span>第一幕 <b>·</b> 第一场 <small id="current-line">开场</small></span><label class="sr-only" for="progress-slider">本场阅读位置</label><input id="progress-slider" type="range" min="0" max="100" value="0" aria-label="本场阅读位置"><button id="jump-end">本场结尾 <svg><use href="#i-arrow"/></svg></button></footer>
+  <footer class="reading-footer"><span id="footer-section">载入作品</span><label class="sr-only" for="progress-slider">本节阅读位置</label><input id="progress-slider" type="range" min="0" max="100" value="0" aria-label="本节阅读位置"><button id="jump-end">本节结尾 <svg><use href="#i-arrow"/></svg></button></footer>
 </div>
-<dialog id="search-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">FIND A PASSAGE</span><h2>寻找一句台词</h2></div><button class="icon-button" data-close aria-label="关闭搜索"><svg><use href="#i-close"/></svg></button></div><div class="search-field"><svg><use href="#i-search"/></svg><input id="search-input" placeholder="搜索英文、中文或角色…" aria-label="搜索英文、中文或角色" autocomplete="off"><kbd>ESC</kbd></div><p class="search-summary" id="search-summary">在第一幕第一场中搜索</p><div id="search-results" class="results"></div></dialog>
+<dialog id="search-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">FIND A PASSAGE</span><h2>寻找一句台词</h2></div><button class="icon-button" data-close aria-label="关闭搜索"><svg><use href="#i-close"/></svg></button></div><div class="search-field"><svg><use href="#i-search"/></svg><input id="search-input" placeholder="搜索当前作品的中英文…" aria-label="搜索英文、中文或角色" autocomplete="off"><kbd>ESC</kbd></div><p class="search-summary" id="search-summary">在当前作品中搜索</p><div id="search-results" class="results"></div></dialog>
 <dialog id="bookmarks-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">YOUR MARGINALIA</span><h2>我的书签</h2></div><button class="icon-button" data-close aria-label="关闭书签"><svg><use href="#i-close"/></svg></button></div><p class="search-summary">留住那些值得重读的句子 · 保存在此浏览器</p><div id="bookmark-results" class="results"></div></dialog>
 <dialog id="type-dialog" class="settings-dialog"><div class="dialog-heading"><h2>阅读设置</h2><button class="icon-button" data-close aria-label="关闭阅读设置"><svg><use href="#i-close"/></svg></button></div><label class="setting-label" for="font-size">字号 <output id="font-output">20 px</output></label><div class="font-slider"><span>A</span><input id="font-size" type="range" min="16" max="28" step="1" value="20"><span>A</span></div><p class="setting-label">纸张</p><div class="theme-options"><button data-theme-choice="paper" aria-pressed="true"><span class="swatch paper"></span>暖纸</button><button data-theme-choice="light" aria-pressed="false"><span class="swatch light"></span>素白</button><button data-theme-choice="night" aria-pressed="false"><span class="swatch night"></span>夜读</button></div><p class="setting-label">行距</p><div class="spacing-options"><button data-spacing="1.65" aria-pressed="false">紧凑</button><button data-spacing="1.9" aria-pressed="true">舒适</button><button data-spacing="2.2" aria-pressed="false">宽松</button></div><button class="reset-settings" id="reset-settings">恢复默认设置</button></dialog>
-<dialog id="library-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">THE COLLECTED WORKS</span><h2>莎士比亚全集</h2></div><button class="icon-button" data-close aria-label="关闭书架"><svg><use href="#i-close"/></svg></button></div><p class="search-summary">从一个故事开始。</p><button class="library-book" id="open-hamlet"><span class="book-cover">HAMLET<span>W. SHAKESPEARE</span></span><span><strong>哈姆雷特</strong><em>Hamlet</em><small>悲剧 · 第一幕第一场已收录</small><b>继续阅读 →</b></span></button></dialog>
+<dialog id="library-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">THE COLLECTED WORKS</span><h2>莎士比亚全集</h2></div><button class="icon-button" data-close aria-label="关闭书架"><svg><use href="#i-close"/></svg></button></div><p class="search-summary" id="library-summary">39 部戏剧与诗歌卷 · 按原书署名</p><div class="shelf-filters"><label class="sr-only" for="library-query">搜索作品或译者</label><input id="library-query" placeholder="搜索作品、英文名或译者"><label><input id="zhu-only" type="checkbox"> 仅明确署名朱生豪</label></div><div id="library-results" class="library-grid"></div></dialog>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body></html>
