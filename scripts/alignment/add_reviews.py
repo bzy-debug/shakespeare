@@ -32,7 +32,7 @@ def apply(path,records):
  for r in resolutions:
   span=r['english'];key=span['blockId'];exact_span(eb,span)
   if key in used or span['start']!=0 or span['end']!=len(eb[key]['text']):raise ValueError('Resolution overlaps accepted block or is partial')
-  if r.get('status') not in ('source_omission','source_artifact') or not r.get('rationale') or not r.get('evidence'):raise ValueError('Resolution classification and evidence required')
+  if r.get('status') not in ('source_omission','source_artifact','source_context') or not r.get('rationale') or not r.get('evidence'):raise ValueError('Resolution classification and evidence required')
   used.add(key)
  check_no_overlap(zz)
  new_ids={k for g in added for k in g['englishBlockIds']}|{r['english']['blockId'] for r in resolutions}

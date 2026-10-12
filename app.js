@@ -153,7 +153,8 @@
       const previous = state.positions[state.englishWork];
       const previousSection = typeof previous === 'string' ? previous : previous?.section;
       const requestedRow = options.row && (rowMap.get(options.row) || rowMap.get(normalizeRow(options.row)));
-      state.section = requestedRow?.section.id || (work.sections.some(section => section.id === options.section) ? options.section : work.sections.some(section => section.id === previousSection) ? previousSection : work.sections[0].id);
+      const firstDramaticSection = work.sections.find(section => section.rows.some(row => row.kind === 'speech' || (row.kind === 'text' && groupMap.has(row.groupId))))?.id || work.sections[0].id;
+      state.section = requestedRow?.section.id || (work.sections.some(section => section.id === options.section) ? options.section : work.sections.some(section => section.id === previousSection) ? previousSection : firstDramaticSection);
       const restoreRow = options.row || ((!options.section || options.section === previousSection) ? previous?.row : '');
       setMetadata(item, english);
       $('#load-status').textContent = '';
@@ -191,8 +192,8 @@
       html += '<article class="aligned-group ' + status + '"' + (group ? ' data-group="' + esc(group.id) + '"' : '') + '><div class="aligned-en" lang="en">';
       html += chunk.map(row => '<div class="english-unit ' + (row.kind === 'stage' ? 'stage-unit' : '') + '" tabindex="0" data-row="' + esc(row.id) + '">' + (row.speaker ? '<h3 class="speaker">' + esc(row.speaker) + '</h3>' : '') + '<p>' + esc(row.english.text) + '</p>' + bookmarkButton(row) + '</div>').join('');
       html += '</div><div class="aligned-zh" lang="zh-CN" data-translation-row="' + esc(first.id) + '">' + bookmarkButton(first, 'chinese-bookmark');
-      if (!visible && first.resolution) html += '<p class="alignment-badge">' + (first.status === 'source_artifact' ? '已核对 · 来源结构项' : '已核对 · 此译本缺文') + '</p><p>' + esc(first.resolution.rationale) + '</p>';
-      else if (!visible) html += '<p class="alignment-pending">' + (first.kind === 'stage' ? '舞台提示对应译文待核对' : '对应译文待核对') + '</p>';
+      if (!visible && first.resolution) html += '<p class="alignment-badge">' + (first.status === 'source_context' ? '非台词 · 原文附属说明' : first.status === 'source_artifact' ? '已核对 · 来源结构项' : '已核对 · 此译本缺文') + '</p><p>' + esc(first.resolution.rationale) + '</p>';
+      else if (!visible) html += '<p class="alignment-pending">' + (first.kind === 'stage' ? '舞台提示按英文保留（未建立译文对应）' : '对应译文待核对') + '</p>';
       else if (used) html += '<p class="shared-translation"><button data-shared="' + esc(group.rowIds?.[0] || first.id) + '">↥ 查看前面的合并台词段译文</button></p>';
       else html += '<p class="alignment-badge">' + (status === 'semantically_reviewed' ? '已语义核对' : first.kind === 'stage' ? '舞台提示对应' : '角色台词对应') + (count > 1 ? ' · 合并台词段（' + count + ' 段）' : '') + '</p><div class="aligned-translation">' + group.chineseHtml + '</div>';
       if (visible && !used && group.sourceVariants?.length) {
@@ -205,7 +206,10 @@
     const reviewed = section.rows.filter(row => groupMap.get(row.groupId)?.status === 'semantically_reviewed').length;
     const automatic = section.rows.filter(row => groupMap.get(row.groupId)?.status === 'automatically_aligned').length;
     const resolved = section.rows.filter(row => row.resolution).length;
-    $('#alignment-counts').textContent = '本节 ' + section.rows.length + ' 段 · 自动对应 ' + automatic + ' · 已语义核对 ' + reviewed + (resolved ? ' · 已核明无译文 ' + resolved : '') + ' · 待核 ' + (section.rows.length - reviewed - automatic - resolved);
+    const pendingSpeech = section.rows.filter(row => row.status === 'unresolved' && row.kind === 'speech').length;
+    const pendingStage = section.rows.filter(row => row.status === 'unresolved' && row.kind === 'stage').length;
+    const pendingOther = section.rows.length - reviewed - automatic - resolved - pendingSpeech - pendingStage;
+    $('#alignment-counts').textContent = '本节 ' + section.rows.length + ' 段 · 自动对应 ' + automatic + ' · 已语义核对 ' + reviewed + (resolved ? ' · 底本说明 ' + resolved : '') + ' · 台词待核 ' + pendingSpeech + (pendingStage ? ' · 仅英文舞台提示 ' + pendingStage : '') + (pendingOther ? ' · 其他待核 ' + pendingOther : '');
     $('#aligned-section').innerHTML = work.sections.map(entry => '<option value="' + esc(entry.id) + '"' + (entry.id === state.section ? ' selected' : '') + '>' + esc(entry.label) + '</option>').join('');
     $('#aligned-section').disabled = false;
     const at = work.sections.indexOf(section);
@@ -287,9 +291,10 @@
     $('#library-summary').textContent = catalog.length + ' 部戏剧 · 按各剧原书署名 · 当前显示 ' + matches.length + ' 部';
     $('#library-results').innerHTML = matches.map(item => {
       const summary = alignedCatalog.find(entry => entry.id === englishId(item));
-      const matched = (summary?.automaticUnits || 0) + (summary?.reviewedUnits || 0);
-      const count = summary?.englishUnits || 0;
-      return '<button class="shelf-book" data-work="' + esc(item.id) + '"><strong>' + esc(item.title) + '</strong><em lang="en">' + esc(englishCatalog.find(entry => entry.id === englishId(item))?.title || '') + '</em><small>' + esc(item.translatorCredit || item.translator) + (item.attributionStatus === 'source-credit-uncertain' ? ' · 署名待核实' : '') + '</small><span>' + (count ? '中英对应 ' + matched + ' / ' + count + ' 段' : '英文完整保留 · 对应数据待准备') + '</span></button>';
+      const matched = summary?.matchedSpeechUnits || 0;
+      const count = summary?.speechUnits || 0;
+      const resolved = summary?.resolvedSpeechUnits || 0;
+      return '<button class="shelf-book" data-work="' + esc(item.id) + '"><strong>' + esc(item.title) + '</strong><em lang="en">' + esc(englishCatalog.find(entry => entry.id === englishId(item))?.title || '') + '</em><small>' + esc(item.translatorCredit || item.translator) + (item.attributionStatus === 'source-credit-uncertain' ? ' · 署名待核实' : '') + '</small><span>' + (count ? '台词对应 ' + matched + ' / ' + count + ' 段' + (resolved ? ' · ' + resolved + ' 项底本说明' : '') : '英文完整保留 · 对应数据待准备') + '</span></button>';
     }).join('') || '<p class="empty-state">没有匹配作品，试试其他书名或译者。</p>';
   }
   $('#library-button').onclick = () => { renderLibrary(); showDialog('#library-dialog'); };

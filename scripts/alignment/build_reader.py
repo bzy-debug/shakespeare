@@ -71,18 +71,26 @@ def build(candidates,out):
    for p in zz:exact_span(zb,p)
    check_no_overlap(zz);zhspans.extend(zz);used.update(ids)
    group={'id':f'{eid}-turn-{i}','english':[byid[k]['english'] for k in ids],'chinese':zz,'rowIds':ids,'status':status,'kind':g.get('kind'),'rationale':g.get('rationale',''),'relation':f'{len(ids)}:{len(zz)}','chineseText':'\n'.join(exact_span(zb,p) for p in zz),'chineseHtml':chinese_html(zb,zz)}
-   if g.get('sourceVariants'):group['sourceVariants']=g['sourceVariants']
+   if g.get('sourceVariants'):
+    variants=g['sourceVariants']
+    if not isinstance(variants,list):raise ValueError(f'{eid}: source variants must be a list')
+    for variant in variants:
+     note=variant if isinstance(variant,str) else (variant.get('description') or variant.get('note') or variant.get('evidence')) if isinstance(variant,dict) else None
+     if not isinstance(note,str) or not note.strip():raise ValueError(f'{eid}: source variant requires visible explanation')
+    group['sourceVariants']=variants
    groups.append(group)
    for k in ids:byid[k]['groupId']=group['id'];byid[k]['status']=status
   for resolution in data.get('resolutions',[]):
    span=resolution['english'];key=span['blockId'];exact_span(eb,span)
    if span['start']!=0 or span['end']!=len(eb[key]['text']):raise ValueError(f'{eid}: partial resolution span')
    if key in used:raise ValueError(f'{eid}: resolution conflicts with accepted group or resolution')
-   if resolution.get('status') not in ('source_omission','source_artifact') or not resolution.get('rationale') or not resolution.get('evidence'):
+   if resolution.get('status') not in ('source_omission','source_artifact','source_context') or not resolution.get('rationale') or not resolution.get('evidence'):
     raise ValueError(f'{eid}: resolution requires reviewed classification and evidence')
    used.add(key);byid[key]['status']=resolution['status'];byid[key]['resolution']=resolution
   check_no_overlap(zhspans)
-  counts={'englishUnits':len(rows),'speechUnits':sum(r['kind']=='speech' for r in rows),'reviewedUnits':sum(r['status']=='semantically_reviewed' for r in rows),'automaticUnits':sum(r['status']=='automatically_aligned' for r in rows),'unresolvedUnits':sum(r['status']=='unresolved' for r in rows),'groups':len(groups),'resolvedWithoutTranslationUnits':sum(r['status'] in ('source_omission','source_artifact') for r in rows)}
+  counts={'englishUnits':len(rows),'speechUnits':sum(r['kind']=='speech' for r in rows),'reviewedUnits':sum(r['status']=='semantically_reviewed' for r in rows),'automaticUnits':sum(r['status']=='automatically_aligned' for r in rows),'unresolvedUnits':sum(r['status']=='unresolved' for r in rows),'groups':len(groups),'resolvedWithoutTranslationUnits':sum(r['status'] in ('source_omission','source_artifact','source_context') for r in rows)}
+  counts['resolvedSpeechUnits']=sum(r['kind']=='speech' and r['status'] in ('source_omission','source_artifact','source_context') for r in rows)
+  counts['unresolvedSpeechUnits']=sum(r['kind']=='speech' and r['status']=='unresolved' for r in rows)
   counts['matchedSpeechUnits']=sum(r['kind']=='speech' and r['groupId'] is not None for r in rows)
   counts['speechCharacters']=sum(len(r['english']['text']) for r in rows if r['kind']=='speech')
   counts['matchedSpeechCharacters']=sum(len(r['english']['text']) for r in rows if r['kind']=='speech' and r['groupId'] is not None)
@@ -95,7 +103,7 @@ def build(candidates,out):
  for p in out.glob('*.js'):
   if p.name not in allowed:p.unlink()
  write_js(out/'catalog.js','SHAKESPEARE_ALIGNED_CATALOG',summaries)
- manifest={'schemaVersion':2,'unit':'original English block','policy':'plays only; speech-block alignment, not sentence alignment','works':summaries,'totals':{k:sum(w[k] for w in summaries) for k in ('englishUnits','speechUnits','matchedSpeechUnits','reviewedUnits','automaticUnits','unresolvedUnits','resolvedWithoutTranslationUnits','speechCharacters','matchedSpeechCharacters','chineseCharacters')}}
+ manifest={'schemaVersion':3,'unit':'original English block','policy':'plays only; speech-block alignment, not sentence alignment','works':summaries,'totals':{k:sum(w[k] for w in summaries) for k in ('englishUnits','speechUnits','matchedSpeechUnits','resolvedSpeechUnits','unresolvedSpeechUnits','reviewedUnits','automaticUnits','unresolvedUnits','resolvedWithoutTranslationUnits','speechCharacters','matchedSpeechCharacters','chineseCharacters')}}
  (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps(manifest['totals']))
 
 if __name__=='__main__':

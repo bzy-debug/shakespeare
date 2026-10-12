@@ -33,12 +33,24 @@ class AlignedDataTests(unittest.TestCase):
    self.assertEqual(len(ids),len(set(ids)))
    for row in rows:self.assertEqual(row['id'],row['english']['blockId']);self.assertEqual(row['english']['start'],0)
    self.assertEqual(m['englishUnits'],len(rows))
+   self.assertEqual(m['speechUnits'],m['matchedSpeechUnits']+m['resolvedSpeechUnits']+m['unresolvedSpeechUnits'])
    self.assertEqual(m['englishUnits'],m['reviewedUnits']+m['automaticUnits']+m['unresolvedUnits']+m['resolvedWithoutTranslationUnits'])
    self.assertTrue(all(r['groupId'] is None for r in rows if r['status']=='unresolved'))
  def test_every_play_has_alignment_records_and_some_matched_speech(self):
   for m in self.catalog:
    self.assertTrue((ROOT/'data/alignment-records'/f'{m["id"]}.json').exists(),m['id'])
    self.assertGreater(m['matchedSpeechUnits'],0,m['id'])
+ def test_all_dramatic_body_blocks_resolved(self):
+  supplemental={'measure:4.1:3','timon:4.3:2','timon:4.3:4','timon:4.3:6','two_noble_kinsmen:1.1:4','two_noble_kinsmen:1.1:5','two_noble_kinsmen:1.1:7','two_noble_kinsmen:1.1:8','pericles:1-2-prologue:3','troilus_cressida:1-2-prologue:1','romeo_juliet:1-2-prologue:1'}
+  found=set()
+  for m in self.catalog:
+   self.assertEqual(m['unresolvedSpeechUnits'],0,m['id'])
+   for section in read_assignment(ROOT/m['file'])['sections']:
+    for row in section['rows']:
+     if row['status']=='unresolved':self.assertEqual(row['kind'],'stage',row['id'])
+     if row['id'] in supplemental:
+      self.assertEqual(row['status'],'semantically_reviewed');self.assertIsNotNone(row['groupId']);found.add(row['id'])
+  self.assertEqual(found,supplemental)
  def test_reviewed_gap_closures(self):
   works={m['id']:m for m in self.catalog}
   self.assertEqual(works['midsummer']['matchedSpeechUnits'],521)
@@ -73,6 +85,11 @@ class BuilderGuardTests(unittest.TestCase):
   from build_reader import chinese_html
   blocks={'z':{'text':'a中b','html':'<p>a<img class="epub-image epub-inline" src="data/chinese-collection/images/glyph.png" alt="字"/>中b</p>'}}
   markup=chinese_html(blocks,[{'blockId':'z','start':0,'end':3,'text':'a中b'}]);self.assertIn('epub-inline',markup);self.assertIn('glyph.png',markup)
+ def test_source_variants_require_renderable_explanation(self):
+  group=self.fixture();group['sourceVariants']={'description':'bad shape'}
+  self.assertIn('source variants must be a list',self.reject(group))
+  group['sourceVariants']=[{'type':'hidden'}]
+  self.assertIn('source variant requires visible explanation',self.reject(group))
  def test_resolution_requires_full_source_and_evidence(self):
   group=self.fixture();span=group['english'][0]
   resolution={'english':span,'status':'source_omission','rationale':'test','evidence':'test'}
