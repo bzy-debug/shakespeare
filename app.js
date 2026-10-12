@@ -186,20 +186,26 @@
       let next = index + 1;
       if (visible) while (next < section.rows.length && section.rows[next].groupId === first.groupId) chunk.push(section.rows[next++]);
       const used = visible && seen.has(group.id); if (visible) seen.add(group.id);
-      const status = visible ? group.status : 'unresolved';
+      const status = visible ? group.status : first.status;
       const count = group?.rowIds?.length || chunk.length;
       html += '<article class="aligned-group ' + status + '"' + (group ? ' data-group="' + esc(group.id) + '"' : '') + '><div class="aligned-en" lang="en">';
       html += chunk.map(row => '<div class="english-unit ' + (row.kind === 'stage' ? 'stage-unit' : '') + '" tabindex="0" data-row="' + esc(row.id) + '">' + (row.speaker ? '<h3 class="speaker">' + esc(row.speaker) + '</h3>' : '') + '<p>' + esc(row.english.text) + '</p>' + bookmarkButton(row) + '</div>').join('');
       html += '</div><div class="aligned-zh" lang="zh-CN" data-translation-row="' + esc(first.id) + '">' + bookmarkButton(first, 'chinese-bookmark');
-      if (!visible) html += '<p class="alignment-pending">' + (first.kind === 'stage' ? '舞台提示对应译文待核对' : '对应译文待核对') + '</p>';
+      if (!visible && first.resolution) html += '<p class="alignment-badge">' + (first.status === 'source_artifact' ? '已核对 · 来源结构项' : '已核对 · 此译本缺文') + '</p><p>' + esc(first.resolution.rationale) + '</p>';
+      else if (!visible) html += '<p class="alignment-pending">' + (first.kind === 'stage' ? '舞台提示对应译文待核对' : '对应译文待核对') + '</p>';
       else if (used) html += '<p class="shared-translation"><button data-shared="' + esc(group.rowIds?.[0] || first.id) + '">↥ 查看前面的合并台词段译文</button></p>';
       else html += '<p class="alignment-badge">' + (status === 'semantically_reviewed' ? '已语义核对' : first.kind === 'stage' ? '舞台提示对应' : '角色台词对应') + (count > 1 ? ' · 合并台词段（' + count + ' 段）' : '') + '</p><div class="aligned-translation">' + group.chineseHtml + '</div>';
+      if (visible && !used && group.sourceVariants?.length) {
+        const notes = group.sourceVariants.map(variant => typeof variant === 'string' ? variant : variant.description || variant.note || variant.evidence || '').filter(note => typeof note === 'string' && note);
+        if (notes.length) html += '<details class="source-variants"><summary>底本差异说明</summary><ul>' + notes.map(note => '<li>' + esc(note) + '</li>').join('') + '</ul></details>';
+      }
       html += '</div></article>'; index = next;
     }
     $('#aligned-text').innerHTML = html;
     const reviewed = section.rows.filter(row => groupMap.get(row.groupId)?.status === 'semantically_reviewed').length;
     const automatic = section.rows.filter(row => groupMap.get(row.groupId)?.status === 'automatically_aligned').length;
-    $('#alignment-counts').textContent = '本节 ' + section.rows.length + ' 段 · 自动对应 ' + automatic + ' · 已语义核对 ' + reviewed + ' · 待核 ' + (section.rows.length - reviewed - automatic);
+    const resolved = section.rows.filter(row => row.resolution).length;
+    $('#alignment-counts').textContent = '本节 ' + section.rows.length + ' 段 · 自动对应 ' + automatic + ' · 已语义核对 ' + reviewed + (resolved ? ' · 已核明无译文 ' + resolved : '') + ' · 待核 ' + (section.rows.length - reviewed - automatic - resolved);
     $('#aligned-section').innerHTML = work.sections.map(entry => '<option value="' + esc(entry.id) + '"' + (entry.id === state.section ? ' selected' : '') + '>' + esc(entry.label) + '</option>').join('');
     $('#aligned-section').disabled = false;
     const at = work.sections.indexOf(section);

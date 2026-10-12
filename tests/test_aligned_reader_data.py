@@ -33,7 +33,7 @@ class AlignedDataTests(unittest.TestCase):
    self.assertEqual(len(ids),len(set(ids)))
    for row in rows:self.assertEqual(row['id'],row['english']['blockId']);self.assertEqual(row['english']['start'],0)
    self.assertEqual(m['englishUnits'],len(rows))
-   self.assertEqual(m['englishUnits'],m['reviewedUnits']+m['automaticUnits']+m['unresolvedUnits'])
+   self.assertEqual(m['englishUnits'],m['reviewedUnits']+m['automaticUnits']+m['unresolvedUnits']+m['resolvedWithoutTranslationUnits'])
    self.assertTrue(all(r['groupId'] is None for r in rows if r['status']=='unresolved'))
  def test_every_play_has_alignment_records_and_some_matched_speech(self):
   for m in self.catalog:
@@ -45,18 +45,19 @@ class AlignedDataTests(unittest.TestCase):
   self.assertEqual(works['midsummer']['speechUnits'],521)
   self.assertEqual(works['pericles']['matchedSpeechUnits'],669)
   work=read_assignment(ROOT/works['pericles']['file'])
-  pending=[r for sec in work['sections'] for r in sec['rows'] if r['kind']=='speech' and r['status']=='unresolved']
+  pending=[r for sec in work['sections'] for r in sec['rows'] if r['kind']=='speech' and r['groupId'] is None]
   self.assertEqual(len(pending),1)
   self.assertEqual(pending[0]['english']['text'],'SCENE I:')
+  self.assertEqual(pending[0]['status'],'source_artifact')
  def test_play_catalogs_only(self):
   for name in ('english','chinese'):
    catalog=json.loads((ROOT/f'data/{name}-collection/catalog.json').read_text());self.assertEqual(len(catalog),39);self.assertTrue(all(w['kind']=='play' for w in catalog))
 
 class BuilderGuardTests(unittest.TestCase):
- def reject(self,group):
+ def reject(self,group,resolutions=None):
   import tempfile,subprocess
   with tempfile.TemporaryDirectory() as temp:
-   base=Path(temp);(base/'records').mkdir();(base/'records/hamlet.json').write_text(json.dumps({'groups':[group]}))
+   base=Path(temp);(base/'records').mkdir();(base/'records/hamlet.json').write_text(json.dumps({'groups':[group] if group else [],'resolutions':resolutions or []}))
    result=subprocess.run([sys.executable,str(ROOT/'scripts/alignment/build_reader.py'),'--candidates',str(base/'records'),'--out',str(base/'out')],capture_output=True,text=True)
    self.assertNotEqual(result.returncode,0,result.stdout);return result.stderr
  def fixture(self):
@@ -72,7 +73,37 @@ class BuilderGuardTests(unittest.TestCase):
   from build_reader import chinese_html
   blocks={'z':{'text':'a中b','html':'<p>a<img class="epub-image epub-inline" src="data/chinese-collection/images/glyph.png" alt="字"/>中b</p>'}}
   markup=chinese_html(blocks,[{'blockId':'z','start':0,'end':3,'text':'a中b'}]);self.assertIn('epub-inline',markup);self.assertIn('glyph.png',markup)
+ def test_resolution_requires_full_source_and_evidence(self):
+  group=self.fixture();span=group['english'][0]
+  resolution={'english':span,'status':'source_omission','rationale':'test','evidence':'test'}
+  self.assertIn('resolution conflicts',self.reject(group,[resolution]))
+  resolution['english']=span|{'end':span['end']-1,'text':span['text'][:-1]}
+  self.assertIn('partial resolution span',self.reject(None,[resolution]))
+  resolution['english']=span;resolution.pop('evidence')
+  self.assertIn('requires reviewed classification and evidence',self.reject(None,[resolution]))
  def test_cross_section_shared_translation_rejected(self):
   group=self.fixture();group['englishBlockIds'].append('hamlet:1.2:2');group.pop('english');self.assertIn('crosses English sections',self.reject(group))
+
+class ExplicitCorrectionTests(unittest.TestCase):
+ def run_proposal(self,alter=None):
+  import tempfile,hashlib,copy
+  sys.path.insert(0,str(ROOT/'scripts/alignment'))
+  from replace_reviews import replace
+  work=read_assignment(ROOT/'data/aligned-collection/hamlet.js');source=work['groups'][0]
+  group={'englishBlockIds':source['rowIds'],'english':source['english'],'chinese':source['chinese'],'status':'semantically_reviewed','rationale':'Regression fixture, exact unchanged reviewed group','kind':source['kind']}
+  with tempfile.TemporaryDirectory() as temp:
+   base=Path(temp);records=base/'records';records.mkdir();target=records/'hamlet.json';target.write_text(json.dumps({'groups':[group]}));before=target.read_bytes()
+   proposal={'workId':'hamlet','groups':[copy.deepcopy(group)],'replacementEnglishBlockIds':source['rowIds'],'alignmentRecordsSha256':hashlib.sha256(before).hexdigest()}
+   if alter:alter(proposal)
+   path=base/'proposal.json';path.write_text(json.dumps(proposal))
+   if alter:
+    with self.assertRaises(ValueError):replace(path,records)
+    self.assertEqual(target.read_bytes(),before)
+   else:
+    result=replace(path,records);self.assertEqual(result['replacedGroups'],1)
+    final=json.loads(target.read_text());self.assertEqual(final['groups'][0]['chinese'],source['chinese']);self.assertEqual(len(final['reviewReplacements']),1)
+ def test_hash_pinned_transactional_correction(self):self.run_proposal()
+ def test_stale_correction_cannot_write(self):self.run_proposal(lambda p:p.update(alignmentRecordsSha256='wrong'))
+ def test_correction_cannot_drop_english(self):self.run_proposal(lambda p:p.update(groups=[]))
 
 if __name__=='__main__':unittest.main()

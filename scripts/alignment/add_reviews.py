@@ -14,6 +14,7 @@ def apply(path,records):
  en=read_assignment(ROOT/'data/english-collection'/f'{eid}.js');zh=read_assignment(ROOT/meta['file'])
  eb={b['id']:b for sec in en['sections'] for b in sec['blocks']};zb={b['id']:b for sec in zh['sections'] for b in sec['blocks']};sections={b['id']:sec['id'] for sec in en['sections'] for b in sec['blocks']}
  target=records/f'{eid}.json';current=json.loads(target.read_text());used={k for g in current['groups'] if g.get('chinese') for k in g['englishBlockIds']};zz=[s for g in current['groups'] if g['englishBlockIds'] for s in g['chinese']];added=[]
+ used.update(r['english']['blockId'] for r in current.get('resolutions',[]))
  for g in incoming['groups']:
   ids=g['englishBlockIds']
   if g.get('status')!='semantically_reviewed' or not g.get('rationale'):raise ValueError('Review status and evidence required')
@@ -26,9 +27,15 @@ def apply(path,records):
   if not g['chinese']:raise ValueError('Empty translation')
   for p in g['chinese']:exact_span(zb,p)
   zz.extend(g['chinese']);used.update(ids)
-  added.append({k:g[k] for k in ('englishBlockIds','chinese','status','kind','method','rationale','reviewNotes','reviewer','matchingPool','reviewGroupId') if k in g})
+  added.append({k:g[k] for k in ('englishBlockIds','chinese','status','kind','method','rationale','reviewNotes','sourceVariants','reviewer','matchingPool','reviewGroupId') if k in g})
+ resolutions=incoming.get('resolutions',[])
+ for r in resolutions:
+  span=r['english'];key=span['blockId'];exact_span(eb,span)
+  if key in used or span['start']!=0 or span['end']!=len(eb[key]['text']):raise ValueError('Resolution overlaps accepted block or is partial')
+  if r.get('status') not in ('source_omission','source_artifact') or not r.get('rationale') or not r.get('evidence'):raise ValueError('Resolution classification and evidence required')
+  used.add(key)
  check_no_overlap(zz)
- new_ids={k for g in added for k in g['englishBlockIds']}
+ new_ids={k for g in added for k in g['englishBlockIds']}|{r['english']['blockId'] for r in resolutions}
  kept=[]
  for g in current['groups']:
   if not g['englishBlockIds']:
@@ -46,9 +53,10 @@ def apply(path,records):
    g=g|{'englishBlockIds':[k for k in g['englishBlockIds'] if k not in new_ids]}
    if not g['englishBlockIds']:continue
   kept.append(g)
- current['groups']=kept+added;current.setdefault('reviewUpdates',[]).append({'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'addedGroups':len(added),'addedEnglishBlocks':sum(len(g['englishBlockIds']) for g in added),'method':'model-agent whole-speech semantic source review'})
+ current.setdefault('resolutions',[]).extend(resolutions)
+ current['groups']=kept+added;current.setdefault('reviewUpdates',[]).append({'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'addedGroups':len(added),'resolvedWithoutTranslation':len(resolutions),'addedEnglishBlocks':sum(len(g['englishBlockIds']) for g in added),'method':'model-agent whole-speech semantic source review'})
  target.write_text(json.dumps(current,ensure_ascii=False,separators=(',',':'))+'\n')
- return {'work':eid,'groups':len(added),'englishBlocks':sum(len(g['englishBlockIds']) for g in added)}
+ return {'work':eid,'groups':len(added),'resolvedWithoutTranslation':len(resolutions),'englishBlocks':sum(len(g['englishBlockIds']) for g in added)}
 if __name__=='__main__':
  ap=argparse.ArgumentParser();ap.add_argument('--records',type=Path,default=ROOT/'data/alignment-records');ap.add_argument('--review',type=Path,required=True,action='append');args=ap.parse_args()
  for path in args.review:print(json.dumps(apply(path,args.records)))
