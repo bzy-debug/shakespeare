@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "acceptanceRevision": "39 plays only; whole character speech turns; no standalone poetry; supersedes sentence-level QA requirements.",
+  "scope": "13 model-agent semantically reviewed representative speech mappings; adversarial regression, not a statistical accuracy estimate.",
+  "offsetConvention": "Zero-based original block text [start,end). Multiple spans exclude inline stage/footnote markers; these spans are not sentence segmentation.",
+  "sources": {
+    "hamlet": {
+      "englishPath": "data/english-collection/hamlet.js",
+      "chinesePath": "data/chinese-collection/works/part0037.js",
+      "englishSha256": "4907020df8e473e657c36f0d090ac0f592724d6044f059146a4a7c2f1380c3a3",
+      "chineseSha256": "5e299fcb7ec12142438a82539b6522409d458dc761ad1d97f2699e505d29098b",
+      "translator": "朱生豪"
+    },
+    "henryv": {
+      "englishPath": "data/english-collection/henryv.js",
+      "chinesePath": "data/chinese-collection/works/part0018.js",
+      "englishSha256": "99cbd1c71e6174aae9773c83fc9552ed64d7229e2ed0e9e4de1e8161552d34ff",
+      "chineseSha256": "a08254f66939c7fdf942e28b34a93e4640ed7d5e26ffd3a9a825b8473dd2a51a",
+      "translator": "方平"
+    },
+    "1henryvi": {
+      "englishPath": "data/english-collection/1henryvi.js",
+      "chinesePath": "data/chinese-collection/works/part0022.js",
+      "englishSha256": "341dc628b49782592b67f7e74b9e4a465468c53280ff721498e5f2b06d1320fc",
+      "chineseSha256": "a04c6bfc071413c78c363f15ccf26b6f340feca39c74f19a960efb68607fd47a",
+      "translator": "章益",
+      "englishExtractionRevision": "mit-tabbed-role-cues-v1 + mit-split-role-prefixes-v1",
+      "previousEnglishSha256": "31125363918425fd366f69a659d436011a26396732193546f91d423944b33354",
+      "extractionRevisionNote": "Exact source role prefixes were restored to speaker metadata. This fixture’s Act 1 Scene 1 block ID, dialogue text and spans remain unchanged; pinned source archive bytes remain unchanged.",
+      "englishExtractionHistory": [
+        {
+          "sha256": "b6a6a219f3c21fccd8b068a3127a651d7cecd9207be225921b619f18eb680740",
+          "revision": "mit-tabbed-role-cues-v1"
+        }
+      ]
+    },
+    "edwardiii": {
+      "englishPath": "data/english-collection/edwardiii.js",
+      "chinesePath": "data/chinese-collection/works/part0041.js",
+      "englishSha256": "48200dffe968aa9cff448dca0b70f0c9af2c55f9fff8ce6d235ebce83f59e089",
+      "chineseSha256": "cbfc38d274a061d5455719b29cf95860f5c25acd0f00dd7c22cc7455a40de16c",
+      "translator": "绿原",
+      "englishExtractionHistory": [
+        {
+          "sha256": "4208e062b6068d5825d0ca105279b73680552e7a38a0879d5a9dad15dd9c756e",
+          "revision": "original-source-extraction"
+        }
+      ],
+      "englishExtractionRevision": "source-markup-corrections-v2",
+      "extractionRevisionNote": "Speaker metadata at source id00388 was corrected to AUDLEY using the explicitly cited Internet Shakespeare Editions text. This fixture’s Act 1 Scene 1 block ID, dialogue text and spans remain unchanged; pinned Gutenberg bytes remain unchanged."
+    },
+    "macbeth": {
+      "englishPath": "data/english-collection/macbeth.js",
+      "chinesePath": "data/chinese-collection/works/part0035.js",
+      "englishSha256": "b56ea0486528567d3aa6559be5feed479be5680b4ea2c2c4ba6da6f8e93dcd14",
+      "chineseSha256": "8b811650a1ad671d3eb84b43cecad2df744592dcffc081cbc721116f34360c57",
+      "translator": "朱生豪"
+    }
+  },
+  "fixtures": [
+    {
+      "id": "hamlet-whole-marriage",
+      "work": "hamlet",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "hamlet:1.2:2"
+      ],
+      "chineseBlockIds": [
+        "part0037-00099"
+      ],
+      "english": [
+        {
+          "blockId": "hamlet:1.2:2",
+          "start": 0,
+          "end": 1691,
+          "text": "Though yet of Hamlet our dear brother's death\nThe memory be green, and that it us befitted\nTo bear our hearts in grief and our whole kingdom\nTo be contracted in one brow of woe,\nYet so far hath discretion fought with nature\nThat we with wisest sorrow think on him,\nTogether with remembrance of ourselves.\nTherefore our sometime sister, now our queen,\nThe imperial jointress to this warlike state,\nHave we, as 'twere with a defeated joy,--\nWith an auspicious and a dropping eye,\nWith mirth in funeral and with dirge in marriage,\nIn equal scale weighing delight and dole,--\nTaken to wife: nor have we herein barr'd\nYour better wisdoms, which have freely gone\nWith this affair along. For all, our thanks.\nNow follows, that you know, young Fortinbras,\nHolding a weak supposal of our worth,\nOr thinking by our late dear brother's death\nOur state to be disjoint and out of frame,\nColleagued with the dream of his advantage,\nHe hath not fail'd to pester us with message,\nImporting the surrender of those lands\nLost by his father, with all bonds of law,\nTo our most valiant brother. So much for him.\nNow for ourself and for this time of meeting:\nThus much the business is: we have here writ\nTo Norway, uncle of young Fortinbras,--\nWho, impotent and bed-rid, scarcely hears\nOf this his nephew's purpose,--to suppress\nHis further gait herein; in that the levies,\nThe lists and full proportions, are all made\nOut of his subject: and we here dispatch\nYou, good Cornelius, and you, Voltimand,\nFor bearers of this greeting to old Norway;\nGiving to you no further personal power\nTo business with the king, more than the scope\nOf these delated articles allow.\nFarewell, and let your haste commend your duty."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0037-00099",
+          "start": 3,
+          "end": 572,
+          "text": "虽然我们亲爱的王兄哈姆莱特新丧未久，我们的心里应当充满了悲痛，我们全国都应当表示一致的哀悼，可是我们凛于后死者责任的重大，不能不违情逆性，一方面固然要用适度的悲哀纪念他，一方面也要为自身的利害着想；所以，在一种悲喜交集的情绪之下，让幸福和忧郁分据了我的两眼，殡葬的挽歌和结婚的笙乐同时并奏，用盛大的喜乐抵消沉重的不幸，我已经和我旧日的长嫂，当今的王后，这一个多事之国的共同的统治者，结为夫妇；这一次婚姻事先曾经征求各位的意见，多承你们诚意的赞助，这是我必须向大家致谢的。现在我要告诉你们知道，年轻的福丁布拉斯看轻了我们的实力，也许他以为自从我们亲爱的王兄驾崩以后，我们的国家已经瓦解，所以挟着他的从中取利的梦想，不断向我们书面要求把他的父亲依法割让给我们英勇的王兄的土地归还。这是他一方面的话。现在要讲到我们的态度和今天召集各位来此的目的。我们的对策是这样的：我这儿已经写好了一封信给挪威国王，年轻的福丁布拉斯的叔父——他因为卧病在床，不曾与闻他侄子的企图——在信里我请他注意他的侄子擅自在国内征募壮丁，训练士卒，积极进行各种准备的事实，要求他从速制止他的进一步的行动；现在我就派遣你，考尼律斯，还有你，伏提曼德，替我把这封信送给挪威老王，除了训令上所规定的条件以外，你们不得僭用你们的权力，和挪威成立逾越范围的妥协。你们赶紧去吧，再会！"
+        }
+      ],
+      "excludedInline": [],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Whole King speech including marriage, Fortinbras and embassy; do not subdivide internally or impose the obsolete3:1 sentence mapping.",
+      "speakerAliases": {
+        "KING CLAUDIUS": "国王"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "hamlet-stage-split-king",
+      "work": "hamlet",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "hamlet:1.2:4",
+        "hamlet:1.2:6"
+      ],
+      "chineseBlockIds": [
+        "part0037-00101"
+      ],
+      "english": [
+        {
+          "blockId": "hamlet:1.2:4",
+          "start": 0,
+          "end": 39,
+          "text": "We doubt it nothing: heartily farewell."
+        },
+        {
+          "blockId": "hamlet:1.2:6",
+          "start": 0,
+          "end": 388,
+          "text": "And now, Laertes, what's the news with you?\nYou told us of some suit; what is't, Laertes?\nYou cannot speak of reason to the Dane,\nAnd loose your voice: what wouldst thou beg, Laertes,\nThat shall not be my offer, not thy asking?\nThe head is not more native to the heart,\nThe hand more instrumental to the mouth,\nThan is the throne of Denmark to thy father.\nWhat wouldst thou have, Laertes?"
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0037-00101",
+          "start": 3,
+          "end": 15,
+          "text": "我相信你们的忠心；再会！"
+        },
+        {
+          "blockId": "part0037-00101",
+          "start": 28,
+          "end": 180,
+          "text": "现在，雷欧提斯，你有什么话说？你对我说你有一个请求；是什么请求，雷欧提斯？只要是合理的事情，你向丹麦王说了，他总不会不答应你。你有什么要求，雷欧提斯，不是你未开口我就自动许给了你？丹麦王室和你父亲的关系，正像头脑之于心灵一样密切；丹麦国王乐意为你父亲效劳，正像双手乐于为嘴服役一样。你要些什么，雷欧提斯？"
+        }
+      ],
+      "excludedInline": [
+        {
+          "blockId": "part0037-00101",
+          "start": 15,
+          "end": 28,
+          "text": "（伏提曼德、考尼律斯同下）",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        }
+      ],
+      "relation": "2-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Same King speech run spans ambassadors exit; both English blocks map to one Chinese paragraph. Keep stage separate but do not advance to Laertes paragraph.",
+      "speakerAliases": {
+        "KING CLAUDIUS": "国王"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "hamlet-reordered-cock-crow",
+      "work": "hamlet",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "hamlet:1.1:55",
+        "hamlet:1.1:57",
+        "hamlet:1.1:59"
+      ],
+      "chineseBlockIds": [
+        "part0037-00083",
+        "part0037-00085"
+      ],
+      "english": [
+        {
+          "blockId": "hamlet:1.1:55",
+          "start": 0,
+          "end": 637,
+          "text": "A mote it is to trouble the mind's eye.\nIn the most high and palmy state of Rome,\nA little ere the mightiest Julius fell,\nThe graves stood tenantless and the sheeted dead\nDid squeak and gibber in the Roman streets:\nAs stars with trains of fire and dews of blood,\nDisasters in the sun; and the moist star\nUpon whose influence Neptune's empire stands\nWas sick almost to doomsday with eclipse:\nAnd even the like precurse of fierce events,\nAs harbingers preceding still the fates\nAnd prologue to the omen coming on,\nHave heaven and earth together demonstrated\nUnto our climatures and countrymen.--\nBut soft, behold! lo, where it comes again!"
+        },
+        {
+          "blockId": "hamlet:1.1:57",
+          "start": 0,
+          "end": 198,
+          "text": "I'll cross it, though it blast me. Stay, illusion!\nIf thou hast any sound, or use of voice,\nSpeak to me:\nIf there be any good thing to be done,\nThat may to thee do ease and grace to me,\nSpeak to me:"
+        },
+        {
+          "blockId": "hamlet:1.1:59",
+          "start": 0,
+          "end": 269,
+          "text": "If thou art privy to thy country's fate,\nWhich, happily, foreknowing may avoid, O, speak!\nOr if thou hast uphoarded in thy life\nExtorted treasure in the womb of earth,\nFor which, they say, you spirits oft walk in death,\nSpeak of it: stay, and speak! Stop it, Marcellus."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0037-00083",
+          "start": 4,
+          "end": 161,
+          "text": "那是扰乱我们心灵之眼的一点微尘。从前在富强繁盛的罗马，在那雄才大略的裘力斯·凯撒遇害以前不久，披着殓衾的死人都从坟墓里出来，在街道上啾啾鬼语，星辰拖着火尾，露水带血，太阳变色，支配潮汐的月亮被吞蚀得像一个没有起色的病人；这一类预报重大变故的朕兆，在我们国内的天上地下也已经屡次出现了。可是不要响！瞧！瞧！它又来了！"
+        },
+        {
+          "blockId": "part0037-00085",
+          "start": 4,
+          "end": 162,
+          "text": "我要挡住它的去路，即使它会害我。不要走，鬼魂！要是你能出声，会开口，对我说话吧；要是我有可以为你效劳之处，使你的灵魂得到安息，那么对我说话吧；要是你预知祖国的命运，靠着你的指示，也许可以及时避免未来的灾祸，那么对我说话吧；或者你在生前曾经把你搜括得来的财宝埋藏在地下，我听见人家说，鬼魂往往在他们藏金的地方徘徊不散，"
+        },
+        {
+          "blockId": "part0037-00085",
+          "start": 166,
+          "end": 197,
+          "text": "要是有这样的事，你也对我说吧；不要走，说呀！拦住它，马西勒斯。"
+        }
+      ],
+      "excludedInline": [
+        {
+          "blockId": "part0037-00085",
+          "start": 162,
+          "end": 166,
+          "text": "（鸡啼）",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        }
+      ],
+      "relation": "3-English-source-blocks:2-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Continuous Horatio turn across ghost reentry and cock-crow. Three English blocks map to two Chinese paragraphs. Cock-crow occurs later inside Chinese speech; do not split whole-turn map at matching stage position.",
+      "speakerAliases": {
+        "HORATIO": "霍拉旭"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "hamlet-marcellus-ghost-exit",
+      "work": "hamlet",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "hamlet:1.1:64",
+        "hamlet:1.1:66"
+      ],
+      "chineseBlockIds": [
+        "part0037-00090"
+      ],
+      "english": [
+        {
+          "blockId": "hamlet:1.1:64",
+          "start": 0,
+          "end": 10,
+          "text": "'Tis gone!"
+        },
+        {
+          "blockId": "hamlet:1.1:66",
+          "start": 0,
+          "end": 145,
+          "text": "We do it wrong, being so majestical,\nTo offer it the show of violence;\nFor it is, as the air, invulnerable,\nAnd our vain blows malicious mockery."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0037-00090",
+          "start": 5,
+          "end": 59,
+          "text": "它走了！我们不该用暴力对待这样一个尊严的亡魂；因为它是像空气一样不可侵害的，我们无益的打击不过是恶意的徒劳。"
+        }
+      ],
+      "excludedInline": [],
+      "relation": "2-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Marcellus exclamation and wrong-to-strike speech span English Exit Ghost but share one Chinese paragraph. Chinese ghost-exit cue instead follows previous Horatio paragraph.",
+      "speakerAliases": {
+        "MARCELLUS": "马西勒斯"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "hamlet-soliloquy-complete",
+      "work": "hamlet",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "hamlet:3.1:26"
+      ],
+      "chineseBlockIds": [
+        "part0037-00622"
+      ],
+      "english": [
+        {
+          "blockId": "hamlet:3.1:26",
+          "start": 0,
+          "end": 1488,
+          "text": "To be, or not to be, that is the question,\nWhether 'tis nobler in the mind to suffer\nThe slings and arrows of outrageous fortune,\nOr to take arms against a sea of troubles,\nAnd by opposing end them? To die: to sleep;\nNo more; and by a sleep to say we end\nThe heart-ache and the thousand natural shocks\nThat flesh is heir to, 'tis a consummation\nDevoutly to be wish'd. To die, to sleep;\nTo sleep: perchance to dream: ay, there's the rub;\nFor in that sleep of death what dreams may come\nWhen we have shuffled off this mortal coil,\nMust give us pause: there's the respect\nThat makes calamity of so long life;\nFor who would bear the whips and scorns of time,\nThe oppressor's wrong, the proud man's contumely,\nThe pangs of despised love, the law's delay,\nThe insolence of office and the spurns\nThat patient merit of the unworthy takes,\nWhen he himself might his quietus make\nWith a bare bodkin? who would fardels bear,\nTo grunt and sweat under a weary life,\nBut that the dread of something after death,\nThe undiscover'd country from whose bourn\nNo traveller returns, puzzles the will\nAnd makes us rather bear those ills we have\nThan fly to others that we know not of?\nThus conscience does make cowards of us all;\nAnd thus the native hue of resolution\nIs sicklied o'er with the pale cast of thought,\nAnd enterprises of great pith and moment\nWith this regard their currents turn awry,\nAnd lose the name of action.--Soft you now!\nThe fair Ophelia! Nymph, in thy orisons\nBe all my sins remember'd."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0037-00622",
+          "start": 5,
+          "end": 542,
+          "text": "生存还是毁灭，这是一个值得考虑的问题；默然忍受命运的暴虐的毒箭，或是挺身反抗人世的无涯的苦难，通过斗争把它们扫清，这两种行为，哪一种更高贵？死了；睡着了；什么都完了；要是在这一种睡眠之中，我们心头的创痛，以及其他无数血肉之躯所不能避免的打击，都可以从此消失，那正是我们求之不得的结局。死了；睡着了；睡着了也许还会做梦；嗯，阻碍就在这儿：因为当我们摆脱了这一具朽腐的皮囊以后，在那死的睡眠里，究竟将要做些什么梦，那不能不使我们踌躇顾虑。人们甘心久困于患难之中，也就是为了这个缘故；谁愿意忍受人世的鞭挞和讥嘲、压迫者的凌辱、傲慢者的冷眼、被轻蔑的爱情的惨痛、法律的迁延、官吏的横暴和费尽辛勤所换来的小人的鄙视，要是他只要用一柄小小的刀子，就可以清算他自己的一生？谁愿意负着这样的重担，在烦劳的生命的压迫下呻吟流汗，倘不是因为惧怕不可知的死后，惧怕那从来不曾有一个旅人回来过的神秘之国，是它迷惑了我们的意志，使我们宁愿忍受目前的磨折，不敢向我们所不知道的痛苦飞去？这样，重重的顾虑使我们全变成了懦夫，决心的赤热的光彩，被审慎的思维盖上了一层灰色，伟大的事业在这一种考虑之下，也会逆流而退，失去了行动的意义。且慢！美丽的奥菲利娅！——女神，在你的祈祷之中，不要忘记替我忏悔我的罪孽。"
+        }
+      ],
+      "excludedInline": [],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Entire To-be speech maps to complete Chinese paragraph. Internal punctuation/count differences are irrelevant under current user acceptance.",
+      "speakerAliases": {
+        "HAMLET": "哈姆莱特"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "hamlet-combined-role-variant",
+      "work": "hamlet",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "hamlet:4.2:3"
+      ],
+      "chineseBlockIds": [
+        "part0037-00990"
+      ],
+      "english": [
+        {
+          "blockId": "hamlet:4.2:3",
+          "start": 8,
+          "end": 29,
+          "text": " Hamlet! Lord Hamlet!"
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0037-00990",
+          "start": 16,
+          "end": 28,
+          "text": "哈姆莱特！哈姆莱特殿下！"
+        }
+      ],
+      "excludedInline": [
+        {
+          "blockId": "hamlet:4.2:3",
+          "start": 0,
+          "end": 8,
+          "text": "[Within]",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        },
+        {
+          "blockId": "part0037-00990",
+          "start": 12,
+          "end": 16,
+          "text": "（在内）",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        }
+      ],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "English source role is GUILDENSTERN: while Chinese jointly credits Rosencrantz and Guildenstern. Preserve source labels and record edition-specific combined-role equivalence; do not globally map Rosencrantz to Guildenstern.",
+      "speakerAliases": {
+        "GUILDENSTERN:": "罗森格兰兹 吉尔登斯吞",
+        "scope": "this occurrence only; punctuation-normalized Guildenstern plus edition combined attribution"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "henryv-complete-prologue",
+      "work": "henryv",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "henryv:1-2-prologue:2"
+      ],
+      "chineseBlockIds": [
+        "part0018-00040"
+      ],
+      "english": [
+        {
+          "blockId": "henryv:1-2-prologue:2",
+          "start": 0,
+          "end": 1421,
+          "text": "O for a Muse of fire, that would ascend\nThe brightest heaven of invention,\nA kingdom for a stage, princes to act\nAnd monarchs to behold the swelling scene!\nThen should the warlike Harry, like himself,\nAssume the port of Mars; and at his heels,\nLeash'd in like hounds, should famine, sword and fire\nCrouch for employment. But pardon, and gentles all,\nThe flat unraised spirits that have dared\nOn this unworthy scaffold to bring forth\nSo great an object: can this cockpit hold\nThe vasty fields of France? or may we cram\nWithin this wooden O the very casques\nThat did affright the air at Agincourt?\nO, pardon! since a crooked figure may\nAttest in little place a million;\nAnd let us, ciphers to this great accompt,\nOn your imaginary forces work.\nSuppose within the girdle of these walls\nAre now confined two mighty monarchies,\nWhose high upreared and abutting fronts\nThe perilous narrow ocean parts asunder:\nPiece out our imperfections with your thoughts;\nInto a thousand parts divide on man,\nAnd make imaginary puissance;\nThink when we talk of horses, that you see them\nPrinting their proud hoofs i' the receiving earth;\nFor 'tis your thoughts that now must deck our kings,\nCarry them here and there; jumping o'er times,\nTurning the accomplishment of many years\nInto an hour-glass: for the which supply,\nAdmit me Chorus to this history;\nWho prologue-like your humble patience pray,\nGently to hear, kindly to judge, our play."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0018-00040",
+          "start": 4,
+          "end": 261,
+          "text": "啊！光芒万丈的缪斯女神呀，你登上了无比辉煌的幻想的天堂；拿整个王国当做舞台，叫帝王们充任演员，让君主们瞪眼瞧着那伟大的场景！——只有这样，那威武的亨利，才像他本人，才具备着战神的气概；在他的脚后跟，“饥馑”、“利剑”和“烈火”像是套上皮带的猎狗一样，蹲伏着，只等待一声命令。可是，在座的诸君，请原谅吧！像咱们这样低微的小人物，居然在这几块破板搭成的戏台上，也搬演什么轰轰烈烈的事迹。难道说，这么一个“斗鸡场”容得下法兰西的万里江山？还是我们这个木头的圆框子里塞得进那么多将士？——只消他们把头盔晃一晃，管叫阿金库尔"
+        },
+        {
+          "blockId": "part0018-00040",
+          "start": 264,
+          "end": 594,
+          "text": "的空气都跟着震荡！请原谅吧！可不是，一个小小的圆圈儿，凑在数字的末尾，就可以变成个一百万；那么，让我们就凭这点渺小的作用，来激发你们庞大的想像力吧。就算在这团团一圈的墙壁内包围了两个强大的王国：国境和国境（一片紧接的高地），却叫惊涛骇浪（一道海峡）从中间一隔两断。发挥你们的想像力，来弥补我们的贫乏吧——一个人，把他分身为一千个，组成了一支幻想的大军。我们提到马儿，眼前就仿佛真有万马奔腾，卷起了半天尘土。把我们的帝王装扮得像个样儿，这也全靠你们的想像帮忙了；凭着那想像力，把他们搬东移西，在时间里飞跃，叫多少年代的事迹都挤塞在一个时辰里。就为了这个使命，请容许我在这个史剧前面，做个致辞者——要说的无非是那几句开场白：这出戏文，要请诸君多多地包涵，静静地听。"
+        }
+      ],
+      "excludedInline": [
+        {
+          "blockId": "part0018-00040",
+          "start": 261,
+          "end": 264,
+          "text": "[1]",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        },
+        {
+          "blockId": "part0018-00040",
+          "start": 594,
+          "end": 598,
+          "text": "（下。）",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        }
+      ],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Complete Chorus prologue is one spoken turn, despite Chinese sentence expansions. Exclude footnote marker and final inline exit; keep whole prologue.",
+      "speakerAliases": {
+        "Chorus": "致辞者"
+      },
+      "sentenceBoundaryRequirements": null,
+      "fixtureCorrection": {
+        "date": "2026-10-12",
+        "reason": "Independent source review: （一片紧接的高地） and （一道海峡） are ordinary unbolded explanatory translation of high upreared and abutting fronts and narrow ocean, not stage directions. Retain them in speech. Footnote [1] and bold final exit （下。） remain excluded.",
+        "previousFixtureSha256": "7c9e97acfeda00452e34c29b8eaddbd2210267fda6a7968b4c8e00983b49b857"
+      }
+    },
+    {
+      "id": "henryv-cup-idiom",
+      "work": "henryv",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "henryv:1.1:6"
+      ],
+      "chineseBlockIds": [
+        "part0018-00048"
+      ],
+      "english": [
+        {
+          "blockId": "henryv:1.1:6",
+          "start": 0,
+          "end": 30,
+          "text": "'Twould drink the cup and all."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0018-00048",
+          "start": 5,
+          "end": 22,
+          "text": "吃掉一块肉！——连骨头都叫人啃啦。"
+        }
+      ],
+      "excludedInline": [],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "English cup/drinking idiom is rendered as meat/bones. Whole short turn is a valid match despite weak literal lexical similarity.",
+      "speakerAliases": {
+        "CANTERBURY": "坎特伯雷"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "henryvi-bishop-role-fragment",
+      "work": "1henryvi",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "1henryvi:1.1:5"
+      ],
+      "chineseBlockIds": [
+        "part0022-00052"
+      ],
+      "english": [
+        {
+          "blockId": "1henryvi:1.1:5",
+          "start": 0,
+          "end": 217,
+          "text": "He was a king bless'd of the King of kings.\nUnto the French the dreadful judgement-day\nSo dreadful will not be as was his sight.\nThe battles of the Lord of hosts he fought:\nThe church's prayers made him so prosperous."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0022-00052",
+          "start": 5,
+          "end": 17,
+          "text": "我们的先王是受到万王之王"
+        },
+        {
+          "blockId": "part0022-00052",
+          "start": 20,
+          "end": 78,
+          "text": "的福佑的。法兰西人见了他，吓得战战兢兢，甚至比末日审判的时候更加害怕。先王是替天行讨，我们教会的颂祷使他的国运昌隆。"
+        }
+      ],
+      "excludedInline": [
+        {
+          "blockId": "part0022-00052",
+          "start": 17,
+          "end": 20,
+          "text": "[1]",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        }
+      ],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Whole bishop speech matches. The exact source-numbered BISHOP fragment and following OF WINCHESTER label are now joined in speaker metadata, with raw fragment provenance; no role fragment is translated as spoken text.",
+      "speakerAliases": {
+        "BISHOP OF WINCHESTER": "温彻斯特",
+        "normalizedEnglish": "BISHOP OF WINCHESTER"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "edward-stage-split-king",
+      "work": "edwardiii",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "edwardiii:1.1:6",
+        "edwardiii:1.1:8"
+      ],
+      "chineseBlockIds": [
+        "part0041-00049"
+      ],
+      "english": [
+        {
+          "blockId": "edwardiii:1.1:6",
+          "start": 0,
+          "end": 378,
+          "text": "This counsel, Artois, like to fruitful showers,\nHath added growth unto my dignity;\nAnd, by the fiery vigor of thy words,\nHot courage is engendered in my breast,\nWhich heretofore was raked in ignorance,\nBut now doth mount with golden wings of fame,\nAnd will approve fair Isabel’s descent,\nAble to yoke their stubborn necks with steel,\nThat spurn against my sovereignty in France."
+        },
+        {
+          "blockId": "edwardiii:1.1:8",
+          "start": 0,
+          "end": 43,
+          "text": "A messenger?—Lord Audley, know from whence."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0041-00049",
+          "start": 5,
+          "end": 119,
+          "text": "你的这番忠告如充沛的阵雨，助长了我的尊严感，由于你的话语如火如荼的活力，我的心胸才升起了炽热的勇气，这股勇气以前一直给蒙在鼓里，现今才展开了荣誉的金翼，使美丽的伊莎贝尔的后裔得以将他们顽强的颈项套上钢铁，好把我的君权踢回法国去。"
+        },
+        {
+          "blockId": "part0041-00049",
+          "start": 125,
+          "end": 149,
+          "text": "一位信使来了！奥德利勋爵，请去瞧瞧是从哪儿来的。"
+        }
+      ],
+      "excludedInline": [
+        {
+          "blockId": "part0041-00049",
+          "start": 119,
+          "end": 125,
+          "text": "（号角长鸣）",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        }
+      ],
+      "relation": "2-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "King continues across horn cue; courage/counsel and messenger instruction share Chinese paragraph. Audley departure after second block ends this selection.",
+      "speakerAliases": {
+        "KING EDWARD": "爱德华王"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "edward-lorrain-envoy",
+      "work": "edwardiii",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "edwardiii:1.1:14"
+      ],
+      "chineseBlockIds": [
+        "part0041-00053"
+      ],
+      "english": [
+        {
+          "blockId": "edwardiii:1.1:14",
+          "start": 0,
+          "end": 465,
+          "text": "The most renowned prince, King John of France,\nDoth greet thee, Edward, and by me commands,\nThat, for so much as by his liberal gift\nThe Guyen Dukedom is entailed to thee,\nThou do him lowly homage for the same.\nAnd, for that purpose, here I summon thee,\nRepair to France within these forty days,\nThat there, according as the custom is,\nThou mayst be sworn true liegeman to our King;\nOr else thy title in that province dies,\nAnd he him self will repossess the place."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0041-00053",
+          "start": 3,
+          "end": 16,
+          "text": "最可敬的君主，法国国王约翰"
+        },
+        {
+          "blockId": "part0041-00053",
+          "start": 19,
+          "end": 42,
+          "text": "，向你，爱德华，问好，并派我传达命令：吉燕公国"
+        },
+        {
+          "blockId": "part0041-00053",
+          "start": 45,
+          "end": 144,
+          "text": "将作为他的慷慨的礼品赐给你，你应为此向他致敬效忠；为了这个目的，我劝你在近四十天内赶赴法国，以便在那里按照惯例向我们的国王宣誓，表示臣服，否则你在那个省份的爵位将会消失，他本人将会重新占有那片土地。"
+        }
+      ],
+      "excludedInline": [
+        {
+          "blockId": "part0041-00053",
+          "start": 16,
+          "end": 19,
+          "text": "[8]",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        },
+        {
+          "blockId": "part0041-00053",
+          "start": 42,
+          "end": 45,
+          "text": "[9]",
+          "reason": "stage_or_note_marker_separate_from_speech"
+        }
+      ],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Whole embassy demand; note references8/9 are not translated speech. LORRAIN spelling corresponds to 洛林; do not mistake KING JOHN mentioned in speech for speaker.",
+      "speakerAliases": {
+        "LORRAIN": "洛林",
+        "LORRAINE": "洛林"
+      },
+      "sentenceBoundaryRequirements": null
+    },
+    {
+      "id": "macbeth-scene-boundary-divergence",
+      "work": "macbeth",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "macbeth:5.8:2"
+      ],
+      "chineseBlockIds": [
+        "part0035-00834"
+      ],
+      "english": [
+        {
+          "blockId": "macbeth:5.8:2",
+          "start": 0,
+          "end": 112,
+          "text": "Why should I play the Roman fool, and die\nOn mine own sword? whiles I see lives, the gashes\nDo better upon them."
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0035-00834",
+          "start": 4,
+          "end": 43,
+          "text": "我为什么要学那些罗马人的傻样子，死在我自己的剑上呢？我的剑是应该为杀敌而用的。"
+        }
+      ],
+      "excludedInline": [],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "English5.8 appears within Chinese5.7, same act and narrative. A missing5.8 Chinese scene key must not imply missing translation.",
+      "speakerAliases": {
+        "MACBETH": "麦克白"
+      },
+      "sentenceBoundaryRequirements": null,
+      "sectionMapping": {
+        "english": "5.8",
+        "chinese": "part0035-section-032",
+        "chineseAct": 5,
+        "chineseScene": 7
+      }
+    },
+    {
+      "id": "macduff-scene-boundary-divergence",
+      "work": "macbeth",
+      "granularity": "whole_character_speech_turn",
+      "englishBlockIds": [
+        "macbeth:5.8:4"
+      ],
+      "chineseBlockIds": [
+        "part0035-00836"
+      ],
+      "english": [
+        {
+          "blockId": "macbeth:5.8:4",
+          "start": 0,
+          "end": 23,
+          "text": "Turn, hell-hound, turn!"
+        }
+      ],
+      "chinese": [
+        {
+          "blockId": "part0035-00836",
+          "start": 5,
+          "end": 20,
+          "text": "转过来，地狱里的恶狗，转过来！"
+        }
+      ],
+      "excludedInline": [],
+      "relation": "1-English-source-blocks:1-Chinese-source-paragraphs",
+      "status": "semantically_reviewed",
+      "rationale": "Neighboring MACDUFF challenge validates scene-boundary continuation and speaker change. English5.8 remains Chinese5.7.",
+      "speakerAliases": {
+        "MACDUFF": "麦克德夫"
+      },
+      "sentenceBoundaryRequirements": null,
+      "sectionMapping": {
+        "english": "5.8",
+        "chinese": "part0035-section-032",
+        "chineseAct": 5,
+        "chineseScene": 7
+      }
+    }
+  ],
+  "qualityGates": [
+    "Catalog contains exactly39 English plays and no standalone poetry. Prologues/choruses/induction within plays remain in scope.",
+    "Every English source speech span appears exactly once and in English order. Stage/source-label anomalies have a separate provenance ledger; no silently dropped prose.",
+    "Whole-turn construction may join same-speaker blocks across a stage cue only with contextual continuity; never join across another speaker or an unreviewed scene boundary.",
+    "Every displayed Chinese span is exact source provenance and consumed once; speaker labels, notes and Chinese-only stage/prose are excluded or metadata.",
+    "Allow validated1:N/N:1 source-block mappings and edition-specific scene bridges; equal role sequence or turn count alone does not prove correct content.",
+    "Zero wrong-speaker or scene-drift failures in these fixtures; explicitly reviewed combined-role/alias exceptions remain scoped.",
+    "Report matched English turns/total, matched English speech characters/total, unresolved turns and speakers, and per-play figures; sentence counts are obsolete.",
+    "Measure manual semantic correctness on held-out turn samples stratified by translator, play, turn length, merged/split shape and scene-boundary bridges. Report n/errors/uncertain, not confidence from cosine.",
+    "Keep unresolved English turns visible with missing/unconfirmed Chinese; do not fake coverage by assigning neighboring speech."
+  ]
+}

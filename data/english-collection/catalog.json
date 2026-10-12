@@ -354,10 +354,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/comedy_errors/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 1966,
+    "sourceSplitRoleExtractionRevision": "mit-split-role-prefixes-v1",
+    "sourceSplitRoleCount": 175,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 11,
-    "blockCount": 702,
-    "wordCount": 14865,
+    "blockCount": 689,
+    "wordCount": 14690,
     "file": "data/english-collection/comedy_errors.js",
     "sections": [
       {
@@ -447,8 +449,10 @@
     "sourceUrl": "https://shakespeare.mit.edu/cymbeline/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 3748,
+    "sourceExtractionRevision": "source-markup-corrections-v2",
+    "sourceMarkupCorrectionCount": 1,
     "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 26,
+    "sectionCount": 27,
     "blockCount": 1088,
     "wordCount": 27459,
     "file": "data/english-collection/cymbeline.js",
@@ -508,6 +512,13 @@
         "act": 2,
         "sourceUrl": "https://shakespeare.mit.edu/cymbeline/full.html",
         "scene": 2
+      },
+      {
+        "id": "2.3",
+        "label": "Act 2 · Scene III. An ante-chamber adjoining Imogen's apartments.",
+        "act": 2,
+        "sourceUrl": "https://shakespeare.mit.edu/cymbeline/full.html",
+        "scene": 3
       },
       {
         "id": "2.4",
@@ -645,10 +656,14 @@
     "sourceUrl": "https://shakespeare.mit.edu/lll/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 2864,
+    "sourceExtractionRevision": "source-markup-corrections-v2",
+    "sourceMarkupCorrectionCount": 1,
+    "sourceSplitRoleExtractionRevision": "mit-split-role-prefixes-v1",
+    "sourceSplitRoleCount": 101,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 9,
-    "blockCount": 1198,
-    "wordCount": 21492,
+    "blockCount": 1189,
+    "wordCount": 21394,
     "file": "data/english-collection/lll.js",
     "sections": [
       {
@@ -724,10 +739,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/measure/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 2838,
+    "sourceExtractionRevision": "source-markup-corrections-v2",
+    "sourceMarkupCorrectionCount": 1,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 17,
     "blockCount": 1081,
-    "wordCount": 21756,
+    "wordCount": 21762,
     "file": "data/english-collection/measure.js",
     "sections": [
       {
@@ -1578,10 +1595,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/taming_shrew/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 2635,
+    "sourceExtractionRevision": "mit-tabbed-role-cues-v1",
+    "sourceRoleCueCount": 1,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 14,
-    "blockCount": 1084,
-    "wordCount": 20958,
+    "blockCount": 1085,
+    "wordCount": 20956,
     "file": "data/english-collection/taming_shrew.js",
     "sections": [
       {
@@ -2379,8 +2398,10 @@
     "sourceUrl": "https://shakespeare.mit.edu/1henryiv/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 3038,
+    "sourceExtractionRevision": "source-markup-corrections-v2",
+    "sourceMarkupCorrectionCount": 1,
     "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 18,
+    "sectionCount": 19,
     "blockCount": 949,
     "wordCount": 24582,
     "file": "data/english-collection/1henryiv.js",
@@ -2447,6 +2468,13 @@
         "act": 3,
         "sourceUrl": "https://shakespeare.mit.edu/1henryiv/full.html",
         "scene": 2
+      },
+      {
+        "id": "3.3",
+        "label": "Act 3 · Scene III. Eastcheap. The Boar's-Head Tavern.",
+        "act": 3,
+        "sourceUrl": "https://shakespeare.mit.edu/1henryiv/full.html",
+        "scene": 3
       },
       {
         "id": "4.1",
@@ -2521,10 +2549,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/2henryiv/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 3249,
+    "sourceExtractionRevision": "mit-tabbed-role-cues-v1",
+    "sourceRoleCueCount": 56,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 20,
-    "blockCount": 1036,
-    "wordCount": 26423,
+    "blockCount": 1087,
+    "wordCount": 26311,
     "file": "data/english-collection/2henryiv.js",
     "sections": [
       {
@@ -2883,10 +2913,14 @@
     "sourceUrl": "https://shakespeare.mit.edu/1henryvi/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 2766,
+    "sourceExtractionRevision": "mit-tabbed-role-cues-v1",
+    "sourceRoleCueCount": 12,
+    "sourceSplitRoleExtractionRevision": "mit-split-role-prefixes-v1",
+    "sourceSplitRoleCount": 40,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 27,
-    "blockCount": 880,
-    "wordCount": 21694,
+    "blockCount": 883,
+    "wordCount": 21633,
     "file": "data/english-collection/1henryvi.js",
     "sections": [
       {
@@ -3088,10 +3122,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/2henryvi/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 3122,
+    "sourceExtractionRevision": "mit-tabbed-role-cues-v1",
+    "sourceRoleCueCount": 3,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 24,
-    "blockCount": 1004,
-    "wordCount": 25476,
+    "blockCount": 1007,
+    "wordCount": 25471,
     "file": "data/english-collection/2henryvi.js",
     "sections": [
       {
@@ -3484,10 +3520,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/henryviii/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 3269,
+    "sourceExtractionRevision": "mit-tabbed-role-cues-v1",
+    "sourceRoleCueCount": 1,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 18,
-    "blockCount": 862,
-    "wordCount": 24621,
+    "blockCount": 863,
+    "wordCount": 24619,
     "file": "data/english-collection/henryviii.js",
     "sections": [
       {
@@ -3902,10 +3940,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/richardiii/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 3700,
+    "sourceSplitRoleExtractionRevision": "mit-split-role-prefixes-v1",
+    "sourceSplitRoleCount": 4,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 25,
-    "blockCount": 1368,
-    "wordCount": 29267,
+    "blockCount": 1364,
+    "wordCount": 29263,
     "file": "data/english-collection/richardiii.js",
     "sections": [
       {
@@ -4403,10 +4443,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/coriolanus/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 3759,
+    "sourceExtractionRevision": "mit-tabbed-role-cues-v1",
+    "sourceRoleCueCount": 2,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 29,
-    "blockCount": 1353,
-    "wordCount": 27530,
+    "blockCount": 1355,
+    "wordCount": 27524,
     "file": "data/english-collection/coriolanus.js",
     "sections": [
       {
@@ -4778,10 +4820,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/julius_caesar/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 2596,
+    "sourceExtractionRevision": "source-markup-corrections-v2",
+    "sourceMarkupCorrectionCount": 1,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 18,
     "blockCount": 988,
-    "wordCount": 19683,
+    "wordCount": 19687,
     "file": "data/english-collection/julius_caesar.js",
     "sections": [
       {
@@ -5647,10 +5691,12 @@
     "sourceUrl": "https://shakespeare.mit.edu/timon/full.html",
     "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
     "sourceLineCount": 2495,
+    "sourceExtractionRevision": "mit-tabbed-role-cues-v1",
+    "sourceRoleCueCount": 33,
     "sourceLabel": "MIT Shakespeare",
     "sectionCount": 17,
-    "blockCount": 945,
-    "wordCount": 18440,
+    "blockCount": 976,
+    "wordCount": 18376,
     "file": "data/english-collection/timon.js",
     "sections": [
       {
@@ -5889,1002 +5935,6 @@
     ]
   },
   {
-    "id": "sonnets",
-    "title": "The Sonnets",
-    "kind": "poetry",
-    "source": "MIT Shakespeare (Complete Moby Shakespeare)",
-    "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnets.html",
-    "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
-    "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 154,
-    "blockCount": 154,
-    "wordCount": 17513,
-    "file": "data/english-collection/sonnets.js",
-    "sections": [
-      {
-        "id": "1",
-        "label": "Sonnet 1",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.I.html"
-      },
-      {
-        "id": "2",
-        "label": "Sonnet 2",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.II.html"
-      },
-      {
-        "id": "3",
-        "label": "Sonnet 3",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.III.html"
-      },
-      {
-        "id": "4",
-        "label": "Sonnet 4",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.IV.html"
-      },
-      {
-        "id": "5",
-        "label": "Sonnet 5",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.V.html"
-      },
-      {
-        "id": "6",
-        "label": "Sonnet 6",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.VI.html"
-      },
-      {
-        "id": "7",
-        "label": "Sonnet 7",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.VII.html"
-      },
-      {
-        "id": "8",
-        "label": "Sonnet 8",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.VIII.html"
-      },
-      {
-        "id": "9",
-        "label": "Sonnet 9",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.IX.html"
-      },
-      {
-        "id": "10",
-        "label": "Sonnet 10",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.X.html"
-      },
-      {
-        "id": "11",
-        "label": "Sonnet 11",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XI.html"
-      },
-      {
-        "id": "12",
-        "label": "Sonnet 12",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XII.html"
-      },
-      {
-        "id": "13",
-        "label": "Sonnet 13",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XIII.html"
-      },
-      {
-        "id": "14",
-        "label": "Sonnet 14",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XIV.html"
-      },
-      {
-        "id": "15",
-        "label": "Sonnet 15",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XV.html"
-      },
-      {
-        "id": "16",
-        "label": "Sonnet 16",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XVI.html"
-      },
-      {
-        "id": "17",
-        "label": "Sonnet 17",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XVII.html"
-      },
-      {
-        "id": "18",
-        "label": "Sonnet 18",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XVIII.html"
-      },
-      {
-        "id": "19",
-        "label": "Sonnet 19",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XIX.html"
-      },
-      {
-        "id": "20",
-        "label": "Sonnet 20",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XX.html"
-      },
-      {
-        "id": "21",
-        "label": "Sonnet 21",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXI.html"
-      },
-      {
-        "id": "22",
-        "label": "Sonnet 22",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXII.html"
-      },
-      {
-        "id": "23",
-        "label": "Sonnet 23",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXIII.html"
-      },
-      {
-        "id": "24",
-        "label": "Sonnet 24",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXIV.html"
-      },
-      {
-        "id": "25",
-        "label": "Sonnet 25",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXV.html"
-      },
-      {
-        "id": "26",
-        "label": "Sonnet 26",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXVI.html"
-      },
-      {
-        "id": "27",
-        "label": "Sonnet 27",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXVII.html"
-      },
-      {
-        "id": "28",
-        "label": "Sonnet 28",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXVIII.html"
-      },
-      {
-        "id": "29",
-        "label": "Sonnet 29",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXIX.html"
-      },
-      {
-        "id": "30",
-        "label": "Sonnet 30",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXX.html"
-      },
-      {
-        "id": "31",
-        "label": "Sonnet 31",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXI.html"
-      },
-      {
-        "id": "32",
-        "label": "Sonnet 32",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXII.html"
-      },
-      {
-        "id": "33",
-        "label": "Sonnet 33",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXIII.html"
-      },
-      {
-        "id": "34",
-        "label": "Sonnet 34",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXIV.html"
-      },
-      {
-        "id": "35",
-        "label": "Sonnet 35",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXV.html"
-      },
-      {
-        "id": "36",
-        "label": "Sonnet 36",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXVI.html"
-      },
-      {
-        "id": "37",
-        "label": "Sonnet 37",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXVII.html"
-      },
-      {
-        "id": "38",
-        "label": "Sonnet 38",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXVIII.html"
-      },
-      {
-        "id": "39",
-        "label": "Sonnet 39",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XXXIX.html"
-      },
-      {
-        "id": "40",
-        "label": "Sonnet 40",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XL.html"
-      },
-      {
-        "id": "41",
-        "label": "Sonnet 41",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLI.html"
-      },
-      {
-        "id": "42",
-        "label": "Sonnet 42",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLII.html"
-      },
-      {
-        "id": "43",
-        "label": "Sonnet 43",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLIII.html"
-      },
-      {
-        "id": "44",
-        "label": "Sonnet 44",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLIV.html"
-      },
-      {
-        "id": "45",
-        "label": "Sonnet 45",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLV.html"
-      },
-      {
-        "id": "46",
-        "label": "Sonnet 46",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLVI.html"
-      },
-      {
-        "id": "47",
-        "label": "Sonnet 47",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLVII.html"
-      },
-      {
-        "id": "48",
-        "label": "Sonnet 48",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLVIII.html"
-      },
-      {
-        "id": "49",
-        "label": "Sonnet 49",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XLIX.html"
-      },
-      {
-        "id": "50",
-        "label": "Sonnet 50",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.L.html"
-      },
-      {
-        "id": "51",
-        "label": "Sonnet 51",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LI.html"
-      },
-      {
-        "id": "52",
-        "label": "Sonnet 52",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LII.html"
-      },
-      {
-        "id": "53",
-        "label": "Sonnet 53",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LIII.html"
-      },
-      {
-        "id": "54",
-        "label": "Sonnet 54",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LIV.html"
-      },
-      {
-        "id": "55",
-        "label": "Sonnet 55",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LV.html"
-      },
-      {
-        "id": "56",
-        "label": "Sonnet 56",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LVI.html"
-      },
-      {
-        "id": "57",
-        "label": "Sonnet 57",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LVII.html"
-      },
-      {
-        "id": "58",
-        "label": "Sonnet 58",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LVIII.html"
-      },
-      {
-        "id": "59",
-        "label": "Sonnet 59",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LIX.html"
-      },
-      {
-        "id": "60",
-        "label": "Sonnet 60",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LX.html"
-      },
-      {
-        "id": "61",
-        "label": "Sonnet 61",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXI.html"
-      },
-      {
-        "id": "62",
-        "label": "Sonnet 62",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXII.html"
-      },
-      {
-        "id": "63",
-        "label": "Sonnet 63",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXIII.html"
-      },
-      {
-        "id": "64",
-        "label": "Sonnet 64",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXIV.html"
-      },
-      {
-        "id": "65",
-        "label": "Sonnet 65",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXV.html"
-      },
-      {
-        "id": "66",
-        "label": "Sonnet 66",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXVI.html"
-      },
-      {
-        "id": "67",
-        "label": "Sonnet 67",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXVII.html"
-      },
-      {
-        "id": "68",
-        "label": "Sonnet 68",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXVIII.html"
-      },
-      {
-        "id": "69",
-        "label": "Sonnet 69",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXIX.html"
-      },
-      {
-        "id": "70",
-        "label": "Sonnet 70",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXX.html"
-      },
-      {
-        "id": "71",
-        "label": "Sonnet 71",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXI.html"
-      },
-      {
-        "id": "72",
-        "label": "Sonnet 72",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXII.html"
-      },
-      {
-        "id": "73",
-        "label": "Sonnet 73",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXIII.html"
-      },
-      {
-        "id": "74",
-        "label": "Sonnet 74",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXIV.html"
-      },
-      {
-        "id": "75",
-        "label": "Sonnet 75",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXV.html"
-      },
-      {
-        "id": "76",
-        "label": "Sonnet 76",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXVI.html"
-      },
-      {
-        "id": "77",
-        "label": "Sonnet 77",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXVII.html"
-      },
-      {
-        "id": "78",
-        "label": "Sonnet 78",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXVIII.html"
-      },
-      {
-        "id": "79",
-        "label": "Sonnet 79",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXIX.html"
-      },
-      {
-        "id": "80",
-        "label": "Sonnet 80",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXX.html"
-      },
-      {
-        "id": "81",
-        "label": "Sonnet 81",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXI.html"
-      },
-      {
-        "id": "82",
-        "label": "Sonnet 82",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXII.html"
-      },
-      {
-        "id": "83",
-        "label": "Sonnet 83",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXIII.html"
-      },
-      {
-        "id": "84",
-        "label": "Sonnet 84",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXIV.html"
-      },
-      {
-        "id": "85",
-        "label": "Sonnet 85",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXV.html"
-      },
-      {
-        "id": "86",
-        "label": "Sonnet 86",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXVI.html"
-      },
-      {
-        "id": "87",
-        "label": "Sonnet 87",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXVII.html"
-      },
-      {
-        "id": "88",
-        "label": "Sonnet 88",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXVIII.html"
-      },
-      {
-        "id": "89",
-        "label": "Sonnet 89",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.LXXXIX.html"
-      },
-      {
-        "id": "90",
-        "label": "Sonnet 90",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XC.html"
-      },
-      {
-        "id": "91",
-        "label": "Sonnet 91",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCI.html"
-      },
-      {
-        "id": "92",
-        "label": "Sonnet 92",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCII.html"
-      },
-      {
-        "id": "93",
-        "label": "Sonnet 93",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCIII.html"
-      },
-      {
-        "id": "94",
-        "label": "Sonnet 94",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCIV.html"
-      },
-      {
-        "id": "95",
-        "label": "Sonnet 95",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCV.html"
-      },
-      {
-        "id": "96",
-        "label": "Sonnet 96",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCVI.html"
-      },
-      {
-        "id": "97",
-        "label": "Sonnet 97",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCVII.html"
-      },
-      {
-        "id": "98",
-        "label": "Sonnet 98",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCVIII.html"
-      },
-      {
-        "id": "99",
-        "label": "Sonnet 99",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.XCIX.html"
-      },
-      {
-        "id": "100",
-        "label": "Sonnet 100",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.C.html"
-      },
-      {
-        "id": "101",
-        "label": "Sonnet 101",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CI.html"
-      },
-      {
-        "id": "102",
-        "label": "Sonnet 102",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CII.html"
-      },
-      {
-        "id": "103",
-        "label": "Sonnet 103",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CIII.html"
-      },
-      {
-        "id": "104",
-        "label": "Sonnet 104",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CIV.html"
-      },
-      {
-        "id": "105",
-        "label": "Sonnet 105",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CV.html"
-      },
-      {
-        "id": "106",
-        "label": "Sonnet 106",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CVI.html"
-      },
-      {
-        "id": "107",
-        "label": "Sonnet 107",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CVII.html"
-      },
-      {
-        "id": "108",
-        "label": "Sonnet 108",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CVIII.html"
-      },
-      {
-        "id": "109",
-        "label": "Sonnet 109",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CIX.html"
-      },
-      {
-        "id": "110",
-        "label": "Sonnet 110",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CX.html"
-      },
-      {
-        "id": "111",
-        "label": "Sonnet 111",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXI.html"
-      },
-      {
-        "id": "112",
-        "label": "Sonnet 112",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXII.html"
-      },
-      {
-        "id": "113",
-        "label": "Sonnet 113",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXIII.html"
-      },
-      {
-        "id": "114",
-        "label": "Sonnet 114",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXIV.html"
-      },
-      {
-        "id": "115",
-        "label": "Sonnet 115",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXV.html"
-      },
-      {
-        "id": "116",
-        "label": "Sonnet 116",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXVI.html"
-      },
-      {
-        "id": "117",
-        "label": "Sonnet 117",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXVII.html"
-      },
-      {
-        "id": "118",
-        "label": "Sonnet 118",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXVIII.html"
-      },
-      {
-        "id": "119",
-        "label": "Sonnet 119",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXIX.html"
-      },
-      {
-        "id": "120",
-        "label": "Sonnet 120",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXX.html"
-      },
-      {
-        "id": "121",
-        "label": "Sonnet 121",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXI.html"
-      },
-      {
-        "id": "122",
-        "label": "Sonnet 122",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXII.html"
-      },
-      {
-        "id": "123",
-        "label": "Sonnet 123",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXIII.html"
-      },
-      {
-        "id": "124",
-        "label": "Sonnet 124",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXIV.html"
-      },
-      {
-        "id": "125",
-        "label": "Sonnet 125",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXV.html"
-      },
-      {
-        "id": "126",
-        "label": "Sonnet 126",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXVI.html"
-      },
-      {
-        "id": "127",
-        "label": "Sonnet 127",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXVII.html"
-      },
-      {
-        "id": "128",
-        "label": "Sonnet 128",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXVIII.html"
-      },
-      {
-        "id": "129",
-        "label": "Sonnet 129",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXIX.html"
-      },
-      {
-        "id": "130",
-        "label": "Sonnet 130",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXX.html"
-      },
-      {
-        "id": "131",
-        "label": "Sonnet 131",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXI.html"
-      },
-      {
-        "id": "132",
-        "label": "Sonnet 132",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXII.html"
-      },
-      {
-        "id": "133",
-        "label": "Sonnet 133",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXIII.html"
-      },
-      {
-        "id": "134",
-        "label": "Sonnet 134",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXIV.html"
-      },
-      {
-        "id": "135",
-        "label": "Sonnet 135",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXV.html"
-      },
-      {
-        "id": "136",
-        "label": "Sonnet 136",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXVI.html"
-      },
-      {
-        "id": "137",
-        "label": "Sonnet 137",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXVII.html"
-      },
-      {
-        "id": "138",
-        "label": "Sonnet 138",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXVIII.html"
-      },
-      {
-        "id": "139",
-        "label": "Sonnet 139",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXXXIX.html"
-      },
-      {
-        "id": "140",
-        "label": "Sonnet 140",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXL.html"
-      },
-      {
-        "id": "141",
-        "label": "Sonnet 141",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLI.html"
-      },
-      {
-        "id": "142",
-        "label": "Sonnet 142",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLII.html"
-      },
-      {
-        "id": "143",
-        "label": "Sonnet 143",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLIII.html"
-      },
-      {
-        "id": "144",
-        "label": "Sonnet 144",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLIV.html"
-      },
-      {
-        "id": "145",
-        "label": "Sonnet 145",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLV.html"
-      },
-      {
-        "id": "146",
-        "label": "Sonnet 146",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLVI.html"
-      },
-      {
-        "id": "147",
-        "label": "Sonnet 147",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLVII.html"
-      },
-      {
-        "id": "148",
-        "label": "Sonnet 148",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLVIII.html"
-      },
-      {
-        "id": "149",
-        "label": "Sonnet 149",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CXLIX.html"
-      },
-      {
-        "id": "150",
-        "label": "Sonnet 150",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CL.html"
-      },
-      {
-        "id": "151",
-        "label": "Sonnet 151",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CLI.html"
-      },
-      {
-        "id": "152",
-        "label": "Sonnet 152",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CLII.html"
-      },
-      {
-        "id": "153",
-        "label": "Sonnet 153",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CLIII.html"
-      },
-      {
-        "id": "154",
-        "label": "Sonnet 154",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/sonnet.CLIV.html"
-      }
-    ]
-  },
-  {
-    "id": "lovers_complaint",
-    "title": "A Lover's Complaint",
-    "kind": "poetry",
-    "source": "MIT Shakespeare (Complete Moby Shakespeare)",
-    "sourceUrl": "https://shakespeare.mit.edu/Poetry/LoversComplaint.html",
-    "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
-    "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 1,
-    "blockCount": 47,
-    "wordCount": 2557,
-    "file": "data/english-collection/lovers_complaint.js",
-    "sections": [
-      {
-        "id": "poem",
-        "label": "A Lover's Complaint",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/LoversComplaint.html"
-      }
-    ]
-  },
-  {
-    "id": "rape_of_lucrece",
-    "title": "The Rape of Lucrece",
-    "kind": "poetry",
-    "source": "MIT Shakespeare (Complete Moby Shakespeare)",
-    "sourceUrl": "https://shakespeare.mit.edu/Poetry/RapeOfLucrece.html",
-    "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
-    "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 3,
-    "blockCount": 269,
-    "wordCount": 15002,
-    "file": "data/english-collection/rape_of_lucrece.js",
-    "sections": [
-      {
-        "id": "dedication",
-        "label": "Dedication and epigraph",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/RapeOfLucrece.html"
-      },
-      {
-        "id": "section-2",
-        "label": "The Argument",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/RapeOfLucrece.html"
-      },
-      {
-        "id": "poem",
-        "label": "The Rape of Lucrece",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/RapeOfLucrece.html"
-      }
-    ]
-  },
-  {
-    "id": "venus_and_adonis",
-    "title": "Venus and Adonis",
-    "kind": "poetry",
-    "source": "MIT Shakespeare (Complete Moby Shakespeare)",
-    "sourceUrl": "https://shakespeare.mit.edu/Poetry/VenusAndAdonis.html",
-    "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
-    "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 2,
-    "blockCount": 202,
-    "wordCount": 9864,
-    "file": "data/english-collection/venus_and_adonis.js",
-    "sections": [
-      {
-        "id": "dedication",
-        "label": "Dedication and epigraph",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/VenusAndAdonis.html"
-      },
-      {
-        "id": "poem",
-        "label": "Venus and Adonis",
-        "sourceUrl": "https://shakespeare.mit.edu/Poetry/VenusAndAdonis.html"
-      }
-    ]
-  },
-  {
-    "id": "passionate_pilgrim",
-    "title": "The Passionate Pilgrim",
-    "kind": "poetry",
-    "source": "MIT Shakespeare (Complete Moby Shakespeare)",
-    "sourceUrl": "https://shakespeare.mit.edu/Poetry/various",
-    "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
-    "attributionNote": "The Passionate Pilgrim and Sundry Notes include poems by other writers; preserved as collected in this historical source.",
-    "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 15,
-    "blockCount": 22,
-    "wordCount": 1779,
-    "file": "data/english-collection/passionate_pilgrim.js",
-    "sections": [
-      {
-        "id": "1",
-        "label": "Poem 1"
-      },
-      {
-        "id": "2",
-        "label": "Poem 2"
-      },
-      {
-        "id": "3",
-        "label": "Poem 3"
-      },
-      {
-        "id": "4",
-        "label": "Poem 4"
-      },
-      {
-        "id": "5",
-        "label": "Poem 5"
-      },
-      {
-        "id": "6",
-        "label": "Poem 6"
-      },
-      {
-        "id": "7",
-        "label": "Poem 7"
-      },
-      {
-        "id": "8",
-        "label": "Poem 8"
-      },
-      {
-        "id": "9",
-        "label": "Poem 9"
-      },
-      {
-        "id": "10",
-        "label": "Poem 10"
-      },
-      {
-        "id": "11",
-        "label": "Poem 11"
-      },
-      {
-        "id": "12",
-        "label": "Poem 12"
-      },
-      {
-        "id": "13",
-        "label": "Poem 13"
-      },
-      {
-        "id": "14",
-        "label": "Poem 14"
-      },
-      {
-        "id": "15",
-        "label": "Poem 15"
-      }
-    ]
-  },
-  {
-    "id": "sundry_notes_of_music",
-    "title": "Sonnets to Sundry Notes of Music",
-    "kind": "poetry",
-    "source": "MIT Shakespeare (Complete Moby Shakespeare)",
-    "sourceUrl": "https://shakespeare.mit.edu/Poetry/various",
-    "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
-    "attributionNote": "The Passionate Pilgrim and Sundry Notes include poems by other writers; preserved as collected in this historical source.",
-    "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 6,
-    "blockCount": 22,
-    "wordCount": 1347,
-    "file": "data/english-collection/sundry_notes_of_music.js",
-    "sections": [
-      {
-        "id": "16",
-        "label": "Poem 16"
-      },
-      {
-        "id": "17",
-        "label": "Poem 17"
-      },
-      {
-        "id": "18",
-        "label": "Poem 18"
-      },
-      {
-        "id": "19",
-        "label": "Poem 19"
-      },
-      {
-        "id": "20",
-        "label": "Poem 20"
-      },
-      {
-        "id": "21",
-        "label": "Poem 21"
-      }
-    ]
-  },
-  {
-    "id": "phoenix_and_turtle",
-    "title": "The Phoenix and the Turtle",
-    "kind": "poetry",
-    "source": "MIT Shakespeare (Complete Moby Shakespeare)",
-    "sourceUrl": "https://shakespeare.mit.edu/Poetry/various",
-    "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
-    "attributionNote": "",
-    "sourceLabel": "MIT Shakespeare",
-    "sectionCount": 1,
-    "blockCount": 19,
-    "wordCount": 353,
-    "file": "data/english-collection/phoenix_and_turtle.js",
-    "sections": [
-      {
-        "id": "poem",
-        "label": "The Phoenix and the Turtle"
-      }
-    ]
-  },
-  {
     "id": "two_noble_kinsmen",
     "title": "The Two Noble Kinsmen",
     "kind": "play",
@@ -7090,6 +6140,8 @@
     "sourceSnapshot": "sources/gutenberg-1770.html",
     "licenseUrl": "https://www.gutenberg.org/policy/license.html",
     "attributionNote": "Attributed in part to William Shakespeare; authorship is disputed.",
+    "sourceExtractionRevision": "source-markup-corrections-v2",
+    "sourceMarkupCorrectionCount": 1,
     "sourceLabel": "Project Gutenberg",
     "sectionCount": 20,
     "blockCount": 617,

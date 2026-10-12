@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Rebuild the English reader corpus, using pinned public-domain source snapshots.
+"""Rebuild the 39-play English reader using pinned public-domain source snapshots.
 
 Python 3 standard library only. Pass --mit-source /path/to/TheMITTech/shakespeare
 for initial acquisition; subsequent builds use the committed source archive.
 The two Gutenberg HTML snapshots retain their complete notices and licences.
 This importer does not translate, paraphrase, or infer bilingual alignment.
+The pinned MIT provenance archive is intentionally unchanged, including its poetry
+pages; only the 39 plays are extracted into published reader payloads.
 """
 from __future__ import annotations
 
@@ -23,6 +25,19 @@ RETRIEVED = '2026-10-12'
 PINNED_MIT_ARCHIVE_SHA256 = '13d60111bdf4ebe68a6aa0d576937de15ac5dc31303487e12961702769e159b6'
 PINNED_GUTENBERG_SHA256 = {'gutenberg-1506.html': '6f6a612fcb25a36c89d12c7200be3876701478f6d669ab9c7cf4c2f6a056c91a', 'gutenberg-1770.html': '401c2bc8d6edf9f4e7d97689c1611b3ef314c7530796f3850c748018fbd8245e'}
 ROOT = Path(__file__).resolve().parents[1]
+ROLE_CUE_FILE = ROOT / 'data/english-collection/sources/mit-embedded-role-cues.json'
+ROLE_CUE_MANIFEST = json.loads(ROLE_CUE_FILE.read_text(encoding='utf-8'))
+assert ROLE_CUE_MANIFEST['sourceRevision'] == COMMIT
+assert ROLE_CUE_MANIFEST['sourceArchiveSha256'] == PINNED_MIT_ARCHIVE_SHA256
+ROLE_CUES = {(c['workId'], c['sourceAnchor']): c for c in ROLE_CUE_MANIFEST['occurrences']}
+assert len(ROLE_CUES) == len(ROLE_CUE_MANIFEST['occurrences']) == 108
+MARKUP_CORRECTION_FILE = ROOT / 'data/english-collection/sources/specific-markup-corrections.json'
+MARKUP_CORRECTION_MANIFEST = json.loads(MARKUP_CORRECTION_FILE.read_text(encoding='utf-8'))
+MARKUP_CORRECTIONS = MARKUP_CORRECTION_MANIFEST['occurrences']
+SPLIT_ROLE_FILE = ROOT / 'data/english-collection/sources/mit-split-role-prefixes.json'
+SPLIT_ROLE_MANIFEST = json.loads(SPLIT_ROLE_FILE.read_text(encoding='utf-8'))
+SPLIT_ROLES = {(c['archiveEntry'].split('/')[0], c['sourceAnchor']): c for c in SPLIT_ROLE_MANIFEST['occurrences']}
+assert len(SPLIT_ROLES) == 320
 
 
 def clean(text):
@@ -62,6 +77,8 @@ class MITEvents(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.events, self.unclaimed = [], []
+        self.raw_line_text = {}
+        self.speech_anchor = None
         self.skip, self.capture = None, None
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -72,6 +89,10 @@ class MITEvents(HTMLParser):
             if tag == 'br': self.capture['parts'].append('\n')
             return
         anchor = attrs.get('name', '')
+        if tag == 'a' and anchor.startswith('speech'):
+            self.speech_anchor = anchor
+        if tag == 'b':
+            anchor = self.speech_anchor or ''
         if tag in ('h3', 'b', 'i') or (tag == 'a' and re.fullmatch(r'[\d.]+', anchor)):
             self.capture = {'tag': tag, 'anchor': anchor, 'parts': []}
     def handle_endtag(self, tag):
@@ -80,7 +101,11 @@ class MITEvents(HTMLParser):
             return
         if self.capture and tag == self.capture['tag']:
             c = self.capture
-            self.events.append((c['tag'], clean(''.join(c['parts'])), c['anchor']))
+            raw = ''.join(c['parts'])
+            if c['tag'] == 'a':
+                assert c['anchor'] not in self.raw_line_text, ('Duplicate source line anchor', c['anchor'])
+                self.raw_line_text[c['anchor']] = raw
+            self.events.append((c['tag'], clean(raw), c['anchor']))
             self.capture = None
     def handle_data(self, data):
         if self.skip: return
@@ -117,8 +142,7 @@ class Elements(HTMLParser):
     def handle_data(self, data):
         if not self.skip and self.capture: self.capture['parts'].append(data)
     def close(self):
-        # Sonnet CLIV ends after its final BR without closing HTML tags.
-        # HTML permits omitted end tags; preserve the final complete stanza.
+        # HTML permits omitted end tags; preserve the final complete block.
         if self.capture:
             c = self.capture
             self.events.append((c['tag'], lines(''.join(c['parts'])), c['attrs'], c['anchor']))
@@ -134,6 +158,13 @@ def mit_work(work_id, title, content):
     pending = None
     seen_acts = set()
     expected_lines, imported_lines = [], []
+    applied_cues = set()
+    pending_prefix = None
+    applied_markup = []
+    pending_split = None
+    active_split = None
+    pending_heading = None
+    applied_split = set()
 
     def flush():
         nonlocal pending
@@ -162,7 +193,27 @@ def mit_work(work_id, title, content):
             else:
                 new_section((f'Act {act} · ' if act else '') + text, f'{act}-{len(sections) + 1}-{text.split()[0].lower()}')
         elif tag == 'b':
-            flush(); speaker = text
+            assert pending_prefix is None and pending_heading is None, (work_id, 'Unconsumed markup correction')
+            flush()
+            correction = next((c for c in MARKUP_CORRECTIONS if c['workId'] == work_id and c['kind'] in ('speaker_label_is_spoken_prefix', 'speaker_label_is_scene_heading') and c['sectionId'] == (section or {}).get('id') and c['speechAnchor'] == anchor), None)
+            if pending_split:
+                assert anchor == pending_split['followingSpeechAnchor'] and text == pending_split['followingBoldLabel'], (work_id, anchor, 'Reviewed split role context changed')
+                assert active_split is None
+                speaker = pending_split['joinedLabel']
+                active_split = pending_split
+                pending_split = None
+            elif correction:
+                assert text == correction['rawLabelText'], (work_id, anchor, 'Reviewed source context changed')
+                if correction['kind'] == 'speaker_label_is_spoken_prefix':
+                    assert speaker == correction['speaker']
+                    pending_prefix = correction
+                else:
+                    assert act == correction['correctedAct']
+                    new_section(f"Act {act} · {text}. {correction['rawNumberedLineText']}", correction['correctedSectionId'], correction['correctedScene'])
+                    pending_heading = correction
+                applied_markup.append(correction)
+            else:
+                speaker = text
         elif tag == 'i':
             flush()
             assert section is not None, (work_id, 'Stage direction before section')
@@ -170,40 +221,71 @@ def mit_work(work_id, title, content):
         elif tag == 'a':
             expected_lines.append(text)
             assert section is not None, (work_id, 'Line before section')
+            numbered_text = text
+            split = SPLIT_ROLES.get((work_id, anchor))
+            if split:
+                assert pending_split is None and active_split is None
+                assert p.raw_line_text[anchor] == split['rawPrefix'] and split['originalHtml'] in content, (work_id, anchor, 'Reviewed split role source changed')
+                flush()
+                pending_split = split
+                applied_split.add(anchor)
+                imported_lines.append(text)
+                continue
+            heading_correction = pending_heading
+            if heading_correction:
+                assert anchor == heading_correction['sourceLine'] and text == heading_correction['rawNumberedLineText']
+                pending_heading = None
+            prefix_correction = pending_prefix
+            if prefix_correction:
+                assert anchor == prefix_correction['sourceLine'] and p.raw_line_text[anchor] == prefix_correction['rawNumberedLineText'], (work_id, anchor, 'Reviewed numbered text changed')
+                text = prefix_correction['rawLabelText'] + ' ' + text
+                pending_prefix = None
+            cue = ROLE_CUES.get((work_id, anchor))
+            if cue:
+                raw = p.raw_line_text[anchor]
+                assert raw == cue['rawLineText'], (work_id, anchor, 'Reviewed role cue source changed')
+                prefix, delimiter, body = raw.partition('\t')
+                assert delimiter and prefix == cue['rawRolePrefix'] and clean(body), (work_id, anchor, 'Invalid role cue')
+                flush()
+                speaker = cue['speaker']
+                text = clean(body)
+                applied_cues.add(anchor)
             if pending is None:
-                pending = {'kind': 'speech' if speaker else 'text', 'text': text, 'sourceLine': anchor}
+                pending = {'kind': 'heading' if heading_correction else 'speech' if speaker else 'text', 'text': text, 'sourceLine': anchor}
                 if speaker: pending['speaker'] = speaker
+                if prefix_correction or heading_correction:
+                    pending['sourceMarkupCorrection'] = prefix_correction or heading_correction
+                if active_split:
+                    pending['sourceRolePrefix'] = active_split
+                    active_split = None
+                if cue:
+                    pending['sourceRoleCue'] = {
+                        'method': ROLE_CUE_MANIFEST['extractionRevision'], 'sourceAnchor': anchor,
+                        'rawRolePrefix': cue['rawRolePrefix'], 'rawLineText': cue['rawLineText']}
             else: pending['text'] += '\n' + text
-            imported_lines.append(text)
+            # The displayed speech omits only the reviewed role prefix. Include
+            # that prefix in exact source accounting; all numbered lines remain.
+            imported_lines.append(clean(cue['rawRolePrefix'] + '\t' + text) if cue else numbered_text)
     flush()
     sections = [s for s in sections if s['blocks']]
     assert seen_acts == {1, 2, 3, 4, 5}, (work_id, seen_acts)
     assert expected_lines == imported_lines
     assert len(expected_lines) > 1200, (work_id, len(expected_lines))
     # Anchors and stage directions preserve MIT's original ordering, including
-    # choruses/headings embedded in speech text. No editorial scene repair.
-    return {'id': work_id, 'title': title, 'kind': 'play', 'source': 'MIT Shakespeare (Complete Moby Shakespeare)', 'sourceUrl': MIT_URL + work_id + '/full.html', 'sourceRevision': COMMIT, 'sections': sections, 'sourceLineCount': len(expected_lines)}
-
-
-def mit_poem(work_id, title, path, content):
-    p = Elements(); p.feed(content); p.close()
-    sections, current = [], None
-    opening = {'lovers_complaint': 'FROM off a hill', 'rape_of_lucrece': 'FROM the besieged', 'venus_and_adonis': 'EVEN as the sun'}[work_id]
-    def begin(label, sid):
-        nonlocal current
-        current = {'id': sid, 'label': label, 'sourceUrl': MIT_URL + path, 'blocks': []}
-        sections.append(current)
-    for tag, text, attrs, anchor in p.events:
-        if not text: continue
-        if tag.startswith('h'):
-            if clean(text).lower() == title.lower(): continue
-            begin(text, f'section-{len(sections) + 1}')
-        else:
-            if text.startswith(opening): begin(title, 'poem')
-            elif current is None: begin('Dedication and epigraph', 'dedication')
-            current['blocks'].append({'kind': 'verse' if tag == 'blockquote' else 'text', 'text': text})
-    assert any(s['id'] == 'poem' for s in sections), work_id
-    return {'id': work_id, 'title': title, 'kind': 'poetry', 'source': 'MIT Shakespeare (Complete Moby Shakespeare)', 'sourceUrl': MIT_URL + path, 'sourceRevision': COMMIT, 'sections': [s for s in sections if s['blocks']]}
+    # choruses/headings embedded in speech text. Only reviewed exact allowlists
+    # repair source label/heading defects; pinned source bytes stay unchanged.
+    assert applied_cues == {anchor for wid, anchor in ROLE_CUES if wid == work_id}, (work_id, 'Missing reviewed role cues')
+    assert pending_prefix is None and pending_heading is None and pending_split is None and active_split is None
+    assert applied_split == {anchor for wid, anchor in SPLIT_ROLES if wid == work_id}
+    assert len(applied_markup) == sum(c['workId'] == work_id and c['kind'] in ('speaker_label_is_spoken_prefix', 'speaker_label_is_scene_heading') for c in MARKUP_CORRECTIONS)
+    result = {'id': work_id, 'title': title, 'kind': 'play', 'source': 'MIT Shakespeare (Complete Moby Shakespeare)', 'sourceUrl': MIT_URL + work_id + '/full.html', 'sourceRevision': COMMIT, 'sections': sections, 'sourceLineCount': len(expected_lines)}
+    if applied_cues:
+        result.update(sourceExtractionRevision=ROLE_CUE_MANIFEST['extractionRevision'], sourceRoleCueCount=len(applied_cues))
+    if applied_markup:
+        result.update(sourceExtractionRevision=MARKUP_CORRECTION_MANIFEST['extractionRevision'], sourceMarkupCorrectionCount=len(applied_markup))
+    if applied_split:
+        result.update(sourceSplitRoleExtractionRevision=SPLIT_ROLE_MANIFEST['extractionRevision'], sourceSplitRoleCount=len(applied_split))
+    return result
 
 
 def gutenberg_work(work_id, title, number, content):
@@ -213,6 +295,7 @@ def gutenberg_work(work_id, title, number, content):
     assert start >= 0
     p = Elements(); p.feed(content[start:]); p.close()
     sections, current, act, carry_speaker = [], None, 0, None
+    applied_markup = []
     def begin(label, sid, scene=None):
         nonlocal current, carry_speaker
         current = {'id': sid, 'label': label, 'act': act, 'blocks': []}
@@ -250,12 +333,24 @@ def gutenberg_work(work_id, title, number, content):
                     speaker, kind = carry_speaker, 'speech'
                 elif tag.startswith('h'): kind = 'heading'
             block = {'kind': kind, 'text': text}
+            correction = next((c for c in MARKUP_CORRECTIONS if c['workId'] == work_id and c['kind'] == 'missing_speaker_corroborated_by_edition' and c['sourceAnchor'] == anchor), None)
+            if correction:
+                assert current['id'] == correction['sectionId'] and text == correction['sourceText'] and speaker == correction['previousCarriedSpeaker'], (work_id, anchor, 'Reviewed source context changed')
+                assert correction['rawSourceParagraph'] in content
+                speaker = correction['speaker']
+                carry_speaker = speaker
+                block['sourceMarkupCorrection'] = correction
+                applied_markup.append(correction)
             if speaker: block['speaker'] = speaker
             if anchor: block['sourceAnchor'] = anchor
             current['blocks'].append(block)
         if current and anchor and 'sourceUrl' not in current:
             current['sourceUrl'] = f'https://www.gutenberg.org/ebooks/{number}'
-    return {'id': work_id, 'title': title, 'kind': 'play', 'source': f'Project Gutenberg #{number}', 'sourceUrl': f'https://www.gutenberg.org/ebooks/{number}', 'sourceSnapshot': f'sources/gutenberg-{number}.html', 'licenseUrl': 'https://www.gutenberg.org/policy/license.html', 'attributionNote': 'William Shakespeare and John Fletcher' if number == 1506 else 'Attributed in part to William Shakespeare; authorship is disputed.', 'sections': [s for s in sections if s['blocks']]}
+    assert len(applied_markup) == sum(c['workId'] == work_id and c['kind'] == 'missing_speaker_corroborated_by_edition' for c in MARKUP_CORRECTIONS)
+    result = {'id': work_id, 'title': title, 'kind': 'play', 'source': f'Project Gutenberg #{number}', 'sourceUrl': f'https://www.gutenberg.org/ebooks/{number}', 'sourceSnapshot': f'sources/gutenberg-{number}.html', 'licenseUrl': 'https://www.gutenberg.org/policy/license.html', 'attributionNote': 'William Shakespeare and John Fletcher' if number == 1506 else 'Attributed in part to William Shakespeare; authorship is disputed.', 'sections': [s for s in sections if s['blocks']]}
+    if applied_markup:
+        result.update(sourceExtractionRevision=MARKUP_CORRECTION_MANIFEST['extractionRevision'], sourceMarkupCorrectionCount=len(applied_markup))
+    return result
 
 
 def main():
@@ -264,6 +359,9 @@ def main():
     ap.add_argument('--output', type=Path, default=ROOT / 'data/english-collection')
     args = ap.parse_args()
     out = args.output; (out / 'sources').mkdir(parents=True, exist_ok=True)
+    (out / 'sources' / ROLE_CUE_FILE.name).write_bytes(ROLE_CUE_FILE.read_bytes())
+    (out / 'sources' / MARKUP_CORRECTION_FILE.name).write_bytes(MARKUP_CORRECTION_FILE.read_bytes())
+    (out / 'sources' / SPLIT_ROLE_FILE.name).write_bytes(SPLIT_ROLE_FILE.read_bytes())
     archive = out / 'sources' / f'mit-shakespeare-{COMMIT}.zip'
     if args.mit_source:
         actual_commit = subprocess.check_output(['git', '-C', str(args.mit_source), 'rev-parse', 'HEAD'], text=True).strip()
@@ -287,35 +385,13 @@ def main():
     titles = [(m[1], clean(plaintext(m[2]))) for m in re.finditer(r'<a\s+href="([\w]+?)/index.html"[^>]*>(.*?)</a>', read('index.html'), re.I | re.S)]
     assert len(titles) == 37
     works = [mit_work(work_id, title, read(f'{work_id}/full.html')) for work_id, title in titles]
-    sonnets = []
-    paths = sorted((name for name in source_files if re.fullmatch(r'Poetry/sonnet\.[IVXLC]+\.html', name)), key=lambda x: roman(x.split('.')[1]))
-    assert len(paths) == 154
-    for path in paths:
-        n = roman(path.split('.')[1]); p = Elements(); p.feed(read(path)); p.close()
-        stanzas = [{'kind': 'verse', 'text': text} for tag, text, _, _ in p.events if tag == 'blockquote']
-        assert stanzas, path
-        sonnets.append({'id': str(n), 'label': f'Sonnet {n}', 'sourceUrl': MIT_URL + path, 'blocks': stanzas})
-    assert [int(s['id']) for s in sonnets] == list(range(1, 155))
-    works.append({'id': 'sonnets', 'title': 'The Sonnets', 'kind': 'poetry', 'source': 'MIT Shakespeare (Complete Moby Shakespeare)', 'sourceUrl': MIT_URL + 'Poetry/sonnets.html', 'sourceRevision': COMMIT, 'sections': sonnets})
-    for work_id, title, path in [('lovers_complaint', "A Lover's Complaint", 'Poetry/LoversComplaint.html'), ('rape_of_lucrece', 'The Rape of Lucrece', 'Poetry/RapeOfLucrece.html'), ('venus_and_adonis', 'Venus and Adonis', 'Poetry/VenusAndAdonis.html')]:
-        works.append(mit_poem(work_id, title, path, read(path)))
-    various = read('Poetry/various')
-    split = re.split(r'^\s*(THE PASSIONATE PILGRIM|SONNETS TO SUNDRY NOTES OF MUSIC|THE PHOENIX AND THE TURTLE)\s*$', various, flags=re.M)
-    assert len(split) == 7
-    for work_id, title, body in zip(['passionate_pilgrim', 'sundry_notes_of_music', 'phoenix_and_turtle'], ['The Passionate Pilgrim', 'Sonnets to Sundry Notes of Music', 'The Phoenix and the Turtle'], split[2::2]):
-        sections, current = [], None
-        for chunk in re.split(r'\n\s*\n', body.strip()):
-            text = lines(chunk)
-            if not text: continue
-            if re.fullmatch(r'[IVXLC]+\.', text):
-                n = roman(text.rstrip('.')); current = {'id': str(n), 'label': f'Poem {n}', 'blocks': []}; sections.append(current)
-            else:
-                if current is None:
-                    current = {'id': 'poem', 'label': title, 'blocks': []}; sections.append(current)
-                current['blocks'].append({'kind': 'heading' if text == 'THRENOS.' else 'verse', 'text': text})
-        works.append({'id': work_id, 'title': title, 'kind': 'poetry', 'source': 'MIT Shakespeare (Complete Moby Shakespeare)', 'sourceUrl': MIT_URL + 'Poetry/various', 'sourceRevision': COMMIT, 'attributionNote': 'The Passionate Pilgrim and Sundry Notes include poems by other writers; preserved as collected in this historical source.' if work_id != 'phoenix_and_turtle' else '', 'sections': sections})
     for work_id, title, number in [('two_noble_kinsmen', 'The Two Noble Kinsmen', 1506), ('edwardiii', 'King Edward III', 1770)]:
         works.append(gutenberg_work(work_id, title, number, (out / 'sources' / f'gutenberg-{number}.html').read_text(encoding='utf-8')))
+    assert len(works) == 39 and all(w['kind'] == 'play' for w in works)
+    # Old published poetry payloads must not survive an in-place plays-only build.
+    for work_id in ('sonnets', 'lovers_complaint', 'rape_of_lucrece', 'venus_and_adonis',
+                    'passionate_pilgrim', 'sundry_notes_of_music', 'phoenix_and_turtle'):
+        (out / f'{work_id}.js').unlink(missing_ok=True)
     catalog = []
     for work in works:
         work['sourceLabel'] = 'Project Gutenberg' if work['source'].startswith('Project Gutenberg') else 'MIT Shakespeare'
@@ -338,7 +414,7 @@ def main():
         catalog.append(summary)
     (out / 'catalog.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (out / 'catalog.js').write_text('window.SHAKESPEARE_ENGLISH_CATALOG = ' + json.dumps(catalog, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
-    manifest = {'retrieved': RETRIEVED, 'mitRepository': 'https://github.com/TheMITTech/shakespeare', 'mitCommit': COMMIT, 'mitSourceArchive': archive.name, 'mitArchiveSha256': hashlib.sha256(archive.read_bytes()).hexdigest(), 'mitFiles': {p: hashlib.sha256(d).hexdigest() for p, d in sorted(source_files.items())}, 'gutenbergSources': [{'file': f'gutenberg-{n}.html', 'url': u, 'sha256': hashlib.sha256((out / 'sources' / f'gutenberg-{n}.html').read_bytes()).hexdigest()} for n, u in [(1506, 'https://www.gutenberg.org/files/1506/1506-h/1506-h.htm'), (1770, 'https://www.gutenberg.org/cache/epub/1770/pg1770.html')]], 'workCount': len(works), 'playCount': sum(w['kind'] == 'play' for w in works), 'poetryCollectionCount': sum(w['kind'] == 'poetry' for w in works), 'sectionCount': sum(w['sectionCount'] for w in works), 'blockCount': sum(w['blockCount'] for w in works), 'wordCount': sum(w['wordCount'] for w in works)}
+    manifest = {'splitRolePrefixes': {'revision': SPLIT_ROLE_MANIFEST['extractionRevision'], 'count': len(SPLIT_ROLES), 'countsByWork': SPLIT_ROLE_MANIFEST['countsByWork'], 'file': SPLIT_ROLE_FILE.name, 'sha256': hashlib.sha256(SPLIT_ROLE_FILE.read_bytes()).hexdigest()}, 'specificMarkupCorrections': {'revision': MARKUP_CORRECTION_MANIFEST['extractionRevision'], 'count': len(MARKUP_CORRECTIONS), 'file': MARKUP_CORRECTION_FILE.name, 'sha256': hashlib.sha256(MARKUP_CORRECTION_FILE.read_bytes()).hexdigest()}, 'roleCueExtractionRevision': ROLE_CUE_MANIFEST['extractionRevision'], 'roleCueCount': len(ROLE_CUES), 'roleCueCountsByWork': ROLE_CUE_MANIFEST['countsByWork'], 'roleCueAllowlist': {'file': ROLE_CUE_FILE.name, 'sha256': hashlib.sha256(ROLE_CUE_FILE.read_bytes()).hexdigest()}, 'scope': '39 plays only; no poetry reader payloads', 'archiveScopeNote': 'The pinned MIT archive is an unmodified historical provenance snapshot and contains poetry source pages. These pages are not extracted into the reader corpus.', 'retrieved': RETRIEVED, 'mitRepository': 'https://github.com/TheMITTech/shakespeare', 'mitCommit': COMMIT, 'mitSourceArchive': archive.name, 'mitArchiveSha256': hashlib.sha256(archive.read_bytes()).hexdigest(), 'mitFiles': {p: hashlib.sha256(d).hexdigest() for p, d in sorted(source_files.items())}, 'gutenbergSources': [{'file': f'gutenberg-{n}.html', 'url': u, 'sha256': hashlib.sha256((out / 'sources' / f'gutenberg-{n}.html').read_bytes()).hexdigest()} for n, u in [(1506, 'https://www.gutenberg.org/files/1506/1506-h/1506-h.htm'), (1770, 'https://www.gutenberg.org/cache/epub/1770/pg1770.html')]], 'workCount': len(works), 'playCount': sum(w['kind'] == 'play' for w in works), 'poetryCollectionCount': sum(w['kind'] == 'poetry' for w in works), 'sectionCount': sum(w['sectionCount'] for w in works), 'blockCount': sum(w['blockCount'] for w in works), 'wordCount': sum(w['wordCount'] for w in works)}
     (out / 'sources' / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in manifest.items() if k.endswith('Count')}, indent=2))
 

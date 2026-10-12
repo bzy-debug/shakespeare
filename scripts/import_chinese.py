@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import the user-supplied Chinese Shakespeare EPUB without third-party downloads.
+"""Import only the 39 plays from the supplied Chinese EPUB, without downloads.
 
 Usage:
     python3 scripts/import_chinese.py --epub /path/to/book.epub
@@ -9,6 +9,7 @@ Only Python's standard library is used. The second form accepts an expanded EPUB
 or the prior staging directory containing original-epub/ and manifest.json.
 The edition's work boundaries are checked against its actual h2 headings. No
 translator attribution is inferred from the book cover or English counterpart.
+Poetry is intentionally outside the reader scope; the original EPUB is unchanged.
 """
 from __future__ import annotations
 
@@ -47,9 +48,7 @@ WORKS = [
     ("裘力斯·凯撒", "julius_caesar"), ("哈姆莱特", "hamlet"),
     ("安东尼与克莉奥佩特拉", "cleopatra"), ("泰特斯·安德洛尼克斯", "titus"),
     ("奥瑟罗", "othello"), ("爱德华三世", "edwardiii"),
-    ("两位贵亲戚", "two_noble_kinsmen"), ("维纳斯与阿都尼", "venus_and_adonis"),
-    ("鲁克丽丝受辱记", "rape_of_lucrece"), ("十四行诗", "sonnets"),
-    ("情女怨 爱情的礼赞 乐曲杂咏 凤凰和斑鸠", None),
+    ("两位贵亲戚", "two_noble_kinsmen"),
 ]
 ALLOWED_TAGS = frozenset("p b strong i em a h1 h2 h3 h4 h5 h6 br sup sub img hr span div ul ol li blockquote small".split())
 # These may contain active content and are removed as entire subtrees.
@@ -185,7 +184,7 @@ def inspect_source(root: Path) -> tuple[list[dict], dict[str, set[str]], dict[st
                       "translatorCredit": credit,
                       "attributionStatus": "source-credit-uncertain" if translator == "朱豪" else "explicit",
                       "attributionNote": "原书署名为“朱豪译”，保留原文，不自动更正为朱生豪。" if translator == "朱豪" else None,
-                      "kind": "play" if index <= 42 else "poetry-or-collection",
+                      "kind": "play",
                       "englishId": english_id, "body": body, "sourcePath": relative})
     return works, anchors, assets
 
@@ -249,17 +248,9 @@ def transform_work(info: dict, anchors: dict[str, set[str]], assets: dict[str, s
     if combined_text != original_text:
         raise ValueError(f"Text loss detected while sanitizing {work_id}")
     result = {key: value for key, value in info.items() if key not in ("body", "sourcePath") and value is not None}
-    if work_id == "part0046":
-        poetry_map = {"情女怨": "lovers_complaint", "爱情的礼赞": "passionate_pilgrim", "乐曲杂咏": "sundry_notes_of_music", "凤凰和斑鸠": "phoenix_and_turtle"}
-        for section in sections:
-            for title, english_id in poetry_map.items():
-                if section["label"] == title or section["label"].startswith(title + " · "):
-                    section["englishId"] = english_id
     result["sections"] = sections
     result["language"] = "zh"
     result["alignment"] = "none"
-    if work_id == "part0046":
-        result["englishIds"] = ["lovers_complaint", "passionate_pilgrim", "sundry_notes_of_music", "phoenix_and_turtle"]
     result["source"] = {**source, "path": current, "blockCount": len(body), "imageCount": image_occurrences,
                         "textSha256": sha256(original_text), "anchorSections": anchor_sections,
                         "note": "用户提供的多译者 EPUB；保留原书署名、注释与图像。未作逐句双语对齐。"}
@@ -281,11 +272,21 @@ def import_collection(root: Path, output: Path, epub_sha256: str | None = None) 
               "attribution": "朱生豪等译（逐作保留原书署名）"}
     infos, anchors, assets = inspect_source(root)
     works = [transform_work(info, anchors, assets, source) for info in infos]
+    # Prune only assets documented by a previous import. Original EPUB bytes and
+    # unrelated files remain untouched when rebuilding an existing reader folder.
+    previous_manifest = output / "manifest.json"
+    old_images = json.loads(previous_manifest.read_text()).get("images", []) if previous_manifest.is_file() else []
     output.mkdir(parents=True, exist_ok=True)
     (output / "works").mkdir(exist_ok=True)
     (output / "images").mkdir(exist_ok=True)
     for original, filename in sorted(assets.items()):
         shutil.copyfile(root / original, output / "images" / filename)
+    for index in range(43, 47):
+        (output / "works" / f"part{index:04d}.js").unlink(missing_ok=True)
+    for image in old_images:
+        relative = PurePosixPath(image["path"])
+        if len(relative.parts) == 2 and relative.parts[0] == "images" and relative.name not in assets.values():
+            (output / "images" / relative.name).unlink(missing_ok=True)
     catalog = []
     for work in works:
         (output / "works" / (work["id"] + ".js")).write_text(
@@ -297,6 +298,9 @@ def import_collection(root: Path, output: Path, epub_sha256: str | None = None) 
     (output / "catalog.js").write_text("window.SHAKESPEARE_CHINESE_CATALOG=" + serialize_js(catalog) + ";\n", encoding="utf-8")
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     summary = {"schemaVersion": 1, "source": source,
+               "scope": {"reader": "39 plays only", "includedWorkIds": [w["id"] for w in works],
+                         "excludedSourceUnits": ["part0043", "part0044", "part0045", "part0046"],
+                         "note": "Only the 39 play units are published in this reader. The complete original EPUB is preserved separately, including its poetry."},
                "counts": {"totalUnits": len(works), "playUnits": sum(w["kind"] == "play" for w in works),
                           "poetryUnits": sum(w["kind"] != "play" for w in works),
                           "sections": sum(len(w["sections"]) for w in works),
@@ -306,7 +310,7 @@ def import_collection(root: Path, output: Path, epub_sha256: str | None = None) 
                           "explicitZhuShenghaoPlays": sum(w["kind"] == "play" and w["translator"] == "朱生豪" and w["attributionStatus"] == "explicit" for w in works),
                           "otherExplicitPlayCredits": sum(w["kind"] == "play" and w["translator"] != "朱生豪" and w["attributionStatus"] == "explicit" for w in works),
                           "uncertainPlayCredits": sum(w["kind"] == "play" and w["attributionStatus"] != "explicit" for w in works)},
-               "validation": {"allBodyTextPreserved": True, "textComparison": "exact concatenation, including all body-child tails", "sourceAnchors": sum(len(v) for v in anchors.values())},
+               "validation": {"allBodyTextPreserved": True, "textComparison": "exact concatenation for each included play, including all body-child tails", "sourceAnchors": sum(len(v) for v in anchors.values())},
                "images": [{"sourcePath": path, "path": "images/" + filename, "sha256": sha256((root / path).read_bytes())} for path, filename in sorted(assets.items())],
                "limitations": ["中文与英文采用独立来源，只按作品关联；未声称逐句或逐场校准。", "部分人物表和文字为原书图片，纯文本搜索无法覆盖这些图片。", "《泰尔亲王配力克里斯》原书署名为“朱豪译”，不自动更正。", "保留用户提供的现代多译者版本；不据此声称全部译文为朱生豪译或公版。"]}
     (output / "manifest.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

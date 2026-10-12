@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#481f26">
+<meta name="description" content="莎士比亚39部戏剧的原始底本参考：保留译者署名、中文注释与独立分节。">
+<title>莎士比亚戏剧 · 原始底本参考</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+<script defer src="data/chinese-collection/catalog.js"></script><script defer src="data/english-collection/catalog.js"></script><script defer src="source-reader.js"></script>
+</head>
+<body>
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#reading">跳到正文</a>
+<button id="scrim" class="scrim" aria-label="关闭目录" hidden></button>
+<aside class="sidebar" id="sidebar" aria-label="作品与目录">
+  <div class="brand"><span class="crown">♛</span><span class="monogram">S</span><div>SHAKESPEARE</div><p>莎士比亚戏剧</p></div>
+  <button class="library-link" id="library-button">← <span>全部作品</span><span class="tiny-label">书架</span></button>
+  <div class="book-title"><span class="eyebrow">THE TRAGEDIES</span><h2>Hamlet</h2><p>哈姆雷特</p></div>
+  <div class="toc-heading">目录 <span>CONTENTS</span></div>
+  <nav class="toc scenes" id="work-toc" aria-label="中文篇章目录"></nav>
+  <div class="sidebar-bottom"><div>本节阅读进度 <span id="progress-label">0%</span></div><div class="progress-track"><span id="progress-fill"></span></div><p>一页之间，走入另一个世界。</p></div>
+</aside>
+<div class="workspace">
+  <header class="toolbar">
+    <button id="menu-button" class="icon-button mobile-menu" aria-label="打开目录" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    <div class="breadcrumb">悲剧 <span>/</span> 哈姆雷特 <span>/</span> <strong>第一幕 · 第一场</strong></div>
+    <div class="tools">
+      <button id="search-button" class="icon-button" aria-label="搜索当前作品" title="搜索台词（⌘ / Ctrl K）"><svg><use href="#i-search"/></svg></button>
+      <button id="bookmarks-button" class="icon-button" aria-label="查看书签" title="查看书签"><svg><use href="#i-bookmark"/></svg><span id="bookmark-count" hidden>0</span></button>
+      <span class="tool-divider"></span>
+      <button id="type-button" class="icon-button type-button" aria-label="阅读设置" title="阅读设置">Aa</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="play-title">
+      <div class="hero-copy"><p class="eyebrow">THE TRAGEDY OF</p><h1 id="play-title">Hamlet<span class="title-period">.</span></h1><div class="hero-subtitle"><span>哈姆雷特</span><span class="author">William Shakespeare <i>c. 1600</i></span></div></div>
+      <div class="hero-art"><img src="assets/globe-engraving.png" alt="环球剧场的复古版画插画"><p>“All the world's a stage.”</p></div>
+    </section>
+    <section class="collection-meta"><p id="edition-note"></p><p class="alignment-disclosure">原始底本参考：中英文独立分节，保留人物表、注释与图片文字。<a id="aligned-reader-link" href="index.html">返回台词对照阅读</a></p></section>
+    <div id="load-status" role="status" aria-live="polite"></div>
+    <section class="reader" id="reading" tabindex="-1" aria-label="作品正文">
+      <div class="reader-heading collection-heading"><div class="language-labels"><span class="en-label">ENGLISH</span><span class="zh-label">中文译文</span></div><div class="reader-controls"><label class="sr-only" for="reading-mode">阅读模式</label><select id="reading-mode"><option value="parallel">中英并列</option><option value="en">仅英文</option><option value="zh">仅中文</option></select></div></div>
+      <div class="collection-columns">
+        <section class="language-pane english-pane" lang="en" aria-label="English text"><div class="section-navigation"><label class="sr-only" for="english-work">English work</label><select id="english-work" class="english-work-choice" hidden></select><label for="en-section">English section</label><select id="en-section"></select><div><button id="en-prev" aria-label="Previous English section">←</button><button id="en-next" aria-label="Next English section">→</button></div></div><div id="english-text" class="collection-text"></div></section>
+        <section class="language-pane chinese-pane" lang="zh-CN" aria-label="中文译文"><div class="section-navigation"><label for="zh-section">中文篇章</label><select id="zh-section"></select><div><button id="zh-prev" aria-label="上一中文篇章">←</button><button id="zh-next" aria-label="下一中文篇章">→</button></div></div><div id="chinese-text" class="collection-text"></div></section>
+      </div>
+    </section>
+    <div class="scene-end"><span>✦</span><p id="section-end-label"></p><button id="back-to-start">回到本节开头 ↑</button></div>
+    <footer class="source-note" id="source-note"></footer>
+  </main>
+  <footer class="reading-footer"><span id="footer-section">载入作品</span><label class="sr-only" for="progress-slider">本节阅读位置</label><input id="progress-slider" type="range" min="0" max="100" value="0" aria-label="本节阅读位置"><button id="jump-end">本节结尾 <svg><use href="#i-arrow"/></svg></button></footer>
+</div>
+<dialog id="search-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">FIND A PASSAGE</span><h2>寻找一句台词</h2></div><button class="icon-button" data-close aria-label="关闭搜索"><svg><use href="#i-close"/></svg></button></div><div class="search-field"><svg><use href="#i-search"/></svg><input id="search-input" placeholder="搜索当前作品的中英文…" aria-label="搜索英文、中文或角色" autocomplete="off"><kbd>ESC</kbd></div><p class="search-summary" id="search-summary">在当前作品中搜索</p><div id="search-results" class="results"></div></dialog>
+<dialog id="bookmarks-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">YOUR MARGINALIA</span><h2>我的书签</h2></div><button class="icon-button" data-close aria-label="关闭书签"><svg><use href="#i-close"/></svg></button></div><p class="search-summary">留住那些值得重读的句子 · 保存在此浏览器</p><div id="bookmark-results" class="results"></div></dialog>
+<dialog id="type-dialog" class="settings-dialog"><div class="dialog-heading"><h2>阅读设置</h2><button class="icon-button" data-close aria-label="关闭阅读设置"><svg><use href="#i-close"/></svg></button></div><label class="setting-label" for="font-size">字号 <output id="font-output">20 px</output></label><div class="font-slider"><span>A</span><input id="font-size" type="range" min="16" max="28" step="1" value="20"><span>A</span></div><p class="setting-label">纸张</p><div class="theme-options"><button data-theme-choice="paper" aria-pressed="true"><span class="swatch paper"></span>暖纸</button><button data-theme-choice="light" aria-pressed="false"><span class="swatch light"></span>素白</button><button data-theme-choice="night" aria-pressed="false"><span class="swatch night"></span>夜读</button></div><p class="setting-label">行距</p><div class="spacing-options"><button data-spacing="1.65" aria-pressed="false">紧凑</button><button data-spacing="1.9" aria-pressed="true">舒适</button><button data-spacing="2.2" aria-pressed="false">宽松</button></div><button class="reset-settings" id="reset-settings">恢复默认设置</button></dialog>
+<dialog id="library-dialog" class="panel-dialog"><div class="dialog-heading"><div><span class="eyebrow">THE COLLECTED WORKS</span><h2>莎士比亚戏剧</h2></div><button class="icon-button" data-close aria-label="关闭书架"><svg><use href="#i-close"/></svg></button></div><p class="search-summary" id="library-summary">39 部戏剧 · 原始底本参考</p><div class="shelf-filters"><label class="sr-only" for="library-query">搜索作品或译者</label><input id="library-query" placeholder="搜索作品、英文名或译者"><label><input id="zhu-only" type="checkbox"> 仅明确署名朱生豪</label></div><div id="library-results" class="library-grid"></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body></html>

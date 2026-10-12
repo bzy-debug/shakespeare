@@ -8,22 +8,73 @@
     "epubSha256": "e0385e88e1428b9accb344d45650a0f52ea1d917cbb12009036b2fb32fd9b747",
     "attribution": "朱生豪等译（逐作保留原书署名）"
   },
+  "scope": {
+    "reader": "39 plays only",
+    "includedWorkIds": [
+      "part0004",
+      "part0005",
+      "part0006",
+      "part0007",
+      "part0008",
+      "part0009",
+      "part0010",
+      "part0011",
+      "part0012",
+      "part0013",
+      "part0014",
+      "part0015",
+      "part0016",
+      "part0017",
+      "part0018",
+      "part0019",
+      "part0020",
+      "part0021",
+      "part0022",
+      "part0023",
+      "part0024",
+      "part0025",
+      "part0026",
+      "part0027",
+      "part0028",
+      "part0029",
+      "part0030",
+      "part0031",
+      "part0032",
+      "part0033",
+      "part0034",
+      "part0035",
+      "part0036",
+      "part0037",
+      "part0038",
+      "part0039",
+      "part0040",
+      "part0041",
+      "part0042"
+    ],
+    "excludedSourceUnits": [
+      "part0043",
+      "part0044",
+      "part0045",
+      "part0046"
+    ],
+    "note": "Only the 39 play units are published in this reader. The complete original EPUB is preserved separately, including its poetry."
+  },
   "counts": {
-    "totalUnits": 43,
+    "totalUnits": 39,
     "playUnits": 39,
-    "poetryUnits": 4,
-    "sections": 1258,
-    "blocks": 47598,
-    "imageOccurrences": 240,
-    "uniqueImageFiles": 222,
+    "poetryUnits": 0,
+    "sections": 1069,
+    "blocks": 40723,
+    "imageOccurrences": 234,
+    "uniqueImageFiles": 216,
     "explicitZhuShenghaoPlays": 30,
     "otherExplicitPlayCredits": 8,
     "uncertainPlayCredits": 1
   },
   "validation": {
     "allBodyTextPreserved": true,
-    "textComparison": "exact concatenation, including all body-child tails",
-    "sourceAnchors": 2434
+    "textComparison": "exact concatenation for each included play, including all body-child tails",
+    "sourceAnchors": 2050
   },
   "images": [
     {
@@ -1105,36 +1156,6 @@
       "sourcePath": "images/00220.jpeg",
       "path": "images/00220.jpeg",
       "sha256": "fcfbb62774bb7bf6072e9081ccf649caa28535dea803da7043538adc12030519"
-    },
-    {
-      "sourcePath": "images/00221.jpeg",
-      "path": "images/00221.jpeg",
-      "sha256": "0d8baf7eec8485faa0543c252220f39e97b182e70178bf7d5ef1cd134b45611b"
-    },
-    {
-      "sourcePath": "images/00222.jpeg",
-      "path": "images/00222.jpeg",
-      "sha256": "4e838dbdd02ee3b6b839e8c56a0ad8be415a8b0cf8b17690343d54b9727b6ff2"
-    },
-    {
-      "sourcePath": "images/00223.jpeg",
-      "path": "images/00223.jpeg",
-      "sha256": "4c3cb8b707b60a2c793838054622a0ee1aa2124794ce933e4768b5c7b6472ecf"
-    },
-    {
-      "sourcePath": "images/00224.jpeg",
-      "path": "images/00224.jpeg",
-      "sha256": "04877f17b55483155a0a8eabed151df461964e39655aa976d9f31d985c78b0e0"
-    },
-    {
-      "sourcePath": "images/00225.jpeg",
-      "path": "images/00225.jpeg",
-      "sha256": "6b40519eabe3b9f1fcba118a31292fa634c191f2163d981bc4e00791575c35ec"
-    },
-    {
-      "sourcePath": "images/00226.jpeg",
-      "path": "images/00226.jpeg",
-      "sha256": "be36d9d9bc68d563fa30bc222a5094d615e4fcc30a4efcff861c18679118ad13"
     }
   ],
   "limitations": [

@@ -6,7 +6,12 @@ Optional raw-source comparison:
 import collections
 import importlib.util
 import json
+import re
+import html
 import os
+import shutil
+import subprocess
+import sys
 from html.parser import HTMLParser
 from pathlib import Path
 import tempfile
@@ -59,8 +64,8 @@ class CollectionTests(unittest.TestCase):
         cls.works = [load_work(item["id"]) for item in cls.catalog]
 
     def test_complete_catalog_and_explicit_credits(self):
-        self.assertEqual([item["id"] for item in self.catalog], [f"part{x:04d}" for x in range(4, 47)])
-        self.assertEqual(len(self.works), 43)
+        self.assertEqual([item["id"] for item in self.catalog], [f"part{x:04d}" for x in range(4, 43)])
+        self.assertEqual(len(self.works), 39)
         plays = [w for w in self.works if w["kind"] == "play"]
         self.assertEqual(len(plays), 39)
         self.assertEqual(sum(w["translator"] == "朱生豪" for w in plays), 30)
@@ -68,8 +73,10 @@ class CollectionTests(unittest.TestCase):
         uncertain = [w for w in plays if w["attributionStatus"] != "explicit"]
         self.assertEqual([(w["id"], w["translatorCredit"]) for w in uncertain], [("part0020", "朱豪译")])
         self.assertEqual(load_work("part0018")["translator"], "方平")
-        self.assertEqual(load_work("part0045")["translator"], "梁宗岱")
-        self.assertEqual(set(load_work("part0046")["englishIds"]), {"lovers_complaint", "passionate_pilgrim", "sundry_notes_of_music", "phoenix_and_turtle"})
+        self.assertTrue(all(w["kind"] == "play" for w in self.works))
+        self.assertEqual({p.stem for p in (DATA / "works").glob("*.js")}, {w["id"] for w in self.works})
+        self.assertEqual(self.manifest["scope"]["reader"], "39 plays only")
+        self.assertEqual(self.manifest["counts"]["poetryUnits"], 0)
         js = (DATA / "catalog.js").read_text()
         self.assertEqual(json.loads(js.removeprefix("window.SHAKESPEARE_CHINESE_CATALOG=").removesuffix(";\n")), self.catalog)
 
@@ -95,10 +102,10 @@ class CollectionTests(unittest.TestCase):
                     self.assertEqual("".join(fragment.text), block["text"])
                     heading_counts[block["tag"]] += 1
             self.assertEqual(work["alignment"], "none")
-        self.assertEqual(len(seen_blocks), 47598)
-        self.assertEqual(len(seen_sections), 1258)
-        self.assertEqual(heading_counts["h3"], 207)
-        self.assertEqual(heading_counts["h4"], 967)
+        self.assertEqual(len(seen_blocks), 40723)
+        self.assertEqual(len(seen_sections), 1069)
+        self.assertEqual(heading_counts["h3"], 200)
+        self.assertEqual(heading_counts["h4"], 793)
 
     def test_safe_html_images_and_all_nested_anchor_targets(self):
         all_ids = set()
@@ -134,10 +141,12 @@ class CollectionTests(unittest.TestCase):
             images.extend(work_images)
             all_links.extend(links)
             source_ids += len(work_ids)
-        self.assertEqual(len(images), 240)
-        self.assertEqual(len(set(images)), 222)
-        self.assertEqual(len(all_links), 1206)
-        self.assertEqual(source_ids, 2434)
+        self.assertEqual(len(images), 234)
+        self.assertEqual(len(set(images)), 216)
+        self.assertEqual(len(all_links), 1008)
+        self.assertEqual(source_ids, 2050)
+        self.assertEqual({"data/chinese-collection/" + i["path"] for i in self.manifest["images"]}, set(images))
+        self.assertEqual({p.name for p in (DATA / "images").iterdir() if p.is_file()}, {Path(i).name for i in images})
         for image in self.manifest["images"]:
             self.assertEqual(importer.sha256((DATA / image["path"]).read_bytes()), image["sha256"])
 
@@ -168,7 +177,184 @@ class CollectionTests(unittest.TestCase):
             self.assertEqual(source_credit, work["translatorCredit"])
 
 
+class EnglishScopeTests(unittest.TestCase):
+    def test_play_catalogs_match_and_published_poetry_is_absent(self):
+        chinese = json.loads((DATA / "catalog.json").read_text())
+        english_dir = ROOT / "data" / "english-collection"
+        english = json.loads((english_dir / "catalog.json").read_text())
+        self.assertEqual(len(english), 39)
+        self.assertEqual({w["englishId"] for w in chinese}, {w["id"] for w in english})
+        self.assertTrue(all(w["kind"] == "play" for w in english))
+        self.assertEqual({p.stem for p in english_dir.glob("*.js")} - {"catalog"}, {w["id"] for w in english})
+        catalog_js = (english_dir / "catalog.js").read_text()
+        self.assertEqual(json.loads(catalog_js.removeprefix("window.SHAKESPEARE_ENGLISH_CATALOG = ").removesuffix(";\n")), english)
+        manifest = json.loads((english_dir / "sources" / "manifest.json").read_text())
+        self.assertEqual(manifest["workCount"], 39)
+        self.assertEqual(manifest["playCount"], 39)
+        self.assertEqual(manifest["poetryCollectionCount"], 0)
+        self.assertEqual(manifest["blockCount"], 39658)
+        self.assertEqual(manifest["sectionCount"], 808)
+        self.assertEqual(importer.sha256((english_dir / "sources" / manifest["mitSourceArchive"]).read_bytes()), manifest["mitArchiveSha256"])
+        fixtures = json.loads((ROOT / "tests" / "fixtures" / "speech-turn-fixtures.json").read_text())
+        for source in fixtures["sources"].values():
+            self.assertEqual(importer.sha256((ROOT / source["englishPath"]).read_bytes()), source["englishSha256"])
+            self.assertEqual(importer.sha256((ROOT / source["chinesePath"]).read_bytes()), source["chineseSha256"])
+
+    def test_reviewed_role_cues_preserve_all_numbered_source_lines(self):
+        english_dir = ROOT / "data" / "english-collection"
+        cues = json.loads((english_dir / "sources" / "mit-embedded-role-cues.json").read_text())
+        expected_cues = {(c["workId"], c["sourceAnchor"]): c for c in cues["occurrences"]}
+        seen_cues = set()
+        seen_split_prefixes = set()
+        split_manifest = json.loads((english_dir / "sources" / "mit-split-role-prefixes.json").read_text())
+        expected_splits = {(c["archiveEntry"].split("/")[0], c["sourceAnchor"]): c for c in split_manifest["occurrences"]}
+        counts = collections.Counter()
+        manifest = json.loads((english_dir / "sources" / "manifest.json").read_text())
+        self.assertEqual(manifest["roleCueCount"], 108)
+        self.assertEqual(cues["countsByWork"], {"1henryvi": 12, "2henryiv": 56, "2henryvi": 3, "coriolanus": 2, "henryviii": 1, "taming_shrew": 1, "timon": 33})
+        with zipfile.ZipFile(english_dir / "sources" / manifest["mitSourceArchive"]) as archive:
+            for item in json.loads((english_dir / "catalog.json").read_text()):
+                if "sourceLineCount" not in item:
+                    continue
+                raw = archive.read(item["id"] + "/full.html").decode("utf-8")
+                original_lines = [(match[1], html.unescape(match[2])) for match in re.finditer(r'<a\s+name=["\']?([\d.]+)["\']?>(.*?)</a>', raw, re.I | re.S)]
+                self.assertEqual(len(original_lines), item["sourceLineCount"], item["id"])
+                source_lines = dict(original_lines)
+                payload = (english_dir / (item["id"] + ".js")).read_text().split("\n", 1)[1].split("=", 1)[1].strip().removesuffix(";")
+                work = json.loads(payload)
+                reconstructed = []
+                for block in blocks(work):
+                    if "sourceLine" not in block:
+                        continue
+                    lines = block["text"].split("\n")
+                    prefix = block.get("sourceRolePrefix")
+                    if prefix:
+                        key = (item["id"], prefix["sourceAnchor"])
+                        self.assertNotIn(key, seen_split_prefixes)
+                        seen_split_prefixes.add(key)
+                        self.assertEqual(prefix, expected_splits[key])
+                        self.assertEqual(prefix["rawPrefix"], source_lines[prefix["sourceAnchor"]])
+                        self.assertEqual(block["speaker"], prefix["joinedLabel"])
+                        self.assertIn(prefix["originalHtml"], raw)
+                        reconstructed.append(" ".join(prefix["rawPrefix"].split()))
+                    correction = block.get("sourceMarkupCorrection")
+                    if correction and correction["kind"] == "speaker_label_is_spoken_prefix":
+                        self.assertTrue(lines[0].startswith(correction["rawLabelText"] + " "))
+                        self.assertIn(correction["originalSpeakerMarkup"], raw)
+                        lines[0] = lines[0][len(correction["rawLabelText"]) + 1:]
+                        self.assertEqual(lines[0], correction["rawNumberedLineText"])
+                    cue = block.get("sourceRoleCue")
+                    if cue:
+                        key = (item["id"], block["sourceLine"])
+                        self.assertNotIn(key, seen_cues)
+                        seen_cues.add(key)
+                        expected = expected_cues[key]
+                        self.assertEqual(cue["sourceAnchor"], block["sourceLine"])
+                        self.assertEqual(cue["rawLineText"], source_lines[block["sourceLine"]])
+                        self.assertEqual(cue["rawRolePrefix"], expected["rawRolePrefix"])
+                        self.assertEqual(block["speaker"], expected["speaker"])
+                        self.assertEqual(lines[0], " ".join(cue["rawLineText"].split("\t", 1)[1].split()))
+                        lines[0] = cue["rawRolePrefix"] + "\t" + lines[0]
+                        counts[item["id"]] += 1
+                    reconstructed.extend(" ".join(line.split()) for line in lines)
+                self.assertEqual(reconstructed, [" ".join(line.split()) for _, line in original_lines], item["id"])
+        self.assertEqual(seen_cues, set(expected_cues))
+        self.assertEqual(seen_split_prefixes, set(expected_splits))
+        self.assertEqual(len(seen_split_prefixes), 320)
+        self.assertEqual(dict(counts), cues["countsByWork"])
+
+    def test_chief_justice_turns_and_non_role_tabs(self):
+        directory = ROOT / "data" / "english-collection"
+        def load(work_id):
+            return json.loads((directory / (work_id + ".js")).read_text().split("\n", 1)[1].split("=", 1)[1].strip().removesuffix(";"))
+        work = load("2henryiv")
+        source_blocks = {b["sourceLine"]: b for b in blocks(work) if "sourceLine" in b}
+        self.assertEqual(source_blocks["1.2.56"]["text"], "Wait, close; I will not see him.")
+        self.assertEqual(source_blocks["1.2.56"]["speaker"], "FALSTAFF")
+        self.assertEqual(source_blocks["1.2.57"]["text"], "What's he that goes there?")
+        self.assertEqual(source_blocks["1.2.57"]["speaker"], "Lord Chief-Justice")
+        self.assertEqual(source_blocks["1.2.58"]["speaker"], "Servant")
+        self.assertEqual(source_blocks["1.2.59"]["speaker"], "Lord Chief-Justice")
+        self.assertIn("Go, pluck him by the elbow; I must speak with him.", source_blocks["1.2.67"]["text"])
+        self.assertEqual(source_blocks["1.2.67"]["speaker"], "Lord Chief-Justice")
+        ordinary = next(b for b in blocks(work) if "Not I I tell thee what, Corporal Bardolph" in b["text"])
+        self.assertNotEqual(ordinary.get("speaker"), "Not I")
+        self.assertNotIn("sourceRoleCue", ordinary)
+        # A separate upstream identity ambiguity is an explicit <b> source label.
+        # This narrowly scoped extraction repair must not silently rename it.
+        scene = next(s for s in load("timon")["sections"] if s["id"] == "3.2")
+        self.assertTrue(any(b.get("speaker") == "LUCILIUS" for b in scene["blocks"]))
+
+    def test_specific_markup_repairs_are_narrow_and_source_anchored(self):
+        directory = ROOT / "data" / "english-collection"
+        def load(work_id):
+            return json.loads((directory / (work_id + ".js")).read_text().split("\n", 1)[1].split("=", 1)[1].strip().removesuffix(";"))
+        for work_id, source_line, speaker, opening in [
+            ("lll", "5.2.418", "BIRON", "Here stand I lady, dart thy skill at me;"),
+            ("measure", "2.4.39", "ANGELO", "As long as you or I yet he must die."),
+            ("julius_caesar", "1.1.63", "FLAVIUS", "This way will I disrobe the images,")]:
+            block = next(b for b in blocks(load(work_id)) if b.get("sourceLine") == source_line)
+            self.assertEqual(block["speaker"], speaker)
+            self.assertEqual(block["text"].split("\n")[0], opening)
+            self.assertIn("folger.edu", block["sourceMarkupCorrection"]["evidence"]["url"])
+        for work_id, section_id, heading_line in [("1henryiv", "3.3", "3.2.182"), ("cymbeline", "2.3", "2.2.55")]:
+            work = load(work_id)
+            section = next(section for section in work["sections"] if section["id"] == section_id)
+            self.assertEqual(section["scene"], 3)
+            self.assertEqual(section["blocks"][0]["kind"], "heading")
+            self.assertEqual(section["blocks"][0]["sourceLine"], heading_line)
+            self.assertFalse(any(b.get("speaker") == "Scene III" for b in blocks(work)))
+        edward = load("edwardiii")
+        block = next(b for b in blocks(edward) if b.get("sourceAnchor") == "id00388")
+        self.assertEqual(block["id"], "edwardiii:3.5:15")
+        self.assertEqual(block["speaker"], "AUDLEY")
+        self.assertEqual(block["text"], block["sourceMarkupCorrection"]["sourceText"])
+        self.assertIsNone(block["sourceMarkupCorrection"]["rawSpeakerLabel"])
+        self.assertIn("internetshakespeare.uvic.ca", block["sourceMarkupCorrection"]["evidence"]["url"])
+        raw = (directory / "sources" / "gutenberg-1770.html").read_text()
+        self.assertIn(block["sourceMarkupCorrection"]["rawSourceParagraph"], raw)
+
+    def test_english_rebuild_is_plays_only_and_exactly_reproducible(self):
+        english_dir = ROOT / "data" / "english-collection"
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary)
+            shutil.copytree(english_dir / "sources", output / "sources")
+            (output / "sonnets.js").write_text("stale prior poetry output")
+            subprocess.run([sys.executable, str(ROOT / "scripts" / "import_english.py"), "--output", str(output)], check=True, capture_output=True, text=True)
+            expected_files = {p.name for p in english_dir.glob("*.js")}
+            self.assertEqual({p.name for p in output.glob("*.js")}, expected_files)
+            for filename in expected_files | {"catalog.json"}:
+                self.assertEqual((output / filename).read_bytes(), (english_dir / filename).read_bytes(), filename)
+            self.assertEqual((output / "sources" / "manifest.json").read_bytes(), (english_dir / "sources" / "manifest.json").read_bytes())
+
+
 class ImporterTests(unittest.TestCase):
+    def test_chinese_rebuild_prunes_only_old_reader_assets_when_source_available(self):
+        source = Path(os.environ.get("SHAKESPEARE_CHINESE_SOURCE", "/workspace/shared/shakespeare-source-staging/extracted/original-epub"))
+        if (source / "original-epub").is_dir():
+            source /= "original-epub"
+        if not (source / "text" / "part0004.html").is_file():
+            self.skipTest("Set SHAKESPEARE_CHINESE_SOURCE for independent original EPUB rebuild")
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary)
+            (output / "works").mkdir()
+            (output / "images").mkdir()
+            (output / "works" / "part0046.js").write_text("stale prior poetry output")
+            (output / "images" / "poetry-old.jpeg").write_bytes(b"stale prior poetry image")
+            (output / "images" / "unrelated.txt").write_text("keep unrelated files")
+            (output / "manifest.json").write_text(json.dumps({"images": [{"path": "images/poetry-old.jpeg"}]}))
+            expected_manifest = json.loads((DATA / "manifest.json").read_text())
+            result = importer.import_collection(source, output, expected_manifest["source"]["epubSha256"])
+            self.assertEqual(result, expected_manifest)
+            self.assertFalse((output / "works" / "part0046.js").exists())
+            self.assertFalse((output / "images" / "poetry-old.jpeg").exists())
+            self.assertEqual((output / "images" / "unrelated.txt").read_text(), "keep unrelated files")
+            self.assertEqual({p.name for p in (output / "works").glob("*.js")}, {p.name for p in (DATA / "works").glob("*.js")})
+            for original in (DATA / "works").glob("*.js"):
+                self.assertEqual((output / "works" / original.name).read_bytes(), original.read_bytes(), original.name)
+            for filename in ("catalog.js", "catalog.json", "manifest.json"):
+                self.assertEqual((output / filename).read_bytes(), (DATA / filename).read_bytes(), filename)
+
     def test_sanitizer_blocks_active_content_and_external_links(self):
         node = ET.fromstring('<p id="one" onclick="evil()" style="color:red">Hello<a href="https://example.com/a">world</a><a href="javascript:evil()">X</a><a href="../../outside#one">Y</a><script>evil()</script>tail<iframe>hidden</iframe>end<a id="nested" href="part0004.html#one">note</a></p>')
         cleaned = importer.sanitize_element(node, "part0004", "text/part0004.html", {"text/part0004.html": {"one", "nested"}}, {})

@@ -1,0 +1,3228 @@
+{
+  "schemaVersion": 1,
+  "extractionRevision": "mit-split-role-prefixes-v1",
+  "sourceArchiveSha256": "13d60111bdf4ebe68a6aa0d576937de15ac5dc31303487e12961702769e159b6",
+  "policy": "Join only these exact source-numbered role fragments with the immediately following explicit bold role label. Preserve the complete fragment, source anchor and original markup in sourceRolePrefix metadata; do not read the fragment as dialogue.",
+  "countsByWork": {
+    "1henryvi": 40,
+    "comedy_errors": 175,
+    "lll": 101,
+    "richardiii": 4
+  },
+  "corroboratingEditions": {
+    "1henryvi": "https://www.folger.edu/explore/shakespeares-works/henry-vi-part-1/read/",
+    "comedy_errors": "https://www.folger.edu/explore/shakespeares-works/the-comedy-of-errors/read/",
+    "lll": "https://www.folger.edu/explore/shakespeares-works/loves-labors-lost/read/",
+    "richardiii": "https://www.folger.edu/explore/shakespeares-works/richard-iii/read/5/3/"
+  },
+  "occurrences": [
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.1.28",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech4",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 64,
+      "originalHtml": "<A NAME=1.1.28>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech4><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.1.38",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech6",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 82,
+      "originalHtml": "<A NAME=1.1.38>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech6><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.1.109",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech21",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 216,
+      "originalHtml": "<A NAME=1.1.109>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech21><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.1.176",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech31",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 326,
+      "originalHtml": "<A NAME=1.1.176>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech31><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.29",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech10",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 726,
+      "originalHtml": "<A NAME=1.3.29>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech10><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.32",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech12",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 737,
+      "originalHtml": "<A NAME=1.3.32>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech12><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.40",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech14",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 753,
+      "originalHtml": "<A NAME=1.3.40>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech14><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.47",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech16",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 768,
+      "originalHtml": "<A NAME=1.3.47>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech16><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.56",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech18",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 785,
+      "originalHtml": "<A NAME=1.3.56>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech18><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.67",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech22",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 813,
+      "originalHtml": "<A NAME=1.3.67>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech22><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.88",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech27",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 855,
+      "originalHtml": "<A NAME=1.3.88>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech27><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "1.3.94",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech30",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 873,
+      "originalHtml": "<A NAME=1.3.94>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech30><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.1",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1550,
+      "originalHtml": "<A NAME=2.3.1>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech1><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.5",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1563,
+      "originalHtml": "<A NAME=2.3.5>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech3><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.16",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1583,
+      "originalHtml": "<A NAME=2.3.16>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech5><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.19",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1594,
+      "originalHtml": "<A NAME=2.3.19>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech7><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.33",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1616,
+      "originalHtml": "<A NAME=2.3.33>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech9><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.39",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech12",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1635,
+      "originalHtml": "<A NAME=2.3.39>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech12><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.42",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech14",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1646,
+      "originalHtml": "<A NAME=2.3.42>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech14><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.53",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech16",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1665,
+      "originalHtml": "<A NAME=2.3.53>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech16><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.58",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech18",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1678,
+      "originalHtml": "<A NAME=2.3.58>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech18><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.61",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech20",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1689,
+      "originalHtml": "<A NAME=2.3.61>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech20><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.70",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech22",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1706,
+      "originalHtml": "<A NAME=2.3.70>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech22><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.81",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech24",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1726,
+      "originalHtml": "<A NAME=2.3.81>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech24><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "2.3.96",
+      "rawPrefix": "COUNTESS",
+      "followingSpeechAnchor": "speech26",
+      "followingBoldLabel": "OF AUVERGNE",
+      "joinedLabel": "COUNTESS OF AUVERGNE",
+      "htmlLine": 1749,
+      "originalHtml": "<A NAME=2.3.96>COUNTESS</A><br>\n</blockquote>\n\n<A NAME=speech26><b>OF AUVERGNE</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.1",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2330,
+      "originalHtml": "<A NAME=3.1.1>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech1><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.28",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2365,
+      "originalHtml": "<A NAME=3.1.28>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech3><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.46",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2391,
+      "originalHtml": "<A NAME=3.1.46>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech5><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.50",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2403,
+      "originalHtml": "<A NAME=3.1.50>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech7><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.54",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2415,
+      "originalHtml": "<A NAME=3.1.54>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech9><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.58",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech11",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2427,
+      "originalHtml": "<A NAME=3.1.58>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech11><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.130",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech28",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2572,
+      "originalHtml": "<A NAME=3.1.130>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech28><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.147",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech34",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2613,
+      "originalHtml": "<A NAME=3.1.147>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech34><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.155",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech36",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2629,
+      "originalHtml": "<A NAME=3.1.155>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech36><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "3.1.177",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech42",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 2676,
+      "originalHtml": "<A NAME=3.1.177>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech42><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "4.1.2",
+      "rawPrefix": "BISHOP",
+      "followingSpeechAnchor": "speech2",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "BISHOP OF WINCHESTER",
+      "htmlLine": 3409,
+      "originalHtml": "<A NAME=4.1.2>BISHOP</A><br>\n</blockquote>\n\n<A NAME=speech2><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "5.1.50",
+      "rawPrefix": "CARDINAL",
+      "followingSpeechAnchor": "speech12",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "CARDINAL OF WINCHESTER",
+      "htmlLine": 4561,
+      "originalHtml": "<A NAME=5.1.50>CARDINAL</A><br>\n</blockquote>\n\n<A NAME=speech12><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "5.1.56",
+      "rawPrefix": "CARDINAL",
+      "followingSpeechAnchor": "speech14",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "CARDINAL OF WINCHESTER",
+      "htmlLine": 4575,
+      "originalHtml": "<A NAME=5.1.56>CARDINAL</A><br>\n</blockquote>\n\n<A NAME=speech14><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "5.4.94",
+      "rawPrefix": "CARDINAL",
+      "followingSpeechAnchor": "speech28",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "CARDINAL OF WINCHESTER",
+      "htmlLine": 5360,
+      "originalHtml": "<A NAME=5.4.94>CARDINAL</A><br>\n</blockquote>\n\n<A NAME=speech28><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "1henryvi/full.html",
+      "sourceAnchor": "5.4.124",
+      "rawPrefix": "CARDINAL",
+      "followingSpeechAnchor": "speech33",
+      "followingBoldLabel": "OF WINCHESTER",
+      "joinedLabel": "CARDINAL OF WINCHESTER",
+      "htmlLine": 5411,
+      "originalHtml": "<A NAME=5.4.124>CARDINAL</A><br>\n</blockquote>\n\n<A NAME=speech33><b>OF WINCHESTER</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.9",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech2",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 248,
+      "originalHtml": "<A NAME=1.2.9>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech2><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.20",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech4",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 268,
+      "originalHtml": "<A NAME=1.2.20>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech4><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.32",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech6",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 288,
+      "originalHtml": "<A NAME=1.2.32>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech6><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.36",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech8",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 301,
+      "originalHtml": "<A NAME=1.2.36>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech8><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.57",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech10",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 331,
+      "originalHtml": "<A NAME=1.2.57>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech10><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.63",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech12",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 345,
+      "originalHtml": "<A NAME=1.2.63>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech12><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.74",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech14",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 364,
+      "originalHtml": "<A NAME=1.2.74>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech14><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.79",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech16",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 377,
+      "originalHtml": "<A NAME=1.2.79>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech16><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.85",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech18",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 391,
+      "originalHtml": "<A NAME=1.2.85>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech18><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.95",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech20",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 409,
+      "originalHtml": "<A NAME=1.2.95>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech20><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.100",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech22",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 422,
+      "originalHtml": "<A NAME=1.2.100>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech22><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "1.2.105",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech24",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 436,
+      "originalHtml": "<A NAME=1.2.105>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech24><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.1",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 739,
+      "originalHtml": "<A NAME=2.2.1>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech1><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.15",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 762,
+      "originalHtml": "<A NAME=2.2.15>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech3><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.19",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 774,
+      "originalHtml": "<A NAME=2.2.19>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech5><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.25",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 788,
+      "originalHtml": "<A NAME=2.2.25>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech7><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.30",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 802,
+      "originalHtml": "<A NAME=2.2.30>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech9><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.45",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech11",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 825,
+      "originalHtml": "<A NAME=2.2.45>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech11><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.48",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech13",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 836,
+      "originalHtml": "<A NAME=2.2.48>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech13><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.52",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech15",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 848,
+      "originalHtml": "<A NAME=2.2.52>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech15><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.59",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech17",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 863,
+      "originalHtml": "<A NAME=2.2.59>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech17><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.62",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech19",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 874,
+      "originalHtml": "<A NAME=2.2.62>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech19><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.66",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech21",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 886,
+      "originalHtml": "<A NAME=2.2.66>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech21><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.69",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech23",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 897,
+      "originalHtml": "<A NAME=2.2.69>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech23><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.72",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech25",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 908,
+      "originalHtml": "<A NAME=2.2.72>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech25><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.76",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech27",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 920,
+      "originalHtml": "<A NAME=2.2.76>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech27><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.80",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech29",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 932,
+      "originalHtml": "<A NAME=2.2.80>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech29><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.84",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech31",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 944,
+      "originalHtml": "<A NAME=2.2.84>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech31><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.88",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech33",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 956,
+      "originalHtml": "<A NAME=2.2.88>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech33><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.92",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech35",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 968,
+      "originalHtml": "<A NAME=2.2.92>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech35><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.97",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech37",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 981,
+      "originalHtml": "<A NAME=2.2.97>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech37><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.100",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech39",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 992,
+      "originalHtml": "<A NAME=2.2.100>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech39><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.104",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech41",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1004,
+      "originalHtml": "<A NAME=2.2.104>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech41><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.107",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech43",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1015,
+      "originalHtml": "<A NAME=2.2.107>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech43><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.110",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech45",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1026,
+      "originalHtml": "<A NAME=2.2.110>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech45><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.113",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech47",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1037,
+      "originalHtml": "<A NAME=2.2.113>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech47><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.118",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech49",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1050,
+      "originalHtml": "<A NAME=2.2.118>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech49><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.123",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech51",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1063,
+      "originalHtml": "<A NAME=2.2.123>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech51><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.128",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech53",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1076,
+      "originalHtml": "<A NAME=2.2.128>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech53><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.168",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech55",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1125,
+      "originalHtml": "<A NAME=2.2.168>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech55><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.177",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech57",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1142,
+      "originalHtml": "<A NAME=2.2.177>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech57><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.183",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech60",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1160,
+      "originalHtml": "<A NAME=2.2.183>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech60><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.187",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech62",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1172,
+      "originalHtml": "<A NAME=2.2.187>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech62><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.191",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech64",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1184,
+      "originalHtml": "<A NAME=2.2.191>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech64><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.207",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech66",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1208,
+      "originalHtml": "<A NAME=2.2.207>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech66><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.223",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech71",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1244,
+      "originalHtml": "<A NAME=2.2.223>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech71><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.226",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech73",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1255,
+      "originalHtml": "<A NAME=2.2.226>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech73><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "2.2.242",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech78",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1291,
+      "originalHtml": "<A NAME=2.2.242>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech78><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.1",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1324,
+      "originalHtml": "<A NAME=3.1.1>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech1><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.16",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1347,
+      "originalHtml": "<A NAME=3.1.16>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech3><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.22",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1361,
+      "originalHtml": "<A NAME=3.1.22>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech5><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.27",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1374,
+      "originalHtml": "<A NAME=3.1.27>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech7><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.31",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1386,
+      "originalHtml": "<A NAME=3.1.31>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech9><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.34",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech11",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1397,
+      "originalHtml": "<A NAME=3.1.34>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech11><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.50",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech16",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1433,
+      "originalHtml": "<A NAME=3.1.50>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech16><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.54",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech18",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1445,
+      "originalHtml": "<A NAME=3.1.54>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech18><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.58",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech20",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1457,
+      "originalHtml": "<A NAME=3.1.58>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech20><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.83",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech33",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1534,
+      "originalHtml": "<A NAME=3.1.83>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech33><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.88",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech37",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1555,
+      "originalHtml": "<A NAME=3.1.88>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech37><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.95",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech41",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1578,
+      "originalHtml": "<A NAME=3.1.95>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech41><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.103",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech47",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1610,
+      "originalHtml": "<A NAME=3.1.103>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech47><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.108",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech49",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1623,
+      "originalHtml": "<A NAME=3.1.108>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech49><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.119",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech55",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1658,
+      "originalHtml": "<A NAME=3.1.119>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech55><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.124",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech57",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1671,
+      "originalHtml": "<A NAME=3.1.124>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech57><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.148",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech59",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1703,
+      "originalHtml": "<A NAME=3.1.148>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech59><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.1.166",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech61",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 1730,
+      "originalHtml": "<A NAME=3.1.166>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech61><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.29",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech2",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1773,
+      "originalHtml": "<A NAME=3.2.29>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech2><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.55",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech4",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1807,
+      "originalHtml": "<A NAME=3.2.55>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech4><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.58",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech6",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1818,
+      "originalHtml": "<A NAME=3.2.58>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech6><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.61",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech8",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1829,
+      "originalHtml": "<A NAME=3.2.61>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech8><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.64",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech10",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1840,
+      "originalHtml": "<A NAME=3.2.64>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech10><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.67",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech12",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1851,
+      "originalHtml": "<A NAME=3.2.67>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech12><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.74",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech14",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1866,
+      "originalHtml": "<A NAME=3.2.74>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech14><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.81",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech16",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1883,
+      "originalHtml": "<A NAME=3.2.81>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech16><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.85",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech18",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1895,
+      "originalHtml": "<A NAME=3.2.85>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech18><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.91",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech22",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1917,
+      "originalHtml": "<A NAME=3.2.91>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech22><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.97",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech24",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1931,
+      "originalHtml": "<A NAME=3.2.97>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech24><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.103",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech26",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1945,
+      "originalHtml": "<A NAME=3.2.103>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech26><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.111",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech28",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1961,
+      "originalHtml": "<A NAME=3.2.111>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech28><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.116",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech30",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1974,
+      "originalHtml": "<A NAME=3.2.116>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech30><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.119",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech32",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1985,
+      "originalHtml": "<A NAME=3.2.119>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech32><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.124",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech34",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 1998,
+      "originalHtml": "<A NAME=3.2.124>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech34><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.129",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech36",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2011,
+      "originalHtml": "<A NAME=3.2.129>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech36><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.132",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech38",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2022,
+      "originalHtml": "<A NAME=3.2.132>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech38><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.135",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech40",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2033,
+      "originalHtml": "<A NAME=3.2.135>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech40><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.139",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech42",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2045,
+      "originalHtml": "<A NAME=3.2.139>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech42><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.144",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech44",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2058,
+      "originalHtml": "<A NAME=3.2.144>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech44><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.147",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech46",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2069,
+      "originalHtml": "<A NAME=3.2.147>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech46><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.153",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech48",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2083,
+      "originalHtml": "<A NAME=3.2.153>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech48><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.165",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech50",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2103,
+      "originalHtml": "<A NAME=3.2.165>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech50><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.175",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech52",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2122,
+      "originalHtml": "<A NAME=3.2.175>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech52><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.186",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech54",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2142,
+      "originalHtml": "<A NAME=3.2.186>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech54><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.191",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech56",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2155,
+      "originalHtml": "<A NAME=3.2.191>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech56><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.194",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech58",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2166,
+      "originalHtml": "<A NAME=3.2.194>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech58><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.200",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech60",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2180,
+      "originalHtml": "<A NAME=3.2.200>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech60><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "3.2.204",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech62",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2193,
+      "originalHtml": "<A NAME=3.2.204>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech62><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.15",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech4",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2238,
+      "originalHtml": "<A NAME=4.1.15>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech4><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.23",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech6",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2255,
+      "originalHtml": "<A NAME=4.1.23>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech6><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.36",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech8",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2276,
+      "originalHtml": "<A NAME=4.1.36>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech8><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.44",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech10",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2292,
+      "originalHtml": "<A NAME=4.1.44>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech10><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.47",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech12",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2303,
+      "originalHtml": "<A NAME=4.1.47>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech12><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.53",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech14",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2317,
+      "originalHtml": "<A NAME=4.1.53>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech14><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.60",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech17",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2336,
+      "originalHtml": "<A NAME=4.1.60>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech17><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.64",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech19",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2348,
+      "originalHtml": "<A NAME=4.1.64>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech19><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.70",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech21",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2362,
+      "originalHtml": "<A NAME=4.1.70>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech21><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.73",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech23",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2373,
+      "originalHtml": "<A NAME=4.1.73>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech23><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.76",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech25",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2384,
+      "originalHtml": "<A NAME=4.1.76>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech25><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.85",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech30",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2413,
+      "originalHtml": "<A NAME=4.1.85>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech30><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.92",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech33",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2432,
+      "originalHtml": "<A NAME=4.1.92>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech33><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.106",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech36",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2459,
+      "originalHtml": "<A NAME=4.1.106>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech36><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.110",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech38",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2471,
+      "originalHtml": "<A NAME=4.1.110>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech38><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.1.115",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech40",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2484,
+      "originalHtml": "<A NAME=4.1.115>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech40><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.1",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2729,
+      "originalHtml": "<A NAME=4.3.1>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech1><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.15",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2752,
+      "originalHtml": "<A NAME=4.3.15>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech3><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.22",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2767,
+      "originalHtml": "<A NAME=4.3.22>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech5><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.31",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2784,
+      "originalHtml": "<A NAME=4.3.31>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech7><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.37",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2798,
+      "originalHtml": "<A NAME=4.3.37>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech9><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.44",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech11",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2813,
+      "originalHtml": "<A NAME=4.3.44>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech11><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.51",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech13",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2829,
+      "originalHtml": "<A NAME=4.3.51>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech13><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.54",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech15",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2840,
+      "originalHtml": "<A NAME=4.3.54>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech15><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.67",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech19",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2869,
+      "originalHtml": "<A NAME=4.3.67>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech19><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.71",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech21",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2881,
+      "originalHtml": "<A NAME=4.3.71>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech21><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.3.86",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech25",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 2912,
+      "originalHtml": "<A NAME=4.3.86>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech25><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.1",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2951,
+      "originalHtml": "<A NAME=4.4.1>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech1><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.12",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2971,
+      "originalHtml": "<A NAME=4.4.12>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech3><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.15",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2982,
+      "originalHtml": "<A NAME=4.4.15>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech5><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.18",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 2993,
+      "originalHtml": "<A NAME=4.4.18>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech7><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.21",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3004,
+      "originalHtml": "<A NAME=4.4.21>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech9><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.27",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech14",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3031,
+      "originalHtml": "<A NAME=4.4.27>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech14><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.44",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech18",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3064,
+      "originalHtml": "<A NAME=4.4.44>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech18><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.49",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech20",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3078,
+      "originalHtml": "<A NAME=4.4.49>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech20><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.59",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech26",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3113,
+      "originalHtml": "<A NAME=4.4.59>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech26><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.65",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech28",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3128,
+      "originalHtml": "<A NAME=4.4.65>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech28><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.68",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech30",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3139,
+      "originalHtml": "<A NAME=4.4.68>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech30><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.77",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech32",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3156,
+      "originalHtml": "<A NAME=4.4.77>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech32><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.80",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech34",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3167,
+      "originalHtml": "<A NAME=4.4.80>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech34><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.83",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech36",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3178,
+      "originalHtml": "<A NAME=4.4.83>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech36><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.86",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech38",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3189,
+      "originalHtml": "<A NAME=4.4.86>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech38><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.89",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech40",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3200,
+      "originalHtml": "<A NAME=4.4.89>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech40><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.96",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech44",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3223,
+      "originalHtml": "<A NAME=4.4.96>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech44><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.102",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech47",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3241,
+      "originalHtml": "<A NAME=4.4.102>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech47><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.111",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech52",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3270,
+      "originalHtml": "<A NAME=4.4.111>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech52><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.118",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech56",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3293,
+      "originalHtml": "<A NAME=4.4.118>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech56><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.127",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech60",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3319,
+      "originalHtml": "<A NAME=4.4.127>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech60><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.144",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech66",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3361,
+      "originalHtml": "<A NAME=4.4.144>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech66><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.147",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech68",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3372,
+      "originalHtml": "<A NAME=4.4.147>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech68><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.171",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech83",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 3459,
+      "originalHtml": "<A NAME=4.4.171>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech83><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.174",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech85",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 3470,
+      "originalHtml": "<A NAME=4.4.174>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech85><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "4.4.183",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech87",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 3487,
+      "originalHtml": "<A NAME=4.4.183>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech87><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.23",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech6",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 3543,
+      "originalHtml": "<A NAME=5.1.23>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech6><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.26",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech8",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 3554,
+      "originalHtml": "<A NAME=5.1.26>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech8><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.31",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech10",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 3567,
+      "originalHtml": "<A NAME=5.1.31>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech10><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.195",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech57",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3928,
+      "originalHtml": "<A NAME=5.1.195>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech57><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.203",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech59",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3944,
+      "originalHtml": "<A NAME=5.1.203>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech59><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.211",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech61",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3960,
+      "originalHtml": "<A NAME=5.1.211>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech61><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.222",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech66",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 3991,
+      "originalHtml": "<A NAME=5.1.222>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech66><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.275",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech71",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4064,
+      "originalHtml": "<A NAME=5.1.275>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech71><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.288",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech75",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4093,
+      "originalHtml": "<A NAME=5.1.288>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech75><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.313",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech88",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4171,
+      "originalHtml": "<A NAME=5.1.313>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech88><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.332",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech94",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4214,
+      "originalHtml": "<A NAME=5.1.332>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech94><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.337",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech96",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4227,
+      "originalHtml": "<A NAME=5.1.337>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech96><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.352",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech103",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 4272,
+      "originalHtml": "<A NAME=5.1.352>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech103><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.379",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech109",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 4323,
+      "originalHtml": "<A NAME=5.1.379>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech109><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.382",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech111",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4334,
+      "originalHtml": "<A NAME=5.1.382>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech111><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.385",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech113",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4345,
+      "originalHtml": "<A NAME=5.1.385>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech113><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.389",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech115",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 4357,
+      "originalHtml": "<A NAME=5.1.389>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech115><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.392",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech117",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4368,
+      "originalHtml": "<A NAME=5.1.392>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech117><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.394",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech118",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 4374,
+      "originalHtml": "<A NAME=5.1.394>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech118><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.402",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech120",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 4391,
+      "originalHtml": "<A NAME=5.1.402>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech120><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.404",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech121",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4397,
+      "originalHtml": "<A NAME=5.1.404>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech121><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.410",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech125",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 4419,
+      "originalHtml": "<A NAME=5.1.410>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech125><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.416",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech126",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4429,
+      "originalHtml": "<A NAME=5.1.416>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech126><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.420",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech129",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4445,
+      "originalHtml": "<A NAME=5.1.420>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech129><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.438",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech133",
+      "followingBoldLabel": "OF EPHESUS",
+      "joinedLabel": "ANTIPHOLUS OF EPHESUS",
+      "htmlLine": 4480,
+      "originalHtml": "<A NAME=5.1.438>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech133><b>OF EPHESUS</b>"
+    },
+    {
+      "archiveEntry": "comedy_errors/full.html",
+      "sourceAnchor": "5.1.441",
+      "rawPrefix": "ANTIPHOLUS",
+      "followingSpeechAnchor": "speech135",
+      "followingBoldLabel": "OF SYRACUSE",
+      "joinedLabel": "ANTIPHOLUS OF SYRACUSE",
+      "htmlLine": 4491,
+      "originalHtml": "<A NAME=5.1.441>ANTIPHOLUS</A><br>\n</blockquote>\n\n<A NAME=speech135><b>OF SYRACUSE</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.1",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 738,
+      "originalHtml": "<A NAME=1.2.1>DON</A><br>\n</blockquote>\n\n<A NAME=speech1><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.5",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 750,
+      "originalHtml": "<A NAME=1.2.5>DON</A><br>\n</blockquote>\n\n<A NAME=speech3><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.8",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 761,
+      "originalHtml": "<A NAME=1.2.8>DON</A><br>\n</blockquote>\n\n<A NAME=speech5><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.12",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 773,
+      "originalHtml": "<A NAME=1.2.12>DON</A><br>\n</blockquote>\n\n<A NAME=speech7><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.15",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 784,
+      "originalHtml": "<A NAME=1.2.15>DON</A><br>\n</blockquote>\n\n<A NAME=speech9><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.25",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech13",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 810,
+      "originalHtml": "<A NAME=1.2.25>DON</A><br>\n</blockquote>\n\n<A NAME=speech13><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.28",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech15",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 821,
+      "originalHtml": "<A NAME=1.2.28>DON</A><br>\n</blockquote>\n\n<A NAME=speech15><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.31",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech17",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 832,
+      "originalHtml": "<A NAME=1.2.31>DON</A><br>\n</blockquote>\n\n<A NAME=speech17><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.34",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech19",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 843,
+      "originalHtml": "<A NAME=1.2.34>DON</A><br>\n</blockquote>\n\n<A NAME=speech19><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.37",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech21",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 854,
+      "originalHtml": "<A NAME=1.2.37>DON</A><br>\n</blockquote>\n\n<A NAME=speech21><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.40",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech23",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 865,
+      "originalHtml": "<A NAME=1.2.40>DON</A><br>\n</blockquote>\n\n<A NAME=speech23><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.43",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech25",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 876,
+      "originalHtml": "<A NAME=1.2.43>DON</A><br>\n</blockquote>\n\n<A NAME=speech25><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.46",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech27",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 887,
+      "originalHtml": "<A NAME=1.2.46>DON</A><br>\n</blockquote>\n\n<A NAME=speech27><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.49",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech29",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 898,
+      "originalHtml": "<A NAME=1.2.49>DON</A><br>\n</blockquote>\n\n<A NAME=speech29><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.52",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech31",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 909,
+      "originalHtml": "<A NAME=1.2.52>DON</A><br>\n</blockquote>\n\n<A NAME=speech31><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.57",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech33",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 922,
+      "originalHtml": "<A NAME=1.2.57>DON</A><br>\n</blockquote>\n\n<A NAME=speech33><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.60",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech35",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 933,
+      "originalHtml": "<A NAME=1.2.60>DON</A><br>\n</blockquote>\n\n<A NAME=speech35><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.67",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech37",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 948,
+      "originalHtml": "<A NAME=1.2.67>DON</A><br>\n</blockquote>\n\n<A NAME=speech37><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.70",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech39",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 959,
+      "originalHtml": "<A NAME=1.2.70>DON</A><br>\n</blockquote>\n\n<A NAME=speech39><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.81",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech41",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 978,
+      "originalHtml": "<A NAME=1.2.81>DON</A><br>\n</blockquote>\n\n<A NAME=speech41><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.88",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech43",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 993,
+      "originalHtml": "<A NAME=1.2.88>DON</A><br>\n</blockquote>\n\n<A NAME=speech43><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.94",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech45",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1007,
+      "originalHtml": "<A NAME=1.2.94>DON</A><br>\n</blockquote>\n\n<A NAME=speech45><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.97",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech47",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1018,
+      "originalHtml": "<A NAME=1.2.97>DON</A><br>\n</blockquote>\n\n<A NAME=speech47><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.100",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech49",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1029,
+      "originalHtml": "<A NAME=1.2.100>DON</A><br>\n</blockquote>\n\n<A NAME=speech49><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.103",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech51",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1040,
+      "originalHtml": "<A NAME=1.2.103>DON</A><br>\n</blockquote>\n\n<A NAME=speech51><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.108",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech53",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1053,
+      "originalHtml": "<A NAME=1.2.108>DON</A><br>\n</blockquote>\n\n<A NAME=speech53><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.112",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech55",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1065,
+      "originalHtml": "<A NAME=1.2.112>DON</A><br>\n</blockquote>\n\n<A NAME=speech55><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.115",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech57",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1076,
+      "originalHtml": "<A NAME=1.2.115>DON</A><br>\n</blockquote>\n\n<A NAME=speech57><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.128",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech59",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1097,
+      "originalHtml": "<A NAME=1.2.128>DON</A><br>\n</blockquote>\n\n<A NAME=speech59><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.134",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech61",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1111,
+      "originalHtml": "<A NAME=1.2.134>DON</A><br>\n</blockquote>\n\n<A NAME=speech61><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.141",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech63",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1126,
+      "originalHtml": "<A NAME=1.2.141>DON</A><br>\n</blockquote>\n\n<A NAME=speech63><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.144",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech65",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1137,
+      "originalHtml": "<A NAME=1.2.144>DON</A><br>\n</blockquote>\n\n<A NAME=speech65><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.152",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech68",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1158,
+      "originalHtml": "<A NAME=1.2.152>DON</A><br>\n</blockquote>\n\n<A NAME=speech68><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.155",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech70",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1169,
+      "originalHtml": "<A NAME=1.2.155>DON</A><br>\n</blockquote>\n\n<A NAME=speech70><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.158",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech72",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1180,
+      "originalHtml": "<A NAME=1.2.158>DON</A><br>\n</blockquote>\n\n<A NAME=speech72><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.161",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech74",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1191,
+      "originalHtml": "<A NAME=1.2.161>DON</A><br>\n</blockquote>\n\n<A NAME=speech74><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.164",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech76",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1202,
+      "originalHtml": "<A NAME=1.2.164>DON</A><br>\n</blockquote>\n\n<A NAME=speech76><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.167",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech78",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1213,
+      "originalHtml": "<A NAME=1.2.167>DON</A><br>\n</blockquote>\n\n<A NAME=speech78><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.171",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech81",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1230,
+      "originalHtml": "<A NAME=1.2.171>DON</A><br>\n</blockquote>\n\n<A NAME=speech81><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.176",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech83",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1243,
+      "originalHtml": "<A NAME=1.2.176>DON</A><br>\n</blockquote>\n\n<A NAME=speech83><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.180",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech85",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1255,
+      "originalHtml": "<A NAME=1.2.180>DON</A><br>\n</blockquote>\n\n<A NAME=speech85><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "1.2.193",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech92",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 1297,
+      "originalHtml": "<A NAME=1.2.193>DON</A><br>\n</blockquote>\n\n<A NAME=speech92><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.1",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech1",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2058,
+      "originalHtml": "<A NAME=3.1.1>DON</A><br>\n</blockquote>\n\n<A NAME=speech1><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.4",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech3",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2070,
+      "originalHtml": "<A NAME=3.1.4>DON</A><br>\n</blockquote>\n\n<A NAME=speech3><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.9",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech5",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2083,
+      "originalHtml": "<A NAME=3.1.9>DON</A><br>\n</blockquote>\n\n<A NAME=speech5><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.26",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech7",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2108,
+      "originalHtml": "<A NAME=3.1.26>DON</A><br>\n</blockquote>\n\n<A NAME=speech7><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.29",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech9",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2119,
+      "originalHtml": "<A NAME=3.1.29>DON</A><br>\n</blockquote>\n\n<A NAME=speech9><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.32",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech11",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2130,
+      "originalHtml": "<A NAME=3.1.32>DON</A><br>\n</blockquote>\n\n<A NAME=speech11><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.36",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech13",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2142,
+      "originalHtml": "<A NAME=3.1.36>DON</A><br>\n</blockquote>\n\n<A NAME=speech13><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.39",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech15",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2153,
+      "originalHtml": "<A NAME=3.1.39>DON</A><br>\n</blockquote>\n\n<A NAME=speech15><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.42",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech17",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2164,
+      "originalHtml": "<A NAME=3.1.42>DON</A><br>\n</blockquote>\n\n<A NAME=speech17><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.50",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech19",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2180,
+      "originalHtml": "<A NAME=3.1.50>DON</A><br>\n</blockquote>\n\n<A NAME=speech19><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.54",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech21",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2192,
+      "originalHtml": "<A NAME=3.1.54>DON</A><br>\n</blockquote>\n\n<A NAME=speech21><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.58",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech23",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2204,
+      "originalHtml": "<A NAME=3.1.58>DON</A><br>\n</blockquote>\n\n<A NAME=speech23><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.62",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech25",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2216,
+      "originalHtml": "<A NAME=3.1.62>DON</A><br>\n</blockquote>\n\n<A NAME=speech25><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.65",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech27",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2227,
+      "originalHtml": "<A NAME=3.1.65>DON</A><br>\n</blockquote>\n\n<A NAME=speech27><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.69",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech29",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2239,
+      "originalHtml": "<A NAME=3.1.69>DON</A><br>\n</blockquote>\n\n<A NAME=speech29><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.73",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech31",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2251,
+      "originalHtml": "<A NAME=3.1.73>DON</A><br>\n</blockquote>\n\n<A NAME=speech31><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.78",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech33",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2265,
+      "originalHtml": "<A NAME=3.1.78>DON</A><br>\n</blockquote>\n\n<A NAME=speech33><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.84",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech35",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2280,
+      "originalHtml": "<A NAME=3.1.84>DON</A><br>\n</blockquote>\n\n<A NAME=speech35><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.89",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech37",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2293,
+      "originalHtml": "<A NAME=3.1.89>DON</A><br>\n</blockquote>\n\n<A NAME=speech37><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.96",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech39",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2308,
+      "originalHtml": "<A NAME=3.1.96>DON</A><br>\n</blockquote>\n\n<A NAME=speech39><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.104",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech41",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2324,
+      "originalHtml": "<A NAME=3.1.104>DON</A><br>\n</blockquote>\n\n<A NAME=speech41><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.113",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech43",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2341,
+      "originalHtml": "<A NAME=3.1.113>DON</A><br>\n</blockquote>\n\n<A NAME=speech43><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.122",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech46",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2362,
+      "originalHtml": "<A NAME=3.1.122>DON</A><br>\n</blockquote>\n\n<A NAME=speech46><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.130",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech49",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2382,
+      "originalHtml": "<A NAME=3.1.130>DON</A><br>\n</blockquote>\n\n<A NAME=speech49><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.136",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech52",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2400,
+      "originalHtml": "<A NAME=3.1.136>DON</A><br>\n</blockquote>\n\n<A NAME=speech52><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.139",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech54",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2411,
+      "originalHtml": "<A NAME=3.1.139>DON</A><br>\n</blockquote>\n\n<A NAME=speech54><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.143",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech56",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2423,
+      "originalHtml": "<A NAME=3.1.143>DON</A><br>\n</blockquote>\n\n<A NAME=speech56><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "3.1.148",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech58",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 2436,
+      "originalHtml": "<A NAME=3.1.148>DON</A><br>\n</blockquote>\n\n<A NAME=speech58><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.32",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech10",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4271,
+      "originalHtml": "<A NAME=5.1.32>DON</A><br>\n</blockquote>\n\n<A NAME=speech10><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.35",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech12",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4283,
+      "originalHtml": "<A NAME=5.1.35>DON</A><br>\n</blockquote>\n\n<A NAME=speech12><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.46",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech17",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4314,
+      "originalHtml": "<A NAME=5.1.46>DON</A><br>\n</blockquote>\n\n<A NAME=speech17><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.57",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech25",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4357,
+      "originalHtml": "<A NAME=5.1.57>DON</A><br>\n</blockquote>\n\n<A NAME=speech25><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.76",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech33",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4408,
+      "originalHtml": "<A NAME=5.1.76>DON</A><br>\n</blockquote>\n\n<A NAME=speech33><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.81",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech35",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4421,
+      "originalHtml": "<A NAME=5.1.81>DON</A><br>\n</blockquote>\n\n<A NAME=speech35><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.84",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech37",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4432,
+      "originalHtml": "<A NAME=5.1.84>DON</A><br>\n</blockquote>\n\n<A NAME=speech37><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.93",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech39",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4449,
+      "originalHtml": "<A NAME=5.1.93>DON</A><br>\n</blockquote>\n\n<A NAME=speech39><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.129",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech43",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4501,
+      "originalHtml": "<A NAME=5.1.129>DON</A><br>\n</blockquote>\n\n<A NAME=speech43><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.139",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech46",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4523,
+      "originalHtml": "<A NAME=5.1.139>DON</A><br>\n</blockquote>\n\n<A NAME=speech46><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.143",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech49",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4539,
+      "originalHtml": "<A NAME=5.1.143>DON</A><br>\n</blockquote>\n\n<A NAME=speech49><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.1.146",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech51",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 4550,
+      "originalHtml": "<A NAME=5.1.146>DON</A><br>\n</blockquote>\n\n<A NAME=speech51><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.551",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech243",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6127,
+      "originalHtml": "<A NAME=5.2.551>DON</A><br>\n</blockquote>\n\n<A NAME=speech243><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.557",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech247",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6150,
+      "originalHtml": "<A NAME=5.2.557>DON</A><br>\n</blockquote>\n\n<A NAME=speech247><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.674",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech317",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6555,
+      "originalHtml": "<A NAME=5.2.674>DON</A><br>\n</blockquote>\n\n<A NAME=speech317><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.681",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech322",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6582,
+      "originalHtml": "<A NAME=5.2.681>DON</A><br>\n</blockquote>\n\n<A NAME=speech322><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.690",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech325",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6603,
+      "originalHtml": "<A NAME=5.2.690>DON</A><br>\n</blockquote>\n\n<A NAME=speech325><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.694",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech328",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6619,
+      "originalHtml": "<A NAME=5.2.694>DON</A><br>\n</blockquote>\n\n<A NAME=speech328><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.700",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech330",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6634,
+      "originalHtml": "<A NAME=5.2.700>DON</A><br>\n</blockquote>\n\n<A NAME=speech330><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.704",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech333",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6650,
+      "originalHtml": "<A NAME=5.2.704>DON</A><br>\n</blockquote>\n\n<A NAME=speech333><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.708",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech335",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6662,
+      "originalHtml": "<A NAME=5.2.708>DON</A><br>\n</blockquote>\n\n<A NAME=speech335><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.713",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech337",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6675,
+      "originalHtml": "<A NAME=5.2.713>DON</A><br>\n</blockquote>\n\n<A NAME=speech337><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.729",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech346",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6727,
+      "originalHtml": "<A NAME=5.2.729>DON</A><br>\n</blockquote>\n\n<A NAME=speech346><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.740",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech352",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6762,
+      "originalHtml": "<A NAME=5.2.740>DON</A><br>\n</blockquote>\n\n<A NAME=speech352><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.744",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech354",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6774,
+      "originalHtml": "<A NAME=5.2.744>DON</A><br>\n</blockquote>\n\n<A NAME=speech354><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.747",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech356",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6785,
+      "originalHtml": "<A NAME=5.2.747>DON</A><br>\n</blockquote>\n\n<A NAME=speech356><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.762",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech364",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 6833,
+      "originalHtml": "<A NAME=5.2.762>DON</A><br>\n</blockquote>\n\n<A NAME=speech364><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.917",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech399",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 7130,
+      "originalHtml": "<A NAME=5.2.917>DON</A><br>\n</blockquote>\n\n<A NAME=speech399><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.921",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech402",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 7146,
+      "originalHtml": "<A NAME=5.2.921>DON</A><br>\n</blockquote>\n\n<A NAME=speech402><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.930",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech404",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 7163,
+      "originalHtml": "<A NAME=5.2.930>DON</A><br>\n</blockquote>\n\n<A NAME=speech404><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "lll/full.html",
+      "sourceAnchor": "5.2.969",
+      "rawPrefix": "DON",
+      "followingSpeechAnchor": "speech405",
+      "followingBoldLabel": "ADRIANO DE ARMADO",
+      "joinedLabel": "DON ADRIANO DE ARMADO",
+      "htmlLine": 7208,
+      "originalHtml": "<A NAME=5.2.969>DON</A><br>\n</blockquote>\n\n<A NAME=speech405><b>ADRIANO DE ARMADO</b>"
+    },
+    {
+      "archiveEntry": "richardiii/full.html",
+      "sourceAnchor": "5.3.123",
+      "rawPrefix": "Ghost",
+      "followingSpeechAnchor": "speech36",
+      "followingBoldLabel": "of Prince Edward",
+      "joinedLabel": "Ghost of Prince Edward",
+      "htmlLine": 7808,
+      "originalHtml": "<A NAME=5.3.123>Ghost</A><br>\n</blockquote>\n\n<A NAME=speech36><b>of Prince Edward</b>"
+    },
+    {
+      "archiveEntry": "richardiii/full.html",
+      "sourceAnchor": "5.3.131",
+      "rawPrefix": "Ghost",
+      "followingSpeechAnchor": "speech37",
+      "followingBoldLabel": "of King Henry VI",
+      "joinedLabel": "Ghost of King Henry VI",
+      "htmlLine": 7822,
+      "originalHtml": "<A NAME=5.3.131>Ghost</A><br>\n</blockquote>\n\n<A NAME=speech37><b>of King Henry VI</b>"
+    },
+    {
+      "archiveEntry": "richardiii/full.html",
+      "sourceAnchor": "5.3.166",
+      "rawPrefix": "Ghosts",
+      "followingSpeechAnchor": "speech44",
+      "followingBoldLabel": "of young Princes",
+      "joinedLabel": "Ghosts of young Princes",
+      "htmlLine": 7892,
+      "originalHtml": "<A NAME=5.3.166>Ghosts</A><br>\n</blockquote>\n\n<A NAME=speech44><b>of young Princes</b>"
+    },
+    {
+      "archiveEntry": "richardiii/full.html",
+      "sourceAnchor": "5.3.185",
+      "rawPrefix": "Ghost",
+      "followingSpeechAnchor": "speech46",
+      "followingBoldLabel": "of BUCKINGHAM",
+      "joinedLabel": "Ghost of BUCKINGHAM",
+      "htmlLine": 7923,
+      "originalHtml": "<A NAME=5.3.185>Ghost</A><br>\n</blockquote>\n\n<A NAME=speech46><b>of BUCKINGHAM</b>"
+    }
+  ],
+  "unresolvedSourceWarnings": [
+    {
+      "archiveEntry": "timon/full.html",
+      "scene": "3.2",
+      "boldSourceLabel": "LUCILIUS",
+      "explanation": "Original bold role labels really use LUCILIUS for Lucius’s scene3.2 dialogue, and also Lucilius in1.1. This remains ambiguous, not a parsing correction; preserve source wording and scope any aliases by scene."
+    }
+  ]
+}

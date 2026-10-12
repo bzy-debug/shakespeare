@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "extractionRevision": "source-markup-corrections-v2",
+  "policy": "Exact, individually reviewed corrections only. Preserve original source snapshots and disclose external-edition corroboration. Do not infer speakers from general prose.",
+  "occurrences": [
+    {
+      "workId": "lll",
+      "kind": "speaker_label_is_spoken_prefix",
+      "sectionId": "5.2",
+      "speechAnchor": "speech193",
+      "sourceLine": "5.2.418",
+      "originalSpeakerMarkup": "<A NAME=speech193><b>Here stand I</b></a>",
+      "rawLabelText": "Here stand I",
+      "rawNumberedLineText": "lady, dart thy skill at me;",
+      "speaker": "BIRON",
+      "preservation": "Move the exact existing source label words into the following speech, joined by one space. Preserve block IDs and all numbered-line text; do not import punctuation or wording from the corroborating edition.",
+      "evidence": {
+        "url": "https://www.folger.edu/explore/shakespeares-works/loves-labors-lost/read/5/2/",
+        "edition": "Folger Shakespeare Library, Love’s Labor’s Lost, Act 5 Scene 2",
+        "support": "The passage belongs to Berowne (BIRON in the MIT spelling); Here stand I is dialogue, not a role label.",
+        "checked": "2026-10-12"
+      }
+    },
+    {
+      "workId": "edwardiii",
+      "kind": "missing_speaker_corroborated_by_edition",
+      "sectionId": "3.5",
+      "sourceAnchor": "id00388",
+      "rawSourceParagraph": "<p id=\"id00388\">Renowned Edward, give me leave, I pray,<br>\n\nTo lead my soldiers where I may relieve<br>\n\nYour Grace’s son, in danger to be slain.<br>\n\nThe snares of French, like Emmets on a bank,<br>\n\nMuster about him; whilest he, Lion like,<br>\n\nIntangled in the net of their assaults,<br>\n\nFranticly wrends, and bites the woven toil;<br>\n\nBut all in vain, he cannot free him self.<br>\n</p>",
+      "sourceText": "Renowned Edward, give me leave, I pray,\nTo lead my soldiers where I may relieve\nYour Grace’s son, in danger to be slain.\nThe snares of French, like Emmets on a bank,\nMuster about him; whilest he, Lion like,\nIntangled in the net of their assaults,\nFranticly wrends, and bites the woven toil;\nBut all in vain, he cannot free him self.",
+      "rawSpeakerLabel": null,
+      "previousCarriedSpeaker": "KING EDWARD",
+      "speaker": "AUDLEY",
+      "preservation": "Correct speaker metadata only. The pinned paragraph has no role cue; retain all Gutenberg dialogue unchanged and disclose the corroborating edition.",
+      "evidence": {
+        "url": "https://internetshakespeare.uvic.ca/doc/Edw_M/complete/index.html",
+        "edition": "Internet Shakespeare Editions, Edward III (Modern), edited by Amy Lidster and Sonia Massai",
+        "location": "Scene 8, 8.46, through-line number 1599",
+        "support": "The corresponding speech is explicitly attributed to Audley. The preceding entrance and following reply also corroborate the role.",
+        "checked": "2026-10-12"
+      }
+    },
+    {
+      "workId": "measure",
+      "kind": "speaker_label_is_spoken_prefix",
+      "sectionId": "2.4",
+      "speechAnchor": "speech8",
+      "sourceLine": "2.4.39",
+      "originalSpeakerMarkup": "<A NAME=speech8><b>As long as you or I</b></a>",
+      "rawLabelText": "As long as you or I",
+      "rawNumberedLineText": "yet he must die.",
+      "speaker": "ANGELO",
+      "preservation": "Restore exact source label words into dialogue with a space; preserve all numbered words and source block boundaries.",
+      "evidence": {
+        "url": "https://www.folger.edu/explore/shakespeares-works/measure-for-measure/read/2/4/",
+        "edition": "Folger Shakespeare Library",
+        "support": "This phrase is spoken by the preceding named character, not a new role label.",
+        "checked": "2026-10-12"
+      }
+    },
+    {
+      "workId": "julius_caesar",
+      "kind": "speaker_label_is_spoken_prefix",
+      "sectionId": "1.1",
+      "speechAnchor": "speech17",
+      "sourceLine": "1.1.63",
+      "originalSpeakerMarkup": "<A NAME=speech17><b>This way will I</b></a>",
+      "rawLabelText": "This way will I",
+      "rawNumberedLineText": "disrobe the images,",
+      "speaker": "FLAVIUS",
+      "preservation": "Restore exact source label words into dialogue with a space; preserve all numbered words and source block boundaries.",
+      "evidence": {
+        "url": "https://www.folger.edu/explore/shakespeares-works/julius-caesar/read/1/1/",
+        "edition": "Folger Shakespeare Library",
+        "support": "This phrase is spoken by the preceding named character, not a new role label.",
+        "checked": "2026-10-12"
+      }
+    },
+    {
+      "workId": "1henryiv",
+      "kind": "speaker_label_is_scene_heading",
+      "sectionId": "3.2",
+      "speechAnchor": "speech10",
+      "sourceLine": "3.2.182",
+      "rawLabelText": "Scene III",
+      "rawNumberedLineText": "Eastcheap. The Boar's-Head Tavern.",
+      "correctedAct": 3,
+      "correctedScene": 3,
+      "correctedSectionId": "3.3",
+      "originalHtml": "<A NAME=speech10><b>Scene III</b></a>\n<blockquote>\n<A NAME=3.2.182>Eastcheap. The Boar's-Head Tavern.</A>",
+      "preservation": "Interpret the existing Scene III label and place line as a heading; retain original numbered source anchors even where their scene numbers are erroneous. Following speeches move into the corrected reader section.",
+      "evidence": {
+        "url": "https://www.folger.edu/explore/shakespeares-works/henry-iv-part-1/read/3/3/",
+        "edition": "Folger Shakespeare Library",
+        "support": "The corresponding entrance and following dialogue begin scene 3 in this edition.",
+        "checked": "2026-10-12"
+      }
+    },
+    {
+      "workId": "cymbeline",
+      "kind": "speaker_label_is_scene_heading",
+      "sectionId": "2.2",
+      "speechAnchor": "speech7",
+      "sourceLine": "2.2.55",
+      "rawLabelText": "Scene III",
+      "rawNumberedLineText": "An ante-chamber adjoining Imogen's apartments.",
+      "correctedAct": 2,
+      "correctedScene": 3,
+      "correctedSectionId": "2.3",
+      "originalHtml": "<A NAME=speech7><b>Scene III</b></a>\n<blockquote>\n<A NAME=2.2.55>An ante-chamber adjoining Imogen's apartments.</A>",
+      "preservation": "Interpret the existing Scene III label and place line as a heading; retain original numbered source anchors even where their scene numbers are erroneous. Following speeches move into the corrected reader section.",
+      "evidence": {
+        "url": "https://www.folger.edu/explore/shakespeares-works/cymbeline/read/2/3/",
+        "edition": "Folger Shakespeare Library",
+        "support": "The corresponding entrance and following dialogue begin scene 3 in this edition.",
+        "checked": "2026-10-12"
+      }
+    }
+  ]
+}

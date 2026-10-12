@@ -1,4 +1,39 @@
 {
+  "splitRolePrefixes": {
+    "revision": "mit-split-role-prefixes-v1",
+    "count": 320,
+    "countsByWork": {
+      "1henryvi": 40,
+      "comedy_errors": 175,
+      "lll": 101,
+      "richardiii": 4
+    },
+    "file": "mit-split-role-prefixes.json",
+    "sha256": "152ec78e0bf231d453f70590c934023f6a66e0ee4cbded648619d79f23810224"
+  },
+  "specificMarkupCorrections": {
+    "revision": "source-markup-corrections-v2",
+    "count": 6,
+    "file": "specific-markup-corrections.json",
+    "sha256": "ce981a45fef5d9268c598dca385e12d45e0259aca1689d103d52119b6d1e0d30"
+  },
+  "roleCueExtractionRevision": "mit-tabbed-role-cues-v1",
+  "roleCueCount": 108,
+  "roleCueCountsByWork": {
+    "1henryvi": 12,
+    "2henryiv": 56,
+    "2henryvi": 3,
+    "coriolanus": 2,
+    "henryviii": 1,
+    "taming_shrew": 1,
+    "timon": 33
+  },
+  "roleCueAllowlist": {
+    "file": "mit-embedded-role-cues.json",
+    "sha256": "b8c6644ea62d1b32ba43103644e1d85e80a661788719c89d6a114745e870c784"
+  },
+  "scope": "39 plays only; no poetry reader payloads",
+  "archiveScopeNote": "The pinned MIT archive is an unmodified historical provenance snapshot and contains poetry source pages. These pages are not extracted into the reader corpus.",
   "retrieved": "2026-10-12",
   "mitRepository": "https://github.com/TheMITTech/shakespeare",
   "mitCommit": "6b82db852c7322dd33e95db347f0ddfc812c6409",
@@ -214,10 +249,10 @@
       "sha256": "401c2bc8d6edf9f4e7d97689c1611b3ef314c7530796f3850c748018fbd8245e"
     }
   ],
-  "workCount": 46,
+  "workCount": 39,
   "playCount": 39,
-  "poetryCollectionCount": 7,
-  "sectionCount": 988,
-  "blockCount": 40327,
-  "wordCount": 929366
+  "poetryCollectionCount": 0,
+  "sectionCount": 808,
+  "blockCount": 39658,
+  "wordCount": 880432
 }

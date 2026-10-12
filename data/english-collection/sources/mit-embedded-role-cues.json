@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "extractionRevision": "mit-tabbed-role-cues-v1",
+  "sourceRevision": "6b82db852c7322dd33e95db347f0ddfc812c6409",
+  "sourceArchiveSha256": "13d60111bdf4ebe68a6aa0d576937de15ac5dc31303487e12961702769e159b6",
+  "policy": "Only these manually reviewed exact source anchors and raw tab-delimited role prefixes introduce speaker turns. Preserve each complete raw line in sourceRoleCue metadata. Ordinary dialogue tabs, bracketed directions, and explicit source speaker labels remain unchanged.",
+  "countsByWork": {
+    "1henryvi": 12,
+    "2henryiv": 56,
+    "2henryvi": 3,
+    "coriolanus": 2,
+    "henryviii": 1,
+    "taming_shrew": 1,
+    "timon": 33
+  },
+  "occurrences": [
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "1.3.6",
+      "rawRolePrefix": "First Serving-Man",
+      "speaker": "First Serving-Man",
+      "rawLineText": "First Serving-Man\tIt is the noble Duke of Gloucester."
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "1.3.8",
+      "rawRolePrefix": "First Serving-Man",
+      "speaker": "First Serving-Man",
+      "rawLineText": "First Serving-Man\tVillains, answer you so the lord protector?"
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "1.3.27",
+      "rawRolePrefix": "Serving-Men",
+      "speaker": "Serving-Men",
+      "rawLineText": "Serving-Men\tOpen the gates unto the lord protector,"
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "1.4.1",
+      "rawRolePrefix": "Master-Gunner",
+      "speaker": "Master-Gunner",
+      "rawLineText": "Master-Gunner\tSirrah, thou know'st how Orleans is besieged,"
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "1.4.5",
+      "rawRolePrefix": "Master-Gunner",
+      "speaker": "Master-Gunner",
+      "rawLineText": "Master-Gunner\tBut now thou shalt not. Be thou ruled by me:"
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "3.1.100",
+      "rawRolePrefix": "First Serving-man",
+      "speaker": "First Serving-Man",
+      "rawLineText": "First Serving-man\tNay, if we be forbidden stones,"
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "3.1.102",
+      "rawRolePrefix": "Second Serving-man",
+      "speaker": "Second Serving-Man",
+      "rawLineText": "Second Serving-man\tDo what ye dare, we are as resolute."
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "3.1.105",
+      "rawRolePrefix": "Third Serving-man",
+      "speaker": "Third Serving-Man",
+      "rawLineText": "Third Serving-man\tMy lord, we know your grace to be a man"
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "3.1.113",
+      "rawRolePrefix": "First Serving-man",
+      "speaker": "First Serving-Man",
+      "rawLineText": "First Serving-man\tAy, and the very parings of our nails"
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "3.1.161",
+      "rawRolePrefix": "First Serving-man",
+      "speaker": "First Serving-Man",
+      "rawLineText": "First Serving-man\tContent: I'll to the surgeon's."
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "3.1.162",
+      "rawRolePrefix": "Second Serving-man",
+      "speaker": "Second Serving-Man",
+      "rawLineText": "Second Serving-man\tAnd so will I."
+    },
+    {
+      "workId": "1henryvi",
+      "sourceAnchor": "3.1.163",
+      "rawRolePrefix": "Third Serving-man",
+      "speaker": "Third Serving-Man",
+      "rawLineText": "Third Serving-man\tAnd I will see what physic the tavern affords."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.57",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhat's he that goes there?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.59",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tHe that was in question for the robbery?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.63",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhat, to York? Call him back again."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.67",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI am sure he is, to the hearing of any thing good."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.90",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tSir John Falstaff, a word with you."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.99",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tSir John, I sent for you before your expedition to"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.103",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI talk not of his majesty: you would not come when"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.107",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWell, God mend him! I pray you, let me speak with"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.112",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhat tell you me of it? be it as it is."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.116",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI think you are fallen into the disease; for you"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.121",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tTo punish you by the heels would amend the"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.130",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI sent for you, when there were matters against you"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.134",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWell, the truth is, Sir John, you live in great infamy."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.136",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tYour means are very slender, and your waste is great."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.139",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tYou have misled the youthful prince."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.142",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWell, I am loath to gall a new-healed wound: your"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.148",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tBut since all is well, keep it so: wake not a"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.151",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhat! you are as a candle, the better part burnt"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.155",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tThere is not a white hair on your face but should"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.158",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tYou follow the young prince up and down, like his"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.174",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tDo you set down your name in the scroll of youth,"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.195",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWell, God send the prince a better companion!"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.198",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWell, the king hath severed you and Prince Harry: I"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.218",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWell, be honest, be honest; and God bless your"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "1.2.222",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tNot a penny, not a penny; you are too impatient to"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.55",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhat is the matter? keep the peace here, ho!"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.57",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tHow now, Sir John! what are you brawling here?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.63",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tFor what sum?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.71",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tHow comes this, Sir John? Fie! what man of good"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.101",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tSir John, Sir John, I am well acquainted with your"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.110",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tPray thee, peace. Pay her the debt you owe her, and"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.121",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tYou speak as having power to do wrong: but answer"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.125",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tNow, Master Gower, what news?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.155",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI have heard better news."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.157",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhere lay the king last night?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.160",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tCome all his forces back?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.165",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tYou shall have letters of me presently:"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.168",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhat's the matter?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.172",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tSir John, you loiter here too long, being you are to"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.175",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tWhat foolish master taught you these manners, Sir John?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "2.1.179",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tNow the Lord lighten thee! thou art a great fool."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.2",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tHow doth the king?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.4",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI hope, not dead."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.7",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI would his majesty had call'd me with him:"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.11",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI know he doth not, and do arm myself"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.20",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tO God, I fear all will be overturn'd!"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.27",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tPeace be with us, lest we be heavier!"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.36",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tSweet princes, what I did, I did in honour,"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.44",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tGood morrow; and God save your majesty!"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.66",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI am assured, if I be measured rightly,"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.2.74",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI then did use the person of your father;"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.5.46",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tHave you your wits? know you what 'tis to speak?"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.5.91",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tGo, carry Sir John Falstaff to the Fleet:"
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.5.94",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tI cannot now speak: I will hear you soon."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.5.102",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tAnd so they are."
+    },
+    {
+      "workId": "2henryiv",
+      "sourceAnchor": "5.5.104",
+      "rawRolePrefix": "Lord Chief-Justice",
+      "speaker": "Lord Chief-Justice",
+      "rawLineText": "Lord Chief-Justice\tHe hath."
+    },
+    {
+      "workId": "2henryvi",
+      "sourceAnchor": "2.3.66",
+      "rawRolePrefix": "First 'Prentice",
+      "speaker": "First 'Prentice",
+      "rawLineText": "First 'Prentice\tHere, Peter, I drink to thee: and be not afraid."
+    },
+    {
+      "workId": "2henryvi",
+      "sourceAnchor": "2.3.67",
+      "rawRolePrefix": "Second 'Prentice",
+      "speaker": "Second 'Prentice",
+      "rawLineText": "Second 'Prentice\tBe merry, Peter, and fear not thy master: fight"
+    },
+    {
+      "workId": "2henryvi",
+      "sourceAnchor": "4.1.17",
+      "rawRolePrefix": "Master's-Mate",
+      "speaker": "Master's-Mate",
+      "rawLineText": "Master's-Mate\tAnd so much shall you give, or off goes yours."
+    },
+    {
+      "workId": "coriolanus",
+      "sourceAnchor": "3.1.219",
+      "rawRolePrefix": "Senators,  & C",
+      "speaker": "Senators, & C",
+      "rawLineText": "Senators,  & C\tWe'll surety him."
+    },
+    {
+      "workId": "coriolanus",
+      "sourceAnchor": "3.1.228",
+      "rawRolePrefix": "Senators,  & C",
+      "speaker": "Senators, & C",
+      "rawLineText": "Senators,  & C\tWeapons, weapons, weapons!"
+    },
+    {
+      "workId": "henryviii",
+      "sourceAnchor": "2.3.44",
+      "rawRolePrefix": "Old Lady:",
+      "speaker": "Old Lady",
+      "rawLineText": "Old Lady:\t'Tis strange: a three-pence bow'd would hire me,"
+    },
+    {
+      "workId": "taming_shrew",
+      "sourceAnchor": "4.1.109",
+      "rawRolePrefix": "ALL SERVING-MEN",
+      "speaker": "ALL SERVING-MEN",
+      "rawLineText": "ALL SERVING-MEN\tHere, here, sir; here, sir."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "1.1.16",
+      "rawRolePrefix": "Jeweller:",
+      "speaker": "Jeweller",
+      "rawLineText": "Jeweller:\tI have a jewel here--"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "1.1.18",
+      "rawRolePrefix": "Jeweller:",
+      "speaker": "Jeweller",
+      "rawLineText": "Jeweller:\tIf he will touch the estimate: but, for that--"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.12",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tIs't not your business too?"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.14",
+      "rawRolePrefix": "Isidore's Servant",
+      "speaker": "Isidore's Servant",
+      "rawLineText": "Isidore's Servant\tIt is so."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.16",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tI fear it."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.34",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tOne Varro's servant, my good lord,--"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.35",
+      "rawRolePrefix": "Isidore's Servant",
+      "speaker": "Isidore's Servant",
+      "rawLineText": "Isidore's Servant\tFrom Isidore;"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.38",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\t'Twas due on forfeiture, my lord, six weeks And past."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.39",
+      "rawRolePrefix": "Isidore's Servant",
+      "speaker": "Isidore's Servant",
+      "rawLineText": "Isidore's Servant\t         Your steward puts me off, my lord;"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.58",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tHang him, he'll abuse us."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.59",
+      "rawRolePrefix": "Isidore's Servant",
+      "speaker": "Isidore's Servant",
+      "rawLineText": "Isidore's Servant\tA plague upon him, dog!"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.60",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tHow dost, fool?"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.62",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tI speak not to thee."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.65",
+      "rawRolePrefix": "Isidore's Servant",
+      "speaker": "Isidore's Servant",
+      "rawLineText": "Isidore's Servant\tThere's the fool hangs on your back already."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.108",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tI could render one."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.112",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tWhat is a whoremaster, fool?"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "2.2.120",
+      "rawRolePrefix": "Varro's Servant",
+      "speaker": "Varro's Servant",
+      "rawLineText": "Varro's Servant\tThou art not altogether a fool."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.6",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tAy, and I think"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.9",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tAnd Sir Philotus too!"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.11",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\t                  Welcome, good brother."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.14",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tSo much?"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.16",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tNot yet."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.18",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tAy, but the days are wax'd shorter with him:"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.31",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tMark, how strange it shows,"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.40",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tFive thousand mine."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.47",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tFlaminius! Sir, a word: pray, is my lord ready to"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.52",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tHa! is not that his steward muffled so?"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.71",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tAy, but this answer will not serve."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.99",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tPut in now, Titus."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.101",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tHere's mine."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.104",
+      "rawRolePrefix": "Varro's Servants",
+      "speaker": "Varro's Servants",
+      "rawLineText": "Varro's Servants\tAnd ours, my lord."
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.107",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tAlas, my lord,-"
+    },
+    {
+      "workId": "timon",
+      "sourceAnchor": "3.4.111",
+      "rawRolePrefix": "Lucilius' Servant",
+      "speaker": "Lucilius' Servant",
+      "rawLineText": "Lucilius' Servant\tFive thousand crowns, my lord."
+    }
+  ]
+}
