@@ -1,6 +1,8 @@
 # GitHub Pages 发布说明
 
-本页是配置参考，不表示网站已发布。
+站点已发布：[在线阅读](https://bzy-debug.github.io/shakespeare/)。仓库公开，HTTPS 已启用；发布源为 `main` 分支根目录。
+
+以下说明记录当前发布方式与维护注意事项。
 
 项目是静态站点。经公开内容权限确认后，GitHub Pages 可选 `main` 分支的 `/(root)` 为发布源；入口是仓库根目录的 `index.html`。根目录的 `.nojekyll` 用于关闭 Jekyll 处理，原样提供静态文件。
 
