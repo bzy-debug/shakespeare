@@ -87,12 +87,23 @@
   function rememberPosition(row = state.row) {
     if (!work || !current()) return;
     state.positions[state.englishWork] = {section: state.section, row: row || ''};
-    persist();
+    updateSourceLinks(row); persist();
   }
-  function sourceURL(anchor) {
-    const params = new URLSearchParams({work: state.work, englishWork: state.englishWork});
+  function sourceURL(anchor, rowId = state.row) {
+    const params = new URLSearchParams({work: state.work, englishWork: state.englishWork, en: state.section});
+    const selected = rowMap.get(rowId);
+    const row = selected?.section.id === state.section && canDisplay(groupMap.get(selected.row.groupId)) ? selected.row : current()?.rows.find(entry => canDisplay(groupMap.get(entry.groupId)));
+    if (selected?.section.id === state.section) { params.set('block', selected.row.id); params.set('lang', 'en'); }
+    // The Chinese destination comes from an actual paired source block, never a scene-number guess.
+    const chineseBlock = groupMap.get(row?.groupId)?.chinese?.[0]?.blockId;
+    if (chineseBlock && !anchor) params.set('zhBlock', chineseBlock);
     if (anchor) params.set('anchor', anchor);
     return 'source-reader.html#' + params;
+  }
+  function updateSourceLinks(rowId = state.row) {
+    const href = sourceURL(undefined, rowId);
+    $('#source-reader-link').href = href;
+    $$('#source-note a[href^="source-reader.html"]').forEach(link => { link.href = href; });
   }
   function setMetadata(item, english) {
     $('.book-title h2').textContent = english?.title || item.title;
@@ -196,7 +207,7 @@
     $('#work-toc').innerHTML = work.sections.map(entry => '<button data-section="' + esc(entry.id) + '" class="' + (entry.id === state.section ? 'scene-current' : '') + '"' + (entry.id === state.section ? ' aria-current="page"' : '') + '>' + esc(entry.label) + '</button>').join('');
     $('.breadcrumb').textContent = '戏剧 / ' + meta.title + ' / ' + section.label;
     $('#footer-section').textContent = section.label; $('#section-end-label').textContent = section.label + ' · 本节终';
-    updateBookmarks(); applySettings();
+    updateSourceLinks(); updateBookmarks(); applySettings();
   }
   function changeSection(id, options = {}) {
     if (!work?.sections.some(section => section.id === id)) return;
@@ -223,6 +234,7 @@
       target.classList.add('selected'); target.tabIndex = -1;
       target.scrollIntoView({block: 'center', behavior: 'instant'}); target.focus({preventScroll: true});
     }
+    updateSourceLinks(entry.row.id);
     return Boolean(target);
   }
   $('#aligned-section').onchange = event => changeSection(event.target.value);

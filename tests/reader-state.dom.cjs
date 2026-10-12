@@ -23,11 +23,11 @@ async function until(check, label) {
   for (let index = 0; index < 180; index++) { if (check()) return; await pause(20); }
   throw new Error('Timeout: ' + label);
 }
-function create(hash = '', storage = {}) {
+function create(hash = '', storage = {}, page = 'index.html') {
   const errors = [], console = new VirtualConsole();
   console.on('jsdomError', error => { if (!error.message.includes('CSS') && !error.message.includes('Could not load script')) errors.push(error.message); });
-  const dom = new JSDOM(fs.readFileSync(path.join(root, 'index.html'), 'utf8'), {
-    url: 'http://reader.test/shakespeare/index.html' + hash,
+  const dom = new JSDOM(fs.readFileSync(path.join(root, page), 'utf8'), {
+    url: 'http://reader.test/shakespeare/' + page + hash,
     runScripts: 'dangerously', resources: new LocalResources(), pretendToBeVisual: true, virtualConsole: console,
     beforeParse(window) {
       window.scrollTo = () => {};
@@ -135,5 +135,26 @@ function finish(test) { assert.deepEqual(test.errors, []); test.dom.window.close
   failOnce = '/data/aligned-collection/edwardiii.js';
   const retry = create('#work=part0041'); await until(() => retry.d.querySelector('#load-status button'), 'retry');
   click(retry, '#load-status button'); await ready(retry, '爱德华三世'); finish(retry);
-  console.log('PASS: main reader bookmark/settings migration, saved resume, settings persistence/reset, malformed state, automatic merged groups, Chinese-only bookmarks/search, mobile keyboard menu, stale-load race, history/hash destinations, retry.');
+  // Source fallback retains authoritative English section and follows a real
+  // paired Chinese block; it must not guess matching scene numbers.
+  for (const [workId, title, sec] of [['part0010', '仲夏夜之梦', '2.1'], ['part0035', '麦克白', '5.8']]) {
+    const main = create('#work=' + workId); await ready(main, title);
+    change(main, '#aligned-section', sec);
+    const href = new URL(main.d.querySelector('#source-reader-link').href);
+    const params = new URLSearchParams(href.hash.slice(1)); assert.equal(params.get('en'), sec);
+    assert.equal(new URL(main.d.querySelector('#source-note a[href*="source-reader.html"]').href).hash, href.hash);
+    const source = create(href.hash, {}, 'source-reader.html');
+    await until(() => source.d.querySelector('#reading').getAttribute('aria-busy') === 'false' && source.d.querySelector('#english-text .source-block'), 'source fallback');
+    assert.equal(source.d.querySelector('#en-section').value, sec);
+    const sourceWork = source.w.SHAKESPEARE_CHINESE[workId];
+    const expected = sourceWork.sections.find(s => s.blocks.some(b => b.id === params.get('zhBlock')));
+    assert.ok(expected); assert.equal(source.d.querySelector('#zh-section').value, expected.id);
+    if (workId === 'part0035') assert.equal(expected.sceneNumber, 7);
+    const back = new URL(source.d.querySelector('#aligned-reader-link').href);
+    assert.equal(new URLSearchParams(back.hash.slice(1)).get('section'), sec);
+    assert.equal(new URL(source.d.querySelector('#source-note a[href*="index.html"]').href).hash, back.hash);
+    const restored = create(back.hash); await ready(restored, title); assert.equal(restored.d.querySelector('#aligned-section').value, sec);
+    finish(restored); finish(source); finish(main);
+  }
+  console.log('PASS: main reader bookmark/settings migration, saved resume, settings persistence/reset, malformed state, automatic merged groups, Chinese-only bookmarks/search, mobile keyboard menu, stale-load race, history/hash destinations, retry, source fallback/return with edition-specific Chinese section mapping.');
 })().catch(error => { console.error(error); process.exitCode = 1; });

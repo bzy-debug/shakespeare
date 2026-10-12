@@ -138,14 +138,14 @@
       "file": "data/aligned-collection/midsummer.js",
       "englishUnits": 648,
       "speechUnits": 521,
-      "reviewedUnits": 1,
+      "reviewedUnits": 74,
       "automaticUnits": 532,
-      "unresolvedUnits": 115,
-      "groups": 519,
-      "matchedSpeechUnits": 448,
+      "unresolvedUnits": 42,
+      "groups": 586,
+      "matchedSpeechUnits": 521,
       "speechCharacters": 84948,
-      "matchedSpeechCharacters": 66759,
-      "chineseCharacters": 25405
+      "matchedSpeechCharacters": 84948,
+      "chineseCharacters": 31323
     },
     {
       "id": "much_ado",
@@ -170,14 +170,14 @@
       "file": "data/aligned-collection/pericles.js",
       "englishUnits": 824,
       "speechUnits": 670,
-      "reviewedUnits": 6,
+      "reviewedUnits": 32,
       "automaticUnits": 737,
-      "unresolvedUnits": 81,
-      "groups": 717,
-      "matchedSpeechUnits": 643,
+      "unresolvedUnits": 55,
+      "groups": 742,
+      "matchedSpeechUnits": 669,
       "speechCharacters": 92562,
-      "matchedSpeechCharacters": 79959,
-      "chineseCharacters": 31906
+      "matchedSpeechCharacters": 92554,
+      "chineseCharacters": 35497
     },
     {
       "id": "taming_shrew",
@@ -631,12 +631,12 @@
   "totals": {
     "englishUnits": 39658,
     "speechUnits": 33681,
-    "matchedSpeechUnits": 32550,
-    "reviewedUnits": 209,
+    "matchedSpeechUnits": 32649,
+    "reviewedUnits": 308,
     "automaticUnits": 36491,
-    "unresolvedUnits": 2958,
+    "unresolvedUnits": 2859,
     "speechCharacters": 4509351,
-    "matchedSpeechCharacters": 4281905,
-    "chineseCharacters": 1620654
+    "matchedSpeechCharacters": 4312689,
+    "chineseCharacters": 1630163
   }
 }

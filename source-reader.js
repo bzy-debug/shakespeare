@@ -18,7 +18,7 @@
     bookmarks:Array.isArray(saved.bookmarks)?saved.bookmarks.filter(b=>b&&catalog.some(w=>w.id===b.work)&&typeof b.block==='string'&&['zh','en'].includes(b.lang)&&typeof b.section==='string').slice(0,2000):[],
     positions:saved.positions&&typeof saved.positions==='object'&&!Array.isArray(saved.positions)?saved.positions:{}
   };
-  let zhWork=null, enWork=null, generation=0, toastTimer, progressFrame, positionTimer, restoringPosition=false;
+  let zhWork=null, enWork=null, generation=0, toastTimer, progressFrame, positionTimer, restoringPosition=false, alignedReturnRow='';
   const scripts=new Map();
   const persist=()=>{try{localStorage.setItem('shakespeare.collection.v1',JSON.stringify(state));}catch{}};
   const englishIds=w=>w.englishIds?.length?w.englishIds:[w.englishId || englishMap[w.title]].filter(Boolean);
@@ -29,7 +29,7 @@
     const p=new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path;s.onload=resolve;s.onerror=()=>{scripts.delete(path);s.remove();reject(new Error('无法载入 '+path));};document.head.append(s);});scripts.set(path,p);return p;
   }
   function section(work,id){return work?.sections.find(s=>s.id===id)||work?.sections[0];}
-  function route(){const q=new URLSearchParams(location.hash.slice(1));return {work:q.get('work'),zh:q.get('zh'),en:q.get('en'),block:q.get('block'),lang:q.get('lang'),englishWork:q.get('englishWork'),anchor:q.get('anchor')};}
+  function route(){const q=new URLSearchParams(location.hash.slice(1));return {work:q.get('work'),zh:q.get('zh'),en:q.get('en'),block:q.get('block'),lang:q.get('lang'),englishWork:q.get('englishWork'),anchor:q.get('anchor'),zhBlock:q.get('zhBlock')};}
   function setURL(replace=false,extra={}){const q=new URLSearchParams({work:state.work,zh:state.zh,en:state.en,englishWork:state.englishWork,...extra});const hash='#'+q; if(location.hash!==hash)history[replace?'replaceState':'pushState'](null,'',hash);}
   function applySettings(){document.documentElement.style.setProperty('--font-size',state.fontSize+'px');document.documentElement.style.setProperty('--leading',state.spacing);document.body.dataset.theme=state.theme;document.body.dataset.mode=state.mode;$('#font-size').value=state.fontSize;$('#font-output').value=state.fontSize+' px';$('#reading-mode').value=state.mode;$$('[data-theme-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.themeChoice===state.theme)));$$('[data-spacing]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.spacing===state.spacing)));requestAnimationFrame(updateProgress);}
   async function openWork(id,options={}){
@@ -45,7 +45,9 @@
       if(enMeta){try{await loadScript(enMeta.file||'data/english-collection/'+enMeta.id+'.js');english=window.SHAKESPEARE_ENGLISH?.[enMeta.id];if(!english?.sections?.length)throw new Error('英文数据无有效篇章');}catch{englishError=true;}}
       if(ticket!==generation)return;
       zhWork=chinese;enWork=english;const previous=state.positions[meta.id]||{};
-      state.zh=section(zhWork,options.zh||previous.zh)?.id||'';state.en=section(enWork,options.en||previous.en)?.id||'';
+      const sourceZhSection=options.zhBlock?zhWork.sections.find(s=>s.blocks.some(b=>b.id===options.zhBlock)):null;
+      state.zh=sourceZhSection?.id||section(zhWork,options.zh||previous.zh)?.id||'';state.en=section(enWork,options.en||previous.en)?.id||'';
+      alignedReturnRow=options.lang==='en'?options.block||'':'';
       $('.book-title h2').textContent=enMeta?.title||'Shakespeare';$('.book-title p').textContent=meta.title;$('.book-title .eyebrow').textContent='SOURCE EDITIONS';
       $('#play-title').textContent=enMeta?.title||meta.title;$('.hero-copy>.eyebrow').textContent='SOURCE EDITIONS';$('.hero-subtitle>span').textContent=meta.title;$('.author').textContent='William Shakespeare';
       $('.breadcrumb').textContent='底本参考 / '+meta.title;document.title=meta.title+' · 原始底本参考';
@@ -55,7 +57,7 @@
       $('#load-status').textContent=englishError?'英文文件未能载入，中文可继续阅读。':'';
       if(englishError){const b=document.createElement('button');b.textContent='重试载入';b.onclick=()=>openWork(meta.id,{zh:state.zh,en:state.en,replace:true});$('#load-status').append(' ',b);}
       renderSections();setURL(options.replace??false);state.positions[state.work]={zh:state.zh,en:state.en,englishWork:state.englishWork};persist();
-      if(options.anchor)navigateAnchor(options.anchor);else if(options.block)jumpBlock(options.lang||'zh',options.block);else if(options.initial&&previous.block)jumpBlock(previous.lang||'zh',previous.block);else if(!options.initial)window.scrollTo({top:0,behavior:'instant'});
+      if(options.anchor)navigateAnchor(options.anchor);else if(options.block)jumpBlock(options.lang||'zh',options.block);else if(options.initial&&!options.en&&!options.zhBlock&&previous.block)jumpBlock(previous.lang||'zh',previous.block);else if(!options.initial)window.scrollTo({top:0,behavior:'instant'});
     }catch(error){if(ticket!==generation)return;$('#load-status').textContent='载入失败：'+error.message+'。';const b=document.createElement('button');b.textContent='重试';b.onclick=()=>openWork(meta.id,{...options,replace:true});$('#load-status').append(b);}
     finally{if(ticket===generation){$('#reading').setAttribute('aria-busy','false');requestAnimationFrame(()=>{restoringPosition=false;});}}
   }
@@ -67,11 +69,17 @@
   function renderSections(){
     if(!zhWork)return;for(const lang of ['zh','en']){const work=lang==='zh'?zhWork:enWork;const cur=state[lang];$('#'+lang+'-section').innerHTML=optionsHTML(work,cur);$('#'+lang+'-section').disabled=!work;const idx=work?.sections.findIndex(s=>s.id===cur)??-1;$('#'+lang+'-prev').disabled=idx<=0;$('#'+lang+'-next').disabled=!work||idx>=work.sections.length-1;renderPane(lang,work,cur);}
     $('#work-toc').innerHTML=zhWork.sections.map(s=>'<button data-section="'+esc(s.id)+'" class="'+(s.id===state.zh?'scene-current':'')+'"'+(s.id===state.zh?' aria-current="page"':'')+'>'+esc(s.label)+'</button>').join('');
-    $('#aligned-reader-link').href='index.html#work='+encodeURIComponent(state.work)+'&englishWork='+encodeURIComponent(state.englishWork)+'&section='+encodeURIComponent(state.en);
+    updateAlignedReturn();
     const label=section(zhWork,state.zh)?.label||'';$('#footer-section').textContent=label;$('#section-end-label').textContent='当前篇章 · '+label;updateBookmarks();applySettings();
   }
+  function updateAlignedReturn(){
+    const params=new URLSearchParams({work:state.work,englishWork:state.englishWork,section:state.en});
+    if(enWork?.sections.find(s=>s.id===state.en)?.blocks.some(b=>b.id===alignedReturnRow))params.set('row',alignedReturnRow);
+    const href='index.html#'+params;$('#aligned-reader-link').href=href;
+    $$('#source-note a[href^="index.html"]').forEach(link=>{link.href=href;});
+  }
   function changeSection(lang,id,opts={}){const work=lang==='zh'?zhWork:enWork;if(!work?.sections.some(s=>s.id===id))return;state[lang]=id;renderSections();state.positions[state.work]={zh:state.zh,en:state.en,englishWork:state.englishWork};persist();setURL(false);toggleMenu(false);if(opts.block)jumpBlock(lang,opts.block);else $('#reading').scrollIntoView({block:'start',behavior:'instant'});}
-  function jumpBlock(lang,id){if(state.mode!==lang&&state.mode!=='parallel'){state.mode=lang;applySettings();persist();}const el=$$('.source-block').find(e=>e.dataset.lang===lang&&e.dataset.block===id);if(el){el.classList.add('selected');el.scrollIntoView({block:'center',behavior:'instant'});el.focus({preventScroll:true});}}
+  function jumpBlock(lang,id){if(state.mode!==lang&&state.mode!=='parallel'){state.mode=lang;applySettings();persist();}const el=$$('.source-block').find(e=>e.dataset.lang===lang&&e.dataset.block===id);if(el){if(lang==='en'){alignedReturnRow=id;updateAlignedReturn();}el.classList.add('selected');el.scrollIntoView({block:'center',behavior:'instant'});el.focus({preventScroll:true});}}
   function updateBookmarks(){$('#bookmark-count').textContent=state.bookmarks.length;$('#bookmark-count').hidden=!state.bookmarks.length;}
   $('#reading').addEventListener('click',e=>{
     const btn=e.target.closest('.block-bookmark');if(btn){const article=btn.closest('[data-block]'),lang=article.dataset.lang,sec=section(lang==='zh'?zhWork:enWork,state[lang]);const id=article.dataset.block;const ix=state.bookmarks.findIndex(b=>b.work===state.work&&b.lang===lang&&b.section===sec.id&&b.block===id);if(ix>=0)state.bookmarks.splice(ix,1);else state.bookmarks.push({work:state.work,lang,englishWork:state.englishWork,section:sec.id,block:id,label:sec.label,text:article.querySelector('.source-content').textContent.slice(0,160)});const on=ix<0;btn.textContent=on?'◆':'◇';btn.setAttribute('aria-pressed',on);btn.setAttribute('aria-label',on?'取消书签':'添加书签');btn.title=on?'取消书签':'添加书签';persist();updateBookmarks();toast(on?'已添加书签':'已移除书签');return;}

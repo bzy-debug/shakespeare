@@ -39,6 +39,15 @@ class AlignedDataTests(unittest.TestCase):
   for m in self.catalog:
    self.assertTrue((ROOT/'data/alignment-records'/f'{m["id"]}.json').exists(),m['id'])
    self.assertGreater(m['matchedSpeechUnits'],0,m['id'])
+ def test_reviewed_gap_closures(self):
+  works={m['id']:m for m in self.catalog}
+  self.assertEqual(works['midsummer']['matchedSpeechUnits'],521)
+  self.assertEqual(works['midsummer']['speechUnits'],521)
+  self.assertEqual(works['pericles']['matchedSpeechUnits'],669)
+  work=read_assignment(ROOT/works['pericles']['file'])
+  pending=[r for sec in work['sections'] for r in sec['rows'] if r['kind']=='speech' and r['status']=='unresolved']
+  self.assertEqual(len(pending),1)
+  self.assertEqual(pending[0]['english']['text'],'SCENE I:')
  def test_play_catalogs_only(self):
   for name in ('english','chinese'):
    catalog=json.loads((ROOT/f'data/{name}-collection/catalog.json').read_text());self.assertEqual(len(catalog),39);self.assertTrue(all(w['kind']=='play' for w in catalog))
